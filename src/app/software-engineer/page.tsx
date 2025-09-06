@@ -157,7 +157,7 @@ export default function SoftwareEngineerPortfolio() {
 
       {/* Projects Section */}
       <section className="mx-auto px-6 py-16">
-        <div className="max-w-6xl mx-auto">
+        <div className="mx-auto">
           <h2 className="text-3xl font-bold text-gray-800 mb-12 text-center">
             Featured Projects
           </h2>
