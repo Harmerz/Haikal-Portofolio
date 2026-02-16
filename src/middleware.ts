@@ -5,20 +5,21 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl;
   const hostname = req.headers.get("host");
 
-  // Define your target subdomain
-  const targetSubdomain = "se.haikalhilmi.my.id";
+  // 1. SKIP middleware for internal Next.js files and static assets
+  if (
+    url.pathname.startsWith("/_next") ||
+    url.pathname.startsWith("/api") ||
+    url.pathname.includes(".") // matches files like .png, .jpg, .svg
+  ) {
+    return NextResponse.next();
+  }
 
-  if (hostname === targetSubdomain) {
-    // If the user is at the root of the subdomain (se.haikalhilmi.my.id/)
-    // Rewrite it to show the content from /software-engineer
+  // 2. Handle the subdomain rewrite
+  if (hostname === "se.haikalhilmi.my.id") {
     if (url.pathname === "/") {
       return NextResponse.rewrite(new URL("/software-engineer", req.url));
     }
-
-    // Optional: If you have sub-pages like se.haikalhilmi.my.id/projects
-    // you can rewrite them to /software-engineer/projects
-    return NextResponse.rewrite(
-      new URL(`/software-engineer${url.pathname}`, req.url)
-    );
   }
+
+  return NextResponse.next();
 }
