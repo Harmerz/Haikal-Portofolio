@@ -1,9 +1,14 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+// Map each subdomain to the page it should serve at its root.
+const SUBDOMAIN_ROUTES: Record<string, string> = {
+  "se.haikalhilmi.my.id": "/software-engineer",
+  "de.haikalhilmi.my.id": "/data-engineer",
+};
+
 export function middleware(req: NextRequest) {
   const url = req.nextUrl;
-  const hostname = req.headers.get("host");
 
   // 1. SKIP middleware for internal Next.js files and static assets
   if (
@@ -14,11 +19,12 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // 2. Handle the subdomain rewrite
-  if (hostname === "se.haikalhilmi.my.id") {
-    if (url.pathname === "/") {
-      return NextResponse.rewrite(new URL("/software-engineer", req.url));
-    }
+  // 2. Handle subdomain rewrites (strip any port, e.g. during local testing)
+  const hostname = req.headers.get("host")?.split(":")[0] ?? "";
+  const target = SUBDOMAIN_ROUTES[hostname];
+
+  if (target && url.pathname === "/") {
+    return NextResponse.rewrite(new URL(target, req.url));
   }
 
   return NextResponse.next();

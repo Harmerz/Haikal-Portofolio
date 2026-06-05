@@ -1,175 +1,88 @@
-import TechStackFilter from "@/components/TechStackFilter";
+import type { Metadata } from "next";
+import TechStack from "@/components/TechStack";
 import HeroSection from "@/components/HeroSection";
-import SoftwarePortfolioGrid, {
-  SoftwareProject,
-} from "@/components/SoftwarePortfolioGrid";
+import SectionHeader from "@/components/SectionHeader";
+import ProjectCard from "@/components/ProjectCard";
+import Reveal from "@/components/Reveal";
+import Testimonials from "@/components/Testimonials";
+import CrossLinkBanner from "@/components/CrossLinkBanner";
+import Footer from "@/components/Footer";
+import { softwareProjects } from "@/data/projects";
+import { t } from "@/i18n/config";
+
+export const metadata: Metadata = {
+  title: "Haikal Hilmi — Software Engineer",
+  description:
+    "Production-ready full-stack web applications by Haikal Hilmi. React/Next.js, backend APIs, and database design.",
+};
 
 export default function Home() {
-  const projects: SoftwareProject[] = [
-    {
-      id: 1,
-      title: "Kembangkan",
-      year: "2025",
-      type: "video",
-      src: "/Porto/Kembangkan.mp4",
-    },
-    {
-      id: 2,
-      title: "Nesco Web",
-      year: "2025",
-      type: "video",
-      src: "/Porto/Nesco Web.mp4",
-    },
-    {
-      id: 3,
-      title: "PPSMB Homepage",
-      year: "2025",
-      type: "video",
-      src: "/Porto/PPSMB Homepage.mp4",
-    },
-    {
-      id: 4,
-      title: "PPSMB Quiz",
-      year: "2025",
-      type: "video",
-      src: "/Porto/PPSMB Quiz.mp4",
-    },
-    {
-      id: 5,
-      title: "Agrichain",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Agrichain.png",
-    },
-    {
-      id: 6,
-      title: "Aksara Indonesia",
-      year: "2026",
-      type: "image",
-      src: "/Porto/Aksara Indonesia.png",
-    },
-    {
-      id: 7,
-      title: "Cakara",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Cakara.png",
-    },
-    {
-      id: 8,
-      title: "Lensight",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Lensight.png",
-    },
-    {
-      id: 9,
-      title: "Nesco Dashboard",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Nesco Dashboard.png",
-    },
-    {
-      id: 10,
-      title: "Pemetaan Daerah rawan - Map - Home - default",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Pemetaan Daerah rawan - Map - Home - default.png",
-    },
-    {
-      id: 11,
-      title: "Petadata",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Petadata.png",
-    },
-    {
-      id: 12,
-      title: "Prometheus",
-      year: "2026",
-      type: "image",
-      src: "/Porto/Prometheus.jpeg",
-    },
-    {
-      id: 13,
-      title: "Career Summit",
-      year: "2026",
-      type: "image",
-      src: "/Porto/Ref 2 - Career Summit.png",
-    },
-    {
-      id: 14,
-      title: "Glulam",
-      year: "2026",
-      type: "image",
-      src: "/Porto/Ref 3 - Glulam.png",
-    },
-    {
-      id: 15,
-      title: "SEATUC",
-      year: "2026",
-      type: "image",
-      src: "/Porto/Ref 4 - SEATUC.jpg",
-    },
-    {
-      id: 16,
-      title: "Robota New",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Robota New.png",
-    },
-    {
-      id: 17,
-      title: "Robota",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Robota.png",
-    },
-    {
-      id: 18,
-      title: "Teknofest",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Teknofest.png",
-    },
-    {
-      id: 19,
-      title: "Tilikan",
-      year: "2025",
-      type: "image",
-      src: "/Porto/Tilikan.png",
-    },
-  ];
-
   return (
     <div className="relative min-h-screen bg-white text-gray-900">
-      {/* Decorative Honeycomb Image - Top Right */}
-
       {/* Hero Section */}
       <HeroSection
-        eyebrow="Specialized in Software Engineering"
-        title="Production-ready web applications."
-        description="Full-stack development that combines seamless user interfaces with high-performance backends. Secure, maintainable, and built for growth."
-        supportingLine="React/Next.js • Backend APIs • Database Design • Fullstack"
-        ctaText="Discuss Your Product"
+        eyebrow={t(
+          "Specialized in Software Engineering",
+          "Spesialisasi Software Engineering",
+        )}
+        title={t(
+          "Production-ready web applications.",
+          "Aplikasi web yang siap produksi.",
+        )}
+        description={t(
+          "Full-stack development that combines seamless user interfaces with high-performance backends. Secure, maintainable, and built for growth.",
+          "Pengembangan full-stack yang memadukan antarmuka mulus dengan backend berperforma tinggi. Aman, mudah dipelihara, dan dibangun untuk berkembang.",
+        )}
+        supportingLine={t(
+          "React/Next.js • Backend APIs • Database Design • Fullstack",
+          "React/Next.js • Backend API • Desain Database • Fullstack",
+        )}
+        ctaText={t("Discuss Your Product", "Diskusikan Produk Anda")}
       />
 
       {/* Featured Projects Section */}
       <section className="bg-white px-4 py-8">
-        <SoftwarePortfolioGrid items={projects} />
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <SectionHeader
+              title={t("Selected Work", "Karya Pilihan")}
+              subtitle={t(
+                "Award-winning products and platforms shipped for real clients & competitions",
+                "Produk & platform pemenang penghargaan untuk klien nyata & kompetisi",
+              )}
+            />
+          </Reveal>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {softwareProjects.map((project, i) => (
+              <Reveal key={project.id} delay={(i % 3) * 80} className="h-full">
+                <ProjectCard {...project} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Tech Stack Section */}
-      <TechStackFilter />
+      <TechStack />
 
-      {/* Footer */}
-      <footer className="bg-white py-6 text-black">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-black">
-            © 2025 Haikal Hilmi. Building the future with data and code.
-          </p>
-        </div>
-      </footer>
+      {/* Testimonials */}
+      <Testimonials />
+
+      {/* Cross-link to Data Engineering */}
+      <CrossLinkBanner
+        title={t("Need data work too?", "Butuh pekerjaan data juga?")}
+        description={t(
+          "Beyond apps, I build reliable data pipelines, web scrapers, and ETL systems that keep your data clean and ready to use.",
+          "Selain aplikasi, saya membangun data pipeline, web scraper, dan sistem ETL yang menjaga data Anda bersih dan siap pakai.",
+        )}
+        href="/data-engineer"
+        ctaLabel={t(
+          "See my data engineering work",
+          "Lihat karya data engineering saya",
+        )}
+      />
+
+      <Footer />
     </div>
   );
 }

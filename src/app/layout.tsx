@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/i18n/LanguageProvider";
+import Header from "@/components/Header";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -15,13 +17,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        {children}
+        <LanguageProvider>
+          <Header />
+          {children}
+          {modal}
+        </LanguageProvider>
       </body>
     </html>
   );
