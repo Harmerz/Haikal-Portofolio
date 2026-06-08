@@ -3,7 +3,9 @@ import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
 import HpcStats from "@/components/HpcStats";
+import About from "@/components/About";
 import Experience from "@/components/Experience";
+import HowIWork from "@/components/HowIWork";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { softwareProjects, dataProjects } from "@/data/projects";
@@ -81,7 +83,9 @@ export default function Home() {
       {/* Infrastructure / scale credibility */}
       <HpcStats />
 
+      <About />
       <Experience />
+      <HowIWork />
       <Testimonials />
       <Footer />
     </div>

@@ -24,16 +24,16 @@ export const softwareProjects: Project[] = [
     id: "pwc",
     title: "PwC Securing AI",
     description: t(
-      "An AI investment assistant that helps people understand and manage their assets through natural conversation.",
-      "Asisten investasi AI yang membantu orang memahami dan mengelola aset lewat percakapan natural.",
+      "An AI assistant that recommends the best credit options for each user based on their income and spending.",
+      "Asisten AI yang merekomendasikan opsi kredit terbaik untuk tiap user berdasarkan penghasilan & pengeluarannya.",
     ),
     problem: t(
-      "Investors struggled to understand and manage their assets efficiently.",
-      "Investor kesulitan memahami dan mengelola aset secara efisien.",
+      "People struggle to pick the right credit product for their finances.",
+      "Orang kesulitan memilih produk kredit yang tepat untuk kondisi keuangannya.",
     ),
     solution: t(
-      "Built an AI chatbot and asset management dashboard in 14 days.",
-      "Membangun chatbot AI dan dashboard manajemen aset dalam 14 hari.",
+      "Built a GPT-style chatbot + dashboard in 14 days, matching users to real credit products.",
+      "Membangun chatbot ala GPT + dashboard dalam 14 hari, mencocokkan user dengan produk kredit nyata.",
     ),
     tech: ["Next.js 13", "Azure", "MongoDB 7", "Node.js", "OpenAI"],
     award: t(
@@ -99,21 +99,21 @@ export const softwareProjects: Project[] = [
     id: "robota-new",
     title: "Robota — AI Hotel Platform",
     description: t(
-      "AI hotel-management platform tracking competitor pricing, guest reviews, and property performance.",
-      "Platform AI manajemen hotel yang memantau harga kompetitor, ulasan tamu, dan performa properti.",
+      "A B2B platform that tracks hotel room prices across OTAs (which shift hourly) and analyzes competitor pricing & availability.",
+      "Platform B2B yang memantau harga kamar hotel di berbagai OTA (yang berubah tiap jam) dan menganalisis harga & ketersediaan kompetitor.",
     ),
     problem: t(
-      "The legacy React SPA was limited in performance, SEO, and dashboard loading.",
-      "Frontend React SPA lama terbatas dalam performa, SEO, dan loading dashboard.",
+      "Hotels' OTA prices shift hour to hour, and they couldn't easily see how competitors compared.",
+      "Harga OTA hotel berubah tiap jam, dan mereka sulit melihat perbandingan dengan kompetitor.",
     ),
     solution: t(
-      "Migrated to Next.js 13 (SSR & SSG) with optimized data visualization.",
-      "Migrasi ke Next.js 13 (SSR & SSG) dengan optimasi visualisasi data.",
+      "Migrated the frontend to Next.js 13 (SSR/SSG) and built dashboards over a custom data backend with AI competitor analysis.",
+      "Migrasi frontend ke Next.js 13 (SSR/SSG) dan membangun dashboard di atas backend data custom dengan analisis kompetitor berbasis AI.",
     ),
     tech: ["Next.js 13", "React", "TypeScript", "TailwindCSS", "TanStack Query"],
     result: t(
-      "A faster, SEO-ready rebuild that hotel teams rely on every day.",
-      "Rebuild yang lebih cepat dan siap SEO, diandalkan tim hotel setiap hari.",
+      "A faster, SEO-ready rebuild, migrated off a legacy React SPA.",
+      "Rebuild yang lebih cepat & siap SEO, lepas dari React SPA lama.",
     ),
     image: "/home/portfolio/robotav2.png",
     alt: "Robota hotel management platform",
@@ -392,10 +392,10 @@ export const dataProjects: Project[] = [
   {
     id: "pipeline",
     title: "Social Media Data Pipeline",
-    scale: t("Multi-million records / day", "Multi-juta records / hari"),
+    scale: t("Hundreds of thousands of records / day", "Ratusan ribu record / hari"),
     description: t(
-      "A unified pipeline behind the Twitter, Instagram, and YouTube scrapers, built for massive volume.",
-      "Pipeline terpadu di balik scraper Twitter, Instagram, dan YouTube, dibangun untuk volume masif.",
+      "The pipeline behind the social-media & news scrapers — powering two-sided sentiment analysis and NER for a public-sector communications team.",
+      "Pipeline di balik scraper media sosial & berita — menggerakkan analisis sentimen dua arah dan NER untuk tim komunikasi sektor publik.",
     ),
     problem: t(
       "Data volume is enormous and must be processed continuously.",
@@ -422,8 +422,8 @@ export const dataProjects: Project[] = [
     id: "instagram",
     title: "Instagram Scraping",
     scale: t(
-      "100,000+ posts & 2M comments / day",
-      "100.000+ post & 2 juta komentar / hari",
+      "Up to ~50K posts & ~1M comments / day",
+      "Hingga ~50K post & ~1 juta komentar / hari",
     ),
     description: t(
       "Large-scale Instagram data collection for AI sentiment analysis and competitor monitoring.",
@@ -446,7 +446,7 @@ export const dataProjects: Project[] = [
   {
     id: "twitter",
     title: "Twitter / X Scraping",
-    scale: t("150,000+ tweets / day", "150.000+ tweets / hari"),
+    scale: t("Up to ~75K tweets / day", "Hingga ~75K tweet / hari"),
     description: t(
       "Distributed Twitter/X scraping for AI sentiment analysis and public-conversation monitoring.",
       "Scraping Twitter/X terdistribusi untuk analisis sentimen AI dan monitoring percakapan publik.",
@@ -469,8 +469,8 @@ export const dataProjects: Project[] = [
     id: "youtube",
     title: "YouTube Scraping",
     scale: t(
-      "10,000+ videos & 1M comments / day",
-      "10.000+ video & 1 juta komentar / hari",
+      "Up to ~5K videos & ~500K comments / day",
+      "Hingga ~5K video & ~500K komentar / hari",
     ),
     description: t(
       "YouTube video and comment intelligence with automatic transcription.",
@@ -493,7 +493,7 @@ export const dataProjects: Project[] = [
   {
     id: "news",
     title: "News Scraping",
-    scale: t("Dozens of sources", "Puluhan sumber"),
+    scale: t("226K+ articles / week", "226K+ artikel / minggu"),
     description: t(
       "A unified crawler that turns dozens of news portals into one clean feed.",
       "Crawler terpadu yang mengubah puluhan portal berita jadi satu feed bersih.",
@@ -537,23 +537,23 @@ export const dataProjects: Project[] = [
   {
     id: "kick",
     title: "In-Video Word Finder",
-    scale: t("Real-time monitoring", "Monitoring real-time"),
+    scale: t("100+ hours of video processed", "100+ jam video diproses"),
     description: t(
-      "Finds exact spoken words inside videos by converting speech to searchable text with AI.",
-      "Menemukan kata persis yang diucapkan di dalam video dengan mengubah suara jadi teks yang dapat dicari memakai AI.",
+      "Finds the exact moment a streamer says a target word (e.g. \"LFG\") for marketing clips — speech to searchable text via AI.",
+      "Menemukan momen persis seorang streamer mengucap kata target (mis. \"LFG\") untuk klip marketing — suara jadi teks yang dapat dicari via AI.",
     ),
     problem: t(
-      "Automated monitoring of creator content on Kick.com.",
-      "Monitoring konten kreator Kick.com secara otomatis.",
+      "A marketing client needed to catch specific words spoken across long Kick.com streams.",
+      "Klien marketing perlu menangkap kata tertentu yang diucapkan di stream Kick.com yang panjang.",
     ),
     solution: t(
-      "Video indexing, video-to-text, and exact-word search inside videos.",
-      "Video indexing, video-to-text, dan pencarian kata persis dalam video.",
+      "Transcribe with Whisper, index words with timestamps, then auto-cut the clip at that moment.",
+      "Transkrip dengan Whisper, indeks kata dengan timestamp, lalu potong klip otomatis di momen itu.",
     ),
-    tech: ["Python", "Speech-to-Text AI", "Scraping"],
+    tech: ["Python", "Whisper", "GPU"],
     result: t(
-      "Pinpoint the exact moment a word is spoken—automatically.",
-      "Temukan momen persis sebuah kata diucapkan—secara otomatis.",
+      "Delivers the exact clip + URL where each searched word is spoken.",
+      "Memberikan klip persis + URL di mana tiap kata yang dicari diucapkan.",
     ),
   },
   {
@@ -590,8 +590,23 @@ export interface ProjectMeta {
 export const projectMeta: Record<string, ProjectMeta> = {
   // Client work — built from scratch (incl. tech selection), owned by the client.
   omnisocials: {
-    role: t("Full Stack Engineer", "Full Stack Engineer"),
+    role: t("Full Stack Engineer (freelance)", "Full Stack Engineer (freelance)"),
     context: "client",
+    status: t("In production", "Berjalan di produksi"),
+    decisions: [
+      t(
+        "Built each platform's OAuth to its own spec (Bluesky needed a username-first flow), with staggered cron token refresh to avoid expiry.",
+        "Membangun OAuth tiap platform sesuai spesifikasinya (Bluesky perlu alur username dulu), dengan refresh token via cron bergiliran agar tidak expired.",
+      ),
+      t(
+        "A per-minute cron worker batches scheduled posts across users — predictable CPU load, with realtime status over WebSockets.",
+        "Worker cron per menit mem-batch posting terjadwal lintas user — beban CPU terprediksi, status realtime via WebSocket.",
+      ),
+      t(
+        "Backend-side upload throttling to respect each platform's rate limits.",
+        "Throttling upload di sisi backend untuk menghormati rate limit tiap platform.",
+      ),
+    ],
   },
   linkynbio: {
     role: t("Full Stack Engineer", "Full Stack Engineer"),
@@ -604,16 +619,20 @@ export const projectMeta: Record<string, ProjectMeta> = {
   kembangkan: { context: "client" },
   // Client / contract work.
   "robota-new": {
-    role: t("Web App Developer · led team", "Web App Developer · pimpin tim"),
+    role: t("Frontend Lead", "Frontend Lead"),
     context: "client",
     decisions: [
       t(
-        "Migrated the React SPA to Next.js 13 (SSR/SSG) to fix SEO and slow dashboard loads.",
-        "Migrasi React SPA ke Next.js 13 (SSR/SSG) untuk memperbaiki SEO dan loading dashboard yang lambat.",
+        "Migrated off a legacy React SPA to Next.js 13 (SSR/SSG) to fix SEO and slow dashboard loads.",
+        "Migrasi dari React SPA lama ke Next.js 13 (SSR/SSG) untuk memperbaiki SEO dan loading dashboard yang lambat.",
       ),
       t(
-        "Adopted TanStack Query for cached, resilient data fetching across heavy dashboards.",
-        "Pakai TanStack Query untuk data fetching ber-cache & tangguh di dashboard berat.",
+        "TanStack Query caches each backend request, keeping heavy real-time dashboards responsive.",
+        "TanStack Query meng-cache tiap request backend, menjaga dashboard real-time yang berat tetap responsif.",
+      ),
+      t(
+        "Set up the frontend architecture and folder structure for the team.",
+        "Menyiapkan arsitektur frontend dan struktur folder untuk tim.",
       ),
     ],
   },
@@ -637,7 +656,24 @@ export const projectMeta: Record<string, ProjectMeta> = {
     context: "client",
   },
   // Competitions / awards.
-  pwc: { role: t("Team Lead", "Team Lead"), context: "competition" },
+  pwc: {
+    role: t("Lead Engineer · full-stack (team of 4)", "Lead Engineer · full-stack (tim 4)"),
+    context: "competition",
+    decisions: [
+      t(
+        "MongoDB for fast iteration on uncertain, evolving metrics under a 14-day deadline.",
+        "MongoDB untuk iterasi cepat pada metrik yang belum pasti & berubah di bawah tenggat 14 hari.",
+      ),
+      t(
+        "Ran the SDLC in parallel with the UI/UX team — execute first, polish last — to ship in 14 days.",
+        "Menjalankan SDLC paralel dengan tim UI/UX — eksekusi dulu, percantik di akhir — agar selesai 14 hari.",
+      ),
+      t(
+        "Azure (hackathon sponsor) + Next.js as the team's fastest, most familiar path to delivery.",
+        "Azure (sponsor hackathon) + Next.js sebagai jalur tercepat & paling familiar bagi tim.",
+      ),
+    ],
+  },
   gmat: {
     role: t("Technical Lead & Project Manager", "Technical Lead & Project Manager"),
     context: "competition",
@@ -649,25 +685,55 @@ export const projectMeta: Record<string, ProjectMeta> = {
     context: "client",
     decisions: [
       t(
-        "Chose RabbitMQ + Docker workers over Kafka for multi-million-record throughput at lower operational cost.",
-        "Pilih RabbitMQ + Docker workers daripada Kafka untuk throughput multi-juta record dengan biaya operasional lebih rendah.",
+        "RabbitMQ for flexible routing — speed from scrape to display wasn't the bottleneck, so simple routing beat Kafka's complexity.",
+        "RabbitMQ untuk routing fleksibel — kecepatan dari scrape ke tampil bukan bottleneck, jadi routing sederhana mengalahkan kompleksitas Kafka.",
       ),
       t(
-        "Added Grafana + Prometheus alerting on CPU/RAM spikes — improved reliability ~25% and prevented server crashes.",
-        "Tambah alerting Grafana + Prometheus untuk lonjakan CPU/RAM — reliability naik ~25% dan mencegah server crash.",
+        "Elasticsearch for fast full-text & context search across large volumes of news and social text.",
+        "Elasticsearch untuk pencarian full-text & konteks yang cepat pada volume besar teks berita & sosial.",
       ),
       t(
-        "Tuned resource allocation and pipeline automation — cut processing time ~40%.",
-        "Optimasi alokasi resource & automasi pipeline — waktu proses turun ~40%.",
+        "An alert bot pings the dev team the moment a scraper returns no data — kept uptime ~99% with fast recovery.",
+        "Bot alert memberi tahu tim dev begitu scraper tak mendapat data — menjaga uptime ~99% dengan recovery cepat.",
+      ),
+      t(
+        "On-prem HPC: the ~40% efficiency gain freed capacity for co-located AI and queue workloads.",
+        "HPC on-prem: efisiensi ~40% membebaskan kapasitas untuk beban AI & queue di server yang sama.",
       ),
     ],
   },
-  instagram: { role: t("Data Engineer", "Data Engineer"), context: "client" },
-  twitter: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  instagram: {
+    role: t("Data Engineer (solo)", "Data Engineer (solo)"),
+    context: "client",
+    decisions: [
+      t(
+        "Benchmarked CPU, RAM, disk, and network per scraper — part of my undergraduate thesis research.",
+        "Mem-benchmark CPU, RAM, disk, dan jaringan tiap scraper — bagian dari riset skripsi S1 saya.",
+      ),
+    ],
+  },
+  twitter: { role: t("Data Engineer (solo)", "Data Engineer (solo)"), context: "client" },
   youtube: { role: t("Data Engineer", "Data Engineer"), context: "client" },
   news: { role: t("Data Engineer", "Data Engineer"), context: "client" },
   leadgen: { role: t("Data Engineer", "Data Engineer"), context: "client" },
-  kick: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  kick: {
+    role: t("Sole Engineer", "Solo Engineer"),
+    context: "client",
+    decisions: [
+      t(
+        "Ran Whisper (medium) locally on a laptop GPU — accurate enough for keyword search at zero STT API cost.",
+        "Menjalankan Whisper (medium) lokal di GPU laptop — cukup akurat untuk pencarian kata dengan biaya STT nol.",
+      ),
+      t(
+        "Batch-processed 100+ hours of video; indexed transcripts with timestamps to auto-cut clips.",
+        "Memproses 100+ jam video secara batch; indeks transkrip dengan timestamp untuk memotong klip otomatis.",
+      ),
+      t(
+        "Whisper's language detection handled mixed-language streams.",
+        "Deteksi bahasa Whisper menangani stream multi-bahasa.",
+      ),
+    ],
+  },
   "twitter-bot": { role: t("Data Engineer", "Data Engineer"), context: "client" },
 };
 
@@ -780,7 +846,7 @@ export const hpcStats: { value: string; label: Localized; detail: Localized }[] 
       detail: t("Ubuntu 22.04 / CentOS", "Ubuntu 22.04 / CentOS"),
     },
     {
-      value: "Multi-M",
+      value: "100K+",
       label: t("Records / day", "Records / hari"),
       detail: t("Pipeline throughput", "Throughput pipeline"),
     },

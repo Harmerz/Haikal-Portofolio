@@ -3,7 +3,10 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
+import About from "@/components/About";
+import EngineeringStandards from "@/components/EngineeringStandards";
 import Experience from "@/components/Experience";
+import HowIWork from "@/components/HowIWork";
 import HpcStats from "@/components/HpcStats";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
@@ -84,6 +87,9 @@ export default function Home() {
       {/* HPC Infrastructure */}
       <HpcStats />
 
+      {/* Engineering standards / data quality & compliance */}
+      <EngineeringStandards />
+
       {/* Data Stack */}
       <TechStack
         title={t("Data Stack", "Data Stack")}
@@ -94,8 +100,13 @@ export default function Home() {
         items={dataTech}
       />
 
+      <About />
+
       {/* Experience */}
       <Experience area="de" />
+
+      {/* How I Work */}
+      <HowIWork />
 
       {/* Testimonials */}
       <Testimonials />

@@ -47,6 +47,27 @@ export const dict = {
       "Peran di mana saya memiliki sistem, memimpin tim, dan merilis dalam skala besar.",
     ),
   },
+  standards: {
+    title: t("Engineering Standards", "Standar Engineering"),
+    subtitle: t(
+      "How I keep large-scale data work reliable, clean, and responsible.",
+      "Cara saya menjaga pekerjaan data skala besar tetap andal, bersih, dan bertanggung jawab.",
+    ),
+  },
+  howIWork: {
+    title: t("How I Work", "Cara Saya Bekerja"),
+    subtitle: t(
+      "Straightforward collaboration, built for results.",
+      "Kolaborasi yang lugas, dirancang untuk hasil.",
+    ),
+  },
+  about: {
+    title: t("About", "Tentang"),
+    body: t(
+      "I'm Haikal Hilmi, a freelance data & software engineer. I build large-scale scraping systems and data pipelines, ship full-stack products for clients, and operate HPC infrastructure. Backend Engineer intern at ByteDance (100k+ RPS), 5.0★ on Upwork, and multiple international hackathon wins. I do my best work on long-term engagements where I can own systems end to end.",
+      "Saya Haikal Hilmi, data & software engineer freelance. Saya membangun sistem scraping skala besar dan data pipeline, merilis produk full-stack untuk klien, serta mengoperasikan infrastruktur HPC. Backend Engineer intern di ByteDance (100k+ RPS), 5.0★ di Upwork, dan beberapa juara hackathon internasional. Saya bekerja paling optimal pada kerja sama jangka panjang di mana saya bisa memiliki sistem secara end-to-end.",
+    ),
+  },
   footer: {
     tagline: t(
       "Building the future with data and code.",

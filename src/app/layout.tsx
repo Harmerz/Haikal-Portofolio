@@ -10,6 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://haikalhilmi.my.id"),
   title: "Haikal Hilmi - Home",
   description:
     "Portfolio website of Haikal Hilmi - Data Engineer & Software Engineer",

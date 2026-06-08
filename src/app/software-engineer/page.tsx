@@ -4,7 +4,9 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
+import About from "@/components/About";
 import Experience from "@/components/Experience";
+import HowIWork from "@/components/HowIWork";
 import Testimonials from "@/components/Testimonials";
 import CrossLinkBanner from "@/components/CrossLinkBanner";
 import Footer from "@/components/Footer";
@@ -66,8 +68,13 @@ export default function Home() {
       {/* Tech Stack Section */}
       <TechStack />
 
+      <About />
+
       {/* Experience */}
       <Experience area="se" />
+
+      {/* How I Work */}
+      <HowIWork />
 
       {/* Testimonials */}
       <Testimonials />
