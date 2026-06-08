@@ -5,6 +5,8 @@ export interface Testimonial {
   quote: Localized;
   name: string;
   role: Localized;
+  /** Client location, e.g. "Aurora, Canada" — shows international reach. */
+  location?: string;
   /** Optional avatar image path under /public. */
   avatar?: string;
 }
@@ -20,6 +22,7 @@ export const testimonials: Testimonial[] = [
     ),
     name: "Jeesun Kim",
     role: t("Upwork client · Twitter/X Scraper", "Klien Upwork · Twitter/X Scraper"),
+    location: "Aurora, Canada",
   },
   {
     id: "claire-bartolozzi",
@@ -29,6 +32,7 @@ export const testimonials: Testimonial[] = [
     ),
     name: "Claire Bartolozzi",
     role: t("Upwork client · Tweet Collector", "Klien Upwork · Tweet Collector"),
+    location: "South Yarra, Australia",
   },
   {
     id: "cristian-buda",
@@ -38,5 +42,6 @@ export const testimonials: Testimonial[] = [
     ),
     name: "Cristian Buda",
     role: t("Upwork client · PDF→JSON Extraction", "Klien Upwork · Ekstraksi PDF→JSON"),
+    location: "Cluj-Napoca, Romania",
   },
 ];
