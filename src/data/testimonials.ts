@@ -17,6 +17,21 @@ export interface Testimonial {
 // stay authentic — they read the same in both language modes.
 export const testimonials: Testimonial[] = [
   {
+    id: "widyawan",
+    quote: t(
+      "As commissioner of Semesta Data Digital and Global Data Inspirasi, I've seen first-hand how Haikal designs data infrastructure, runs large-scale pipelines and scraping with high reliability, and helped shape products like Robota. He was also my teaching assistant for a year—consistent, a fast learner, and highly dependable. He combines genuine technical depth with a strong sense of ownership.",
+      "Sebagai komisaris di Semesta Data Digital dan Global Data Inspirasi, saya menyaksikan langsung bagaimana Haikal merancang infrastruktur data, mengelola pipeline dan scraping berskala besar dengan keandalan tinggi, hingga ikut membentuk produk seperti Robota. Sebelumnya ia juga menjadi asisten dosen saya selama setahun—konsisten, cepat belajar, dan sangat dapat diandalkan. Ia memadukan kedalaman teknis dengan rasa tanggung jawab yang menonjol.",
+    ),
+    name: "Widyawan, S.T., M.Sc., Ph.D.",
+    role: t(
+      "Commissioner, Semesta Data Digital & Global Data Inspirasi",
+      "Komisaris, Semesta Data Digital & Global Data Inspirasi",
+    ),
+    location: "Yogyakarta, ID",
+    avatar: "/home/review/widyawan.jpg",
+    linkedin: "https://www.linkedin.com/in/widyawan/",
+  },
+  {
     id: "alamsyah-pangestu",
     quote: t(
       "As Director of PT Aksarakan Bhumi Indonesia, I deeply appreciate his work—he not only built the company's website and digital infrastructure, but also drafted our IT security SOPs and actively took part in negotiations with strategic clients, showing a remarkable combination of technical skill, leadership, and business sense.",
