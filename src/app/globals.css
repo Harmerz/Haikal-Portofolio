@@ -83,6 +83,15 @@ body {
     opacity: 0;
   }
 }
+/* Hide scrollbar (used by the testimonials carousel). */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 .animate-pipe-x {
   animation: pipe-x 2.4s linear infinite;
 }

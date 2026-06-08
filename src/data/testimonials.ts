@@ -9,11 +9,28 @@ export interface Testimonial {
   location?: string;
   /** Optional avatar image path under /public. */
   avatar?: string;
+  /** Optional LinkedIn (or other) profile URL — lets clients verify the review. */
+  linkedin?: string;
 }
 
 // Real Upwork client reviews (5.0★). Quotes kept in their original English to
 // stay authentic — they read the same in both language modes.
 export const testimonials: Testimonial[] = [
+  {
+    id: "alamsyah-pangestu",
+    quote: t(
+      "As Director of PT Aksarakan Bhumi Indonesia, I deeply appreciate his work—he not only built the company's website and digital infrastructure, but also drafted our IT security SOPs and actively took part in negotiations with strategic clients, showing a remarkable combination of technical skill, leadership, and business sense.",
+      "Sebagai Direktur PT Aksarakan Bhumi Indonesia, saya sangat mengapresiasi kinerja beliau yang tidak hanya berhasil mengembangkan website dan infrastruktur digital perusahaan, tetapi juga menyusun SOP keamanan IT serta berperan aktif dalam negosiasi dengan klien-klien strategis, menunjukkan kombinasi kemampuan teknis, kepemimpinan, dan pemahaman bisnis yang luar biasa.",
+    ),
+    name: "Alamsyah Pangestu",
+    role: t(
+      "Director, PT Aksarakan Bhumi Indonesia",
+      "Direktur, PT Aksarakan Bhumi Indonesia",
+    ),
+    location: "Yogyakarta, ID",
+    avatar: "/home/review/alamsyah-pangestu.jpg",
+    linkedin: "https://www.linkedin.com/in/alamsyah-pangestu/",
+  },
   {
     id: "jeesun-kim",
     quote: t(
