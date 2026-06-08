@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { isVideo, type Project } from "@/data/projects";
+import { getProjectMeta, isVideo, type Project } from "@/data/projects";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { dict } from "@/i18n/dictionaries";
+import ContextBadge from "./ContextBadge";
 
 interface ProjectCardProps extends Project {
   /** Show the image/gradient cover on top. Off for data-engineering cards. */
@@ -23,6 +24,7 @@ const ProjectCard = ({
   showCover = true,
 }: ProjectCardProps) => {
   const { t } = useLanguage();
+  const meta = getProjectMeta(id);
 
   return (
     <Link
@@ -73,14 +75,25 @@ const ProjectCard = ({
             {t(scale)}
           </p>
         )}
-        {!showCover && award && (
-          <span className="inline-flex w-fit items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-2 py-1 text-xs font-semibold text-amber-700">
-            <span aria-hidden="true">🏆</span>
-            {t(award)}
-          </span>
-        )}
+        <div className="flex flex-wrap items-center gap-1.5">
+          {meta.context && <ContextBadge context={meta.context} />}
+          {!showCover && award && (
+            <span className="inline-flex w-fit items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-2 py-0.5 text-[11px] font-semibold text-amber-700">
+              <span aria-hidden="true">🏆</span>
+              {t(award)}
+            </span>
+          )}
+        </div>
 
         <h3 className="text-lg font-semibold text-gray-900">{title}</h3>
+
+        {(meta.role || meta.status) && (
+          <p className="-mt-1.5 text-xs text-gray-500">
+            {[meta.role && t(meta.role), meta.status && t(meta.status)]
+              .filter(Boolean)
+              .join(" · ")}
+          </p>
+        )}
 
         <p className="text-sm text-gray-600">{t(description)}</p>
 

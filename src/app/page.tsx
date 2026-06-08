@@ -2,6 +2,8 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
+import HpcStats from "@/components/HpcStats";
+import Experience from "@/components/Experience";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { softwareProjects, dataProjects } from "@/data/projects";
@@ -76,6 +78,10 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Infrastructure / scale credibility */}
+      <HpcStats />
+
+      <Experience />
       <Testimonials />
       <Footer />
     </div>

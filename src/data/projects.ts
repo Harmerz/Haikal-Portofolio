@@ -135,8 +135,8 @@ export const softwareProjects: Project[] = [
     ),
     tech: ["Next.js 14", "TanStack", "TailwindCSS", "ECharts", "ChartJS"],
     result: t(
-      "The day-to-day analytics and reporting tool clients depend on.",
-      "Alat analitik dan pelaporan harian yang diandalkan klien.",
+      "Boosted system reliability ~50% and cross-team efficiency ~70%.",
+      "Reliability sistem naik ~50% dan efisiensi lintas tim ~70%.",
     ),
     image: "/home/portfolio/tilikan.png",
     alt: "Tilikan analytics dashboard",
@@ -414,8 +414,8 @@ export const dataProjects: Project[] = [
       "Airflow",
     ],
     result: t(
-      "Reliable 24/7 processing at scale, with full monitoring.",
-      "Pemrosesan andal 24/7 dalam skala besar, dengan monitoring penuh.",
+      "Cut processing time ~40% and improved reliability ~25%, monitored 24/7.",
+      "Pangkas waktu proses ~40% dan tingkatkan reliability ~25%, dimonitor 24/7.",
     ),
   },
   {
@@ -575,6 +575,105 @@ export const dataProjects: Project[] = [
     ),
   },
 ];
+
+// Per-project meta: role, context, status, and key decisions (senior signals).
+// Kept in a side map so the project arrays stay readable.
+export type ProjectContext = "client" | "owned" | "competition";
+
+export interface ProjectMeta {
+  role?: Localized;
+  context?: ProjectContext;
+  status?: Localized;
+  decisions?: Localized[]; // architecture / tech-selection calls (flagship)
+}
+
+export const projectMeta: Record<string, ProjectMeta> = {
+  // Client work — built from scratch (incl. tech selection), owned by the client.
+  omnisocials: {
+    role: t("Full Stack Engineer", "Full Stack Engineer"),
+    context: "client",
+  },
+  linkynbio: {
+    role: t("Full Stack Engineer", "Full Stack Engineer"),
+    context: "client",
+  },
+  "create-carousels": {
+    role: t("Full Stack Engineer", "Full Stack Engineer"),
+    context: "client",
+  },
+  kembangkan: { context: "client" },
+  // Client / contract work.
+  "robota-new": {
+    role: t("Web App Developer · led team", "Web App Developer · pimpin tim"),
+    context: "client",
+    decisions: [
+      t(
+        "Migrated the React SPA to Next.js 13 (SSR/SSG) to fix SEO and slow dashboard loads.",
+        "Migrasi React SPA ke Next.js 13 (SSR/SSG) untuk memperbaiki SEO dan loading dashboard yang lambat.",
+      ),
+      t(
+        "Adopted TanStack Query for cached, resilient data fetching across heavy dashboards.",
+        "Pakai TanStack Query untuk data fetching ber-cache & tangguh di dashboard berat.",
+      ),
+    ],
+  },
+  "robota-old": {
+    role: t("Web App Developer", "Web App Developer"),
+    context: "client",
+  },
+  tilikan: { role: t("Web App Developer", "Web App Developer"), context: "client" },
+  petadata: { context: "client" },
+  atensi: { context: "client" },
+  festify: {
+    role: t("Full Stack Engineer", "Full Stack Engineer"),
+    context: "client",
+  },
+  ppsmb: {
+    role: t("IT Team Lead (team of 7)", "IT Team Lead (tim 7 orang)"),
+    context: "client",
+  },
+  nesco: {
+    role: t("Frontend Lead (team of 6)", "Frontend Lead (tim 6 orang)"),
+    context: "client",
+  },
+  // Competitions / awards.
+  pwc: { role: t("Team Lead", "Team Lead"), context: "competition" },
+  gmat: {
+    role: t("Technical Lead & Project Manager", "Technical Lead & Project Manager"),
+    context: "competition",
+  },
+  ganjar: { context: "competition" },
+  // Data engineering (contract @ Semesta Data Digital).
+  pipeline: {
+    role: t("Data Engineer", "Data Engineer"),
+    context: "client",
+    decisions: [
+      t(
+        "Chose RabbitMQ + Docker workers over Kafka for multi-million-record throughput at lower operational cost.",
+        "Pilih RabbitMQ + Docker workers daripada Kafka untuk throughput multi-juta record dengan biaya operasional lebih rendah.",
+      ),
+      t(
+        "Added Grafana + Prometheus alerting on CPU/RAM spikes — improved reliability ~25% and prevented server crashes.",
+        "Tambah alerting Grafana + Prometheus untuk lonjakan CPU/RAM — reliability naik ~25% dan mencegah server crash.",
+      ),
+      t(
+        "Tuned resource allocation and pipeline automation — cut processing time ~40%.",
+        "Optimasi alokasi resource & automasi pipeline — waktu proses turun ~40%.",
+      ),
+    ],
+  },
+  instagram: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  twitter: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  youtube: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  news: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  leadgen: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  kick: { role: t("Data Engineer", "Data Engineer"), context: "client" },
+  "twitter-bot": { role: t("Data Engineer", "Data Engineer"), context: "client" },
+};
+
+export function getProjectMeta(id: string): ProjectMeta {
+  return projectMeta[id] ?? {};
+}
 
 // Architecture flow diagrams for data-engineering projects (shown in detail view).
 // Roles are kept in English — standard, universal tech terms for US/EU clients.

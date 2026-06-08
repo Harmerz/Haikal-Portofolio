@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
 import Reveal from "@/components/Reveal";
+import Experience from "@/components/Experience";
 import HpcStats from "@/components/HpcStats";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
@@ -92,6 +93,9 @@ export default function Home() {
         )}
         items={dataTech}
       />
+
+      {/* Experience */}
+      <Experience area="de" />
 
       {/* Testimonials */}
       <Testimonials />

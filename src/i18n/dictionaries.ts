@@ -32,6 +32,20 @@ export const dict = {
     solution: t("Solution", "Solusi"),
     stack: t("Tech stack", "Tech stack"),
     architecture: t("How it works", "Cara kerja"),
+    decisions: t("Key decisions", "Keputusan kunci"),
+    role: t("Role", "Peran"),
+  },
+  context: {
+    client: t("Client work", "Proyek klien"),
+    owned: t("Owned product", "Produk sendiri"),
+    competition: t("Competition", "Kompetisi"),
+  },
+  experience: {
+    title: t("Experience", "Pengalaman"),
+    subtitle: t(
+      "Roles where I've owned systems, led teams, and shipped at scale.",
+      "Peran di mana saya memiliki sistem, memimpin tim, dan merilis dalam skala besar.",
+    ),
   },
   footer: {
     tagline: t(

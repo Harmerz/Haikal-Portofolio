@@ -9,36 +9,34 @@ export interface Testimonial {
   avatar?: string;
 }
 
-// ⚠️ PLACEHOLDER CONTENT — replace with REAL client testimonials before launch.
-// Do not ship invented quotes attributed to real people. These samples use
-// role-based attribution so they read as examples until you swap them.
-// To hide the section entirely, set this to an empty array: `export const testimonials = [];`
+// Real Upwork client reviews (5.0★). Quotes kept in their original English to
+// stay authentic — they read the same in both language modes.
 export const testimonials: Testimonial[] = [
   {
-    id: "sample-1",
+    id: "jeesun-kim",
     quote: t(
-      "Haikal delivered a production-ready dashboard faster than we expected, and the data was rock solid.",
-      "Haikal menyelesaikan dashboard yang siap produksi lebih cepat dari perkiraan kami, dan datanya sangat andal.",
+      "I had the pleasure of working with Haikal on a scraping project, and he exceeded my expectations in every aspect. Professional, responsive, and highly skilled, delivering high-quality work on time. I highly recommend Haikal—he's a fantastic contractor.",
+      "I had the pleasure of working with Haikal on a scraping project, and he exceeded my expectations in every aspect. Professional, responsive, and highly skilled, delivering high-quality work on time. I highly recommend Haikal—he's a fantastic contractor.",
     ),
-    name: "— Add client name",
-    role: t("Product Lead, Hospitality SaaS", "Product Lead, Hospitality SaaS"),
+    name: "Jeesun Kim",
+    role: t("Upwork client · Twitter/X Scraper", "Klien Upwork · Twitter/X Scraper"),
   },
   {
-    id: "sample-2",
+    id: "claire-bartolozzi",
     quote: t(
-      "The scraping pipeline he built handles millions of records a day without a hitch. Exactly what we needed.",
-      "Pipeline scraping yang ia bangun menangani jutaan record per hari tanpa kendala. Persis seperti yang kami butuhkan.",
+      "Haikal is very smart, creative and good at what he does. He is a great communicator and very efficient.",
+      "Haikal is very smart, creative and good at what he does. He is a great communicator and very efficient.",
     ),
-    name: "— Add client name",
-    role: t("Founder, Market Intelligence Startup", "Founder, Startup Market Intelligence"),
+    name: "Claire Bartolozzi",
+    role: t("Upwork client · Tweet Collector", "Klien Upwork · Tweet Collector"),
   },
   {
-    id: "sample-3",
+    id: "cristian-buda",
     quote: t(
-      "Clear communication, clean code, and real results. We'd work with him again in a heartbeat.",
-      "Komunikasi jelas, kode rapi, dan hasil nyata. Kami pasti akan bekerja sama lagi dengannya.",
+      "Haikal was very quick to respond and professional in his work. He even suggested some improvements to the deliverables, which I found useful. I would definitely work with him again.",
+      "Haikal was very quick to respond and professional in his work. He even suggested some improvements to the deliverables, which I found useful. I would definitely work with him again.",
     ),
-    name: "— Add client name",
-    role: t("Engineering Manager, Agency", "Engineering Manager, Agency"),
+    name: "Cristian Buda",
+    role: t("Upwork client · PDF→JSON Extraction", "Klien Upwork · Ekstraksi PDF→JSON"),
   },
 ];

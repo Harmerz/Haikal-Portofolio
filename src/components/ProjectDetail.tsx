@@ -4,17 +4,20 @@ import Image from "next/image";
 import {
   getPipeline,
   getProjectImages,
+  getProjectMeta,
   isVideo,
   type Project,
 } from "@/data/projects";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { dict } from "@/i18n/dictionaries";
 import PipelineDiagram from "./PipelineDiagram";
+import ContextBadge from "./ContextBadge";
 
 export default function ProjectDetail({ project }: { project: Project }) {
   const { t } = useLanguage();
   const images = getProjectImages(project);
   const pipeline = getPipeline(project.id);
+  const meta = getProjectMeta(project.id);
 
   return (
     <article className="flex flex-col">
@@ -51,6 +54,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
       <div className="flex flex-col gap-4 p-6 sm:p-8">
         <div className="flex flex-wrap items-center gap-2">
+          {meta.context && <ContextBadge context={meta.context} />}
           {project.award && (
             <span className="inline-flex items-center gap-1 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-xs font-semibold text-amber-700">
               <span aria-hidden="true">🏆</span>
@@ -64,9 +68,18 @@ export default function ProjectDetail({ project }: { project: Project }) {
           )}
         </div>
 
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
-          {project.title}
-        </h1>
+        <div>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+            {project.title}
+          </h1>
+          {(meta.role || meta.status) && (
+            <p className="mt-1 text-sm text-gray-500">
+              {[meta.role && t(meta.role), meta.status && t(meta.status)]
+                .filter(Boolean)
+                .join(" · ")}
+            </p>
+          )}
+        </div>
 
         <p className="text-base text-gray-600">{t(project.description)}</p>
 
@@ -121,6 +134,38 @@ export default function ProjectDetail({ project }: { project: Project }) {
                 </p>
               </div>
             )}
+          </div>
+        )}
+
+        {meta.decisions && meta.decisions.length > 0 && (
+          <div>
+            <h2 className="mb-2 text-xs font-semibold tracking-wide text-gray-400 uppercase">
+              {t(dict.card.decisions)}
+            </h2>
+            <ul className="space-y-2">
+              {meta.decisions.map((decision, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-2 text-sm leading-relaxed text-gray-600"
+                >
+                  <svg
+                    className="mt-0.5 h-4 w-4 shrink-0 text-gray-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                  {t(decision)}
+                </li>
+              ))}
+            </ul>
           </div>
         )}
 
