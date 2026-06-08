@@ -37,21 +37,15 @@ export default function Experience({ area }: { area?: "se" | "de" }) {
                 <p className="mt-0.5 text-sm font-medium text-gray-800">
                   {t(item.headline)}
                 </p>
-                <p className="mb-3 text-xs text-gray-400">
+                <p className="text-xs text-gray-400">
                   {t(item.role)} · {item.location}
                 </p>
-                <ul className="mb-3 space-y-1.5">
-                  {item.bullets.map((bullet, b) => (
-                    <li
-                      key={b}
-                      className="flex items-start gap-2 text-sm leading-relaxed text-gray-600"
-                    >
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-gray-400" />
-                      {t(bullet)}
-                    </li>
-                  ))}
-                </ul>
-                <ul className="flex flex-wrap gap-1.5">
+                {item.note && (
+                  <p className="mt-2 text-sm leading-relaxed text-gray-600">
+                    {t(item.note)}
+                  </p>
+                )}
+                <ul className="mt-3 flex flex-wrap gap-1.5">
                   {item.tech.map((techName) => (
                     <li
                       key={techName}

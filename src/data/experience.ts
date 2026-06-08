@@ -5,6 +5,8 @@ export interface ExperienceItem {
   company: string;
   /** Lead line — the impact, shown prominently (NOT the job title). */
   headline: Localized;
+  /** Optional single supporting line (only used for the 1-2 top entries). */
+  note?: Localized;
   role: Localized; // shown small & secondary
   period: Localized;
   location: string;
@@ -24,6 +26,10 @@ export const experience: ExperienceItem[] = [
     headline: t(
       "Built a microservice handling 100,000+ requests/second.",
       "Membangun microservice yang menangani 100.000+ request/detik.",
+    ),
+    note: t(
+      "Contributed to Tokopedia × TikTok-Shop system integrations.",
+      "Berkontribusi pada integrasi sistem Tokopedia × TikTok-Shop.",
     ),
     role: t("Backend Engineer · Intern", "Backend Engineer · Magang"),
     period: t("Feb 2025 – Jun 2025", "Feb 2025 – Jun 2025"),
@@ -70,6 +76,10 @@ export const experience: ExperienceItem[] = [
     headline: t(
       "Designed HPC data pipelines — reliability +25%, processing time −40%.",
       "Merancang HPC data pipeline — reliability +25%, waktu proses −40%.",
+    ),
+    note: t(
+      "Operated an 8-server HPC cluster ingesting social-media & news data at scale.",
+      "Mengoperasikan cluster HPC 8 server untuk ingest data media sosial & berita dalam skala besar.",
     ),
     role: t("Data Engineer · Contract", "Data Engineer · Kontrak"),
     period: t("Jan 2024 – Nov 2025", "Jan 2024 – Nov 2025"),
