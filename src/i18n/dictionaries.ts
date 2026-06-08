@@ -34,6 +34,7 @@ export const dict = {
     architecture: t("How it works", "Cara kerja"),
     decisions: t("Key decisions", "Keputusan kunci"),
     role: t("Role", "Peran"),
+    visit: t("Visit live site", "Kunjungi situs live"),
   },
   context: {
     client: t("Client work", "Proyek klien"),

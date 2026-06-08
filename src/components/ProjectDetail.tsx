@@ -83,6 +83,31 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
         <p className="text-base text-gray-600">{t(project.description)}</p>
 
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
+          >
+            {t(dict.card.visit)}
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
+        )}
+
         {project.result && (
           <p className="flex items-start gap-2 rounded-lg bg-green-50 p-3 text-sm font-medium text-green-800">
             <svg

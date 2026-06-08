@@ -13,6 +13,7 @@ export interface Project {
   image?: string; // card cover
   images?: string[]; // gallery shown in the detail view / modal (add more here)
   alt?: string;
+  link?: string; // public live URL (shown as "Visit live site" in the detail)
 }
 
 // ----------------------------------------------------------------------------
@@ -23,6 +24,7 @@ export const softwareProjects: Project[] = [
   {
     id: "pwc",
     title: "PwC Securing AI",
+    image: "/Porto/lensight_ori_pwc.png",
     description: t(
       "An AI assistant that recommends the best credit options for each user based on their income and spending.",
       "Asisten AI yang merekomendasikan opsi kredit terbaik untuk tiap user berdasarkan penghasilan & pengeluarannya.",
@@ -93,6 +95,7 @@ export const softwareProjects: Project[] = [
       "1,3 juta pengunjung di bulan pertama, dengan 300+ panitia terkoordinasi di satu tempat.",
     ),
     image: "/home/portfolio/ppsmb.png",
+    images: ["/Porto/PPSMB Homepage.mp4", "/Porto/PPSMB Quiz.mp4"],
     alt: "University onboarding platform",
   },
   {
@@ -214,6 +217,9 @@ export const softwareProjects: Project[] = [
   {
     id: "omnisocials",
     title: "Omnisocials",
+    image: "/Porto/omnisocial.png",
+    images: ["/Porto/omnisocial.png", "/Porto/omnisocial-2.png"],
+    alt: "Omnisocials dashboard",
     description: t(
       "A single dashboard to manage and monitor every social network in one place.",
       "Satu dashboard untuk mengelola dan memantau semua jejaring sosial di satu tempat.",
@@ -252,6 +258,9 @@ export const softwareProjects: Project[] = [
       "Turns hours of content design into minutes.",
       "Mengubah berjam-jam desain konten jadi hitungan menit.",
     ),
+    image: "/Porto/create-carousels.png",
+    images: ["/Porto/create-carousels.png", "/Porto/create-carousels.jpeg"],
+    alt: "Create Carousels app",
   },
   {
     id: "festify",
@@ -297,11 +306,13 @@ export const softwareProjects: Project[] = [
       "Menjalankan kompetisi penuh untuk peserta maupun panitia.",
     ),
     image: "/home/portfolio/nesco.png",
+    images: ["/Porto/Nesco Web.mp4", "/Porto/Nesco Dashboard.png"],
     alt: "Online competition platform",
   },
   {
     id: "linkynbio",
-    title: "LinkynBio",
+    title: "Linkyin.bio",
+    link: "https://linkyin.bio/",
     description: t(
       "A bio-link platform (like Linktree) for creators and businesses.",
       "Platform bio-link (seperti Linktree) untuk kreator dan bisnis.",
@@ -319,6 +330,8 @@ export const softwareProjects: Project[] = [
       "One link that holds a user's entire online presence.",
       "Satu link yang memuat seluruh kehadiran online pengguna.",
     ),
+    image: "/Porto/linkyinbio.jpeg",
+    alt: "Linkyin.bio",
   },
   {
     id: "robota-old",
@@ -382,6 +395,8 @@ export const softwareProjects: Project[] = [
       "Led a team that shipped 8+ products, from websites to ticketing systems.",
       "Memimpin tim yang merilis 8+ produk, dari website hingga sistem ticketing.",
     ),
+    image: "/Porto/Kembangkan.mp4",
+    alt: "Kembangkan software studio",
   },
 ];
 
