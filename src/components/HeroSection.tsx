@@ -18,7 +18,7 @@ const companies = [
   { name: "Robota", logo: "/home/company/robota.png" },
   {
     name: "Semesta Data Digital",
-    logo: "/home/company/semesta-data-digital.jfif",
+    logo: "/home/company/semesta-data-digital.webp",
   },
   { name: "Telkom Indonesia", logo: "/home/company/telkom.png" },
   { name: "Tilikan", logo: "/home/company/tilikan.png" },

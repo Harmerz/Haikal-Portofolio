@@ -8,11 +8,11 @@ import Experience from "@/components/Experience";
 import HowIWork from "@/components/HowIWork";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import { softwareProjects, dataProjects } from "@/data/projects";
+import { featuredSoftware, dataProjects } from "@/data/projects";
 import { t } from "@/i18n/config";
 
 export default function Home() {
-  const featuredSoftware = softwareProjects.slice(0, 3);
+  const homeSoftware = featuredSoftware.slice(0, 3);
   const featuredData = dataProjects.slice(0, 3);
 
   return (
@@ -71,7 +71,7 @@ export default function Home() {
             />
           </Reveal>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {featuredSoftware.map((project, i) => (
+            {homeSoftware.map((project, i) => (
               <Reveal key={project.id} delay={i * 80} className="h-full">
                 <ProjectCard {...project} />
               </Reveal>

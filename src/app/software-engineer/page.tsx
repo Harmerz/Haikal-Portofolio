@@ -10,7 +10,7 @@ import HowIWork from "@/components/HowIWork";
 import Testimonials from "@/components/Testimonials";
 import CrossLinkBanner from "@/components/CrossLinkBanner";
 import Footer from "@/components/Footer";
-import { softwareProjects } from "@/data/projects";
+import { featuredSoftware, moreSoftware } from "@/data/projects";
 import { t } from "@/i18n/config";
 
 export const metadata: Metadata = {
@@ -43,20 +43,42 @@ export default function Home() {
         ctaText={t("Discuss Your Product", "Diskusikan Produk Anda")}
       />
 
-      {/* Featured Projects Section */}
+      {/* Featured Work — the hook (AI, SaaS & real client products) */}
       <section className="bg-white px-4 py-8">
         <div className="mx-auto max-w-6xl">
           <Reveal>
             <SectionHeader
-              title={t("Selected Work", "Karya Pilihan")}
+              title={t("Featured Work", "Karya Unggulan")}
               subtitle={t(
-                "Award-winning products and platforms shipped for real clients & competitions",
-                "Produk & platform pemenang penghargaan untuk klien nyata & kompetisi",
+                "AI products, SaaS, and platforms I've shipped for real clients",
+                "Produk AI, SaaS, dan platform yang saya rilis untuk klien nyata",
               )}
             />
           </Reveal>
           <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {softwareProjects.map((project, i) => (
+            {featuredSoftware.map((project, i) => (
+              <Reveal key={project.id} delay={(i % 3) * 80} className="h-full">
+                <ProjectCard {...project} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* More Projects */}
+      <section className="bg-white px-4 pb-8">
+        <div className="mx-auto max-w-6xl">
+          <Reveal>
+            <SectionHeader
+              title={t("More Projects", "Proyek Lainnya")}
+              subtitle={t(
+                "Award-winning competition builds and other client work",
+                "Karya kompetisi pemenang penghargaan & pekerjaan klien lainnya",
+              )}
+            />
+          </Reveal>
+          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {moreSoftware.map((project, i) => (
               <Reveal key={project.id} delay={(i % 3) * 80} className="h-full">
                 <ProjectCard {...project} />
               </Reveal>

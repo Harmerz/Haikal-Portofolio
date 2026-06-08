@@ -215,6 +215,29 @@ export const softwareProjects: Project[] = [
     alt: "Personal safety mobile app",
   },
   {
+    id: "foodcycle",
+    title: "FoodCycle",
+    description: t(
+      "An ML platform that detects food waste via image recognition and connects waste generators with distributors.",
+      "Platform ML yang mendeteksi limbah makanan via image recognition dan menghubungkan penghasil limbah dengan distributor.",
+    ),
+    problem: t(
+      "Edible surplus food goes to waste instead of reaching those who can use it.",
+      "Surplus makanan yang masih layak terbuang alih-alih sampai ke yang membutuhkan.",
+    ),
+    solution: t(
+      "Image recognition to identify food, plus a marketplace linking generators to distributors.",
+      "Image recognition untuk mengidentifikasi makanan, plus marketplace yang menghubungkan penghasil ke distributor.",
+    ),
+    tech: ["Machine Learning", "Image Recognition", "Web"],
+    award: t(
+      "1st place · Hackbiz 180DC UGM 2022",
+      "Juara 1 · Hackbiz 180DC UGM 2022",
+    ),
+    image: "/Porto/foodcycle.png",
+    alt: "FoodCycle food-waste detection platform",
+  },
+  {
     id: "omnisocials",
     title: "Omnisocials",
     image: "/Porto/omnisocial.png",
@@ -694,6 +717,7 @@ export const projectMeta: Record<string, ProjectMeta> = {
     context: "competition",
   },
   ganjar: { context: "competition" },
+  foodcycle: { role: t("Team Lead", "Team Lead"), context: "competition" },
   // Data engineering (contract @ Semesta Data Digital).
   pipeline: {
     role: t("Data Engineer", "Data Engineer"),
@@ -830,6 +854,24 @@ export const allProjects: Project[] = [...softwareProjects, ...dataProjects];
 export function getProjectById(id: string): Project | undefined {
   return allProjects.find((project) => project.id === id);
 }
+
+// Featured "hook" projects — the strongest for freelance clients (AI, SaaS,
+// real client products). University/competition work shows lower as "more work".
+const FEATURED_IDS = [
+  "pwc",
+  "omnisocials",
+  "linkynbio",
+  "robota-new",
+  "create-carousels",
+];
+
+export const featuredSoftware: Project[] = FEATURED_IDS.map((id) =>
+  softwareProjects.find((project) => project.id === id),
+).filter((project): project is Project => Boolean(project));
+
+export const moreSoftware: Project[] = softwareProjects.filter(
+  (project) => !FEATURED_IDS.includes(project.id),
+);
 
 /** Resolve the gallery media for a project (falls back to the card cover). */
 export function getProjectImages(project: Project): string[] {
