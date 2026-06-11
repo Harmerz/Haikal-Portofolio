@@ -237,54 +237,54 @@ export const softwareProjects: Project[] = [
     image: "/Porto/foodcycle.png",
     alt: "FoodCycle food-waste detection platform",
   },
-  {
-    id: "omnisocials",
-    title: "Omnisocials",
-    image: "/Porto/omnisocial.png",
-    images: ["/Porto/omnisocial.png", "/Porto/omnisocial-2.png"],
-    alt: "Omnisocials dashboard",
-    description: t(
-      "A single dashboard to manage and monitor every social network in one place.",
-      "Satu dashboard untuk mengelola dan memantau semua jejaring sosial di satu tempat.",
-    ),
-    problem: t(
-      "Social media managers had to open many platforms to monitor and manage content.",
-      "Social media manager harus membuka banyak platform untuk memantau & mengelola konten.",
-    ),
-    solution: t(
-      "A dashboard integrating Instagram, X, TikTok, YouTube, LinkedIn, and more.",
-      "Dashboard yang mengintegrasikan API Instagram, X, TikTok, YouTube, LinkedIn, dan lainnya.",
-    ),
-    tech: ["Next.js 14", "TailwindCSS", "Node.js", "PostgreSQL", "Sequelize"],
-    result: t(
-      "Manage 11+ social networks from one dashboard—no more tab-switching.",
-      "Kelola 11+ jejaring sosial dari satu dashboard—tanpa berpindah tab.",
-    ),
-  },
-  {
-    id: "create-carousels",
-    title: "Create Carousels",
-    description: t(
-      "An AI tool that turns articles, ideas, or documents into ready-to-post social carousels.",
-      "Alat AI yang mengubah artikel, ide, atau dokumen jadi carousel media sosial siap posting.",
-    ),
-    problem: t(
-      "Making carousels is time-consuming: research, copywriting, and per-slide design.",
-      "Pembuatan carousel makan waktu: riset, copywriting, hingga desain tiap slide.",
-    ),
-    solution: t(
-      "Turns text input into post-ready carousels with AI & design templates.",
-      "Mengubah input teks jadi carousel siap posting dengan AI & template desain.",
-    ),
-    tech: ["Next.js", "TypeScript", "OpenAI API", "TailwindCSS", "Supabase"],
-    result: t(
-      "Turns hours of content design into minutes.",
-      "Mengubah berjam-jam desain konten jadi hitungan menit.",
-    ),
-    image: "/Porto/create-carousels.png",
-    images: ["/Porto/create-carousels.png", "/Porto/create-carousels.jpeg"],
-    alt: "Create Carousels app",
-  },
+  // {
+  //   id: "omnisocials",
+  //   title: "Omnisocials",
+  //   image: "/Porto/omnisocial.png",
+  //   images: ["/Porto/omnisocial.png", "/Porto/omnisocial-2.png"],
+  //   alt: "Omnisocials dashboard",
+  //   description: t(
+  //     "A single dashboard to manage and monitor every social network in one place.",
+  //     "Satu dashboard untuk mengelola dan memantau semua jejaring sosial di satu tempat.",
+  //   ),
+  //   problem: t(
+  //     "Social media managers had to open many platforms to monitor and manage content.",
+  //     "Social media manager harus membuka banyak platform untuk memantau & mengelola konten.",
+  //   ),
+  //   solution: t(
+  //     "A dashboard integrating Instagram, X, TikTok, YouTube, LinkedIn, and more.",
+  //     "Dashboard yang mengintegrasikan API Instagram, X, TikTok, YouTube, LinkedIn, dan lainnya.",
+  //   ),
+  //   tech: ["Next.js 14", "TailwindCSS", "Node.js", "PostgreSQL", "Sequelize"],
+  //   result: t(
+  //     "Manage 11+ social networks from one dashboard—no more tab-switching.",
+  //     "Kelola 11+ jejaring sosial dari satu dashboard—tanpa berpindah tab.",
+  //   ),
+  // },
+  // {
+  //   id: "create-carousels",
+  //   title: "Create Carousels",
+  //   description: t(
+  //     "An AI tool that turns articles, ideas, or documents into ready-to-post social carousels.",
+  //     "Alat AI yang mengubah artikel, ide, atau dokumen jadi carousel media sosial siap posting.",
+  //   ),
+  //   problem: t(
+  //     "Making carousels is time-consuming: research, copywriting, and per-slide design.",
+  //     "Pembuatan carousel makan waktu: riset, copywriting, hingga desain tiap slide.",
+  //   ),
+  //   solution: t(
+  //     "Turns text input into post-ready carousels with AI & design templates.",
+  //     "Mengubah input teks jadi carousel siap posting dengan AI & template desain.",
+  //   ),
+  //   tech: ["Next.js", "TypeScript", "OpenAI API", "TailwindCSS", "Supabase"],
+  //   result: t(
+  //     "Turns hours of content design into minutes.",
+  //     "Mengubah berjam-jam desain konten jadi hitungan menit.",
+  //   ),
+  //   image: "/Porto/create-carousels.png",
+  //   images: ["/Porto/create-carousels.png", "/Porto/create-carousels.jpeg"],
+  //   alt: "Create Carousels app",
+  // },
   {
     id: "festify",
     title: "Festify",
@@ -332,30 +332,30 @@ export const softwareProjects: Project[] = [
     images: ["/Porto/Nesco Web.mp4", "/Porto/Nesco Dashboard.png"],
     alt: "Online competition platform",
   },
-  {
-    id: "linkynbio",
-    title: "Linkyin.bio",
-    link: "https://linkyin.bio/",
-    description: t(
-      "A bio-link platform (like Linktree) for creators and businesses.",
-      "Platform bio-link (seperti Linktree) untuk kreator dan bisnis.",
-    ),
-    problem: t(
-      "Creators & businesses share many different links, making it hard for audiences.",
-      "Creator & bisnis harus membagikan banyak link berbeda sehingga audiens kesulitan.",
-    ),
-    solution: t(
-      "Manage multiple links, set priority, and toggle them—all in one URL.",
-      "Kelola multiple links, atur prioritas, aktif/nonaktifkan, dalam satu URL.",
-    ),
-    tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
-    result: t(
-      "One link that holds a user's entire online presence.",
-      "Satu link yang memuat seluruh kehadiran online pengguna.",
-    ),
-    image: "/Porto/linkyinbio.jpeg",
-    alt: "Linkyin.bio",
-  },
+  // {
+  //   id: "linkynbio",
+  //   title: "Linkyin.bio",
+  //   link: "https://linkyin.bio/",
+  //   description: t(
+  //     "A bio-link platform (like Linktree) for creators and businesses.",
+  //     "Platform bio-link (seperti Linktree) untuk kreator dan bisnis.",
+  //   ),
+  //   problem: t(
+  //     "Creators & businesses share many different links, making it hard for audiences.",
+  //     "Creator & bisnis harus membagikan banyak link berbeda sehingga audiens kesulitan.",
+  //   ),
+  //   solution: t(
+  //     "Manage multiple links, set priority, and toggle them—all in one URL.",
+  //     "Kelola multiple links, atur prioritas, aktif/nonaktifkan, dalam satu URL.",
+  //   ),
+  //   tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
+  //   result: t(
+  //     "One link that holds a user's entire online presence.",
+  //     "Satu link yang memuat seluruh kehadiran online pengguna.",
+  //   ),
+  //   image: "/Porto/linkyinbio.jpeg",
+  //   alt: "Linkyin.bio",
+  // },
   {
     id: "robota-old",
     title: "Robota — First Generation",
