@@ -237,54 +237,48 @@ export const softwareProjects: Project[] = [
     image: "/Porto/foodcycle.png",
     alt: "FoodCycle food-waste detection platform",
   },
-  // {
-  //   id: "omnisocials",
-  //   title: "Omnisocials",
-  //   image: "/Porto/omnisocial.png",
-  //   images: ["/Porto/omnisocial.png", "/Porto/omnisocial-2.png"],
-  //   alt: "Omnisocials dashboard",
-  //   description: t(
-  //     "A single dashboard to manage and monitor every social network in one place.",
-  //     "Satu dashboard untuk mengelola dan memantau semua jejaring sosial di satu tempat.",
-  //   ),
-  //   problem: t(
-  //     "Social media managers had to open many platforms to monitor and manage content.",
-  //     "Social media manager harus membuka banyak platform untuk memantau & mengelola konten.",
-  //   ),
-  //   solution: t(
-  //     "A dashboard integrating Instagram, X, TikTok, YouTube, LinkedIn, and more.",
-  //     "Dashboard yang mengintegrasikan API Instagram, X, TikTok, YouTube, LinkedIn, dan lainnya.",
-  //   ),
-  //   tech: ["Next.js 14", "TailwindCSS", "Node.js", "PostgreSQL", "Sequelize"],
-  //   result: t(
-  //     "Manage 11+ social networks from one dashboard—no more tab-switching.",
-  //     "Kelola 11+ jejaring sosial dari satu dashboard—tanpa berpindah tab.",
-  //   ),
-  // },
-  // {
-  //   id: "create-carousels",
-  //   title: "Create Carousels",
-  //   description: t(
-  //     "An AI tool that turns articles, ideas, or documents into ready-to-post social carousels.",
-  //     "Alat AI yang mengubah artikel, ide, atau dokumen jadi carousel media sosial siap posting.",
-  //   ),
-  //   problem: t(
-  //     "Making carousels is time-consuming: research, copywriting, and per-slide design.",
-  //     "Pembuatan carousel makan waktu: riset, copywriting, hingga desain tiap slide.",
-  //   ),
-  //   solution: t(
-  //     "Turns text input into post-ready carousels with AI & design templates.",
-  //     "Mengubah input teks jadi carousel siap posting dengan AI & template desain.",
-  //   ),
-  //   tech: ["Next.js", "TypeScript", "OpenAI API", "TailwindCSS", "Supabase"],
-  //   result: t(
-  //     "Turns hours of content design into minutes.",
-  //     "Mengubah berjam-jam desain konten jadi hitungan menit.",
-  //   ),
-  //   image: "/Porto/create-carousels.png",
-  //   images: ["/Porto/create-carousels.png", "/Porto/create-carousels.jpeg"],
-  //   alt: "Create Carousels app",
-  // },
+  {
+    id: "omnisocials",
+    title: "Social Media Management Platform",
+    description: t(
+      "A SaaS platform to manage and schedule content across many social networks from one dashboard.",
+      "Platform SaaS untuk mengelola dan menjadwalkan konten di banyak jejaring sosial dari satu dashboard.",
+    ),
+    problem: t(
+      "Teams had to juggle many platforms to publish and monitor their content.",
+      "Tim harus berpindah-pindah banyak platform untuk publikasi & memantau konten.",
+    ),
+    solution: t(
+      "A unified dashboard that connects to major social networks via their official APIs.",
+      "Dashboard terpadu yang terhubung ke jejaring sosial utama lewat API resmi mereka.",
+    ),
+    tech: ["Next.js", "Node.js", "PostgreSQL", "TailwindCSS"],
+    result: t(
+      "Manage all your social networks from a single dashboard.",
+      "Kelola semua jejaring sosial dari satu dashboard.",
+    ),
+  },
+  {
+    id: "create-carousels",
+    title: "AI Carousel Generator",
+    description: t(
+      "An AI tool that turns articles, ideas, or documents into ready-to-post social carousels.",
+      "Alat AI yang mengubah artikel, ide, atau dokumen jadi carousel media sosial siap posting.",
+    ),
+    problem: t(
+      "Making carousels is time-consuming: research, copywriting, and per-slide design.",
+      "Pembuatan carousel makan waktu: riset, copywriting, hingga desain tiap slide.",
+    ),
+    solution: t(
+      "Turns text input into post-ready carousels with AI & design templates.",
+      "Mengubah input teks jadi carousel siap posting dengan AI & template desain.",
+    ),
+    tech: ["Next.js", "TypeScript", "OpenAI API", "TailwindCSS", "Supabase"],
+    result: t(
+      "Turns hours of content design into minutes.",
+      "Mengubah berjam-jam desain konten jadi hitungan menit.",
+    ),
+  },
   {
     id: "festify",
     title: "Festify",
@@ -332,30 +326,27 @@ export const softwareProjects: Project[] = [
     images: ["/Porto/Nesco Web.mp4", "/Porto/Nesco Dashboard.png"],
     alt: "Online competition platform",
   },
-  // {
-  //   id: "linkynbio",
-  //   title: "Linkyin.bio",
-  //   link: "https://linkyin.bio/",
-  //   description: t(
-  //     "A bio-link platform (like Linktree) for creators and businesses.",
-  //     "Platform bio-link (seperti Linktree) untuk kreator dan bisnis.",
-  //   ),
-  //   problem: t(
-  //     "Creators & businesses share many different links, making it hard for audiences.",
-  //     "Creator & bisnis harus membagikan banyak link berbeda sehingga audiens kesulitan.",
-  //   ),
-  //   solution: t(
-  //     "Manage multiple links, set priority, and toggle them—all in one URL.",
-  //     "Kelola multiple links, atur prioritas, aktif/nonaktifkan, dalam satu URL.",
-  //   ),
-  //   tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
-  //   result: t(
-  //     "One link that holds a user's entire online presence.",
-  //     "Satu link yang memuat seluruh kehadiran online pengguna.",
-  //   ),
-  //   image: "/Porto/linkyinbio.jpeg",
-  //   alt: "Linkyin.bio",
-  // },
+  {
+    id: "linkynbio",
+    title: "Bio-Link Platform",
+    description: t(
+      "A bio-link platform (like Linktree) for creators and businesses.",
+      "Platform bio-link (seperti Linktree) untuk kreator dan bisnis.",
+    ),
+    problem: t(
+      "Creators & businesses share many different links, making it hard for audiences.",
+      "Creator & bisnis harus membagikan banyak link berbeda sehingga audiens kesulitan.",
+    ),
+    solution: t(
+      "Manage multiple links, set priority, and toggle them—all in one URL.",
+      "Kelola multiple links, atur prioritas, aktif/nonaktifkan, dalam satu URL.",
+    ),
+    tech: ["Next.js", "TypeScript", "TailwindCSS", "Supabase"],
+    result: t(
+      "One link that holds a user's entire online presence.",
+      "Satu link yang memuat seluruh kehadiran online pengguna.",
+    ),
+  },
   {
     id: "robota-old",
     title: "Robota — First Generation",
@@ -630,29 +621,61 @@ export const projectMeta: Record<string, ProjectMeta> = {
   omnisocials: {
     role: t("Full Stack Engineer (freelance)", "Full Stack Engineer (freelance)"),
     context: "client",
-    status: t("In production", "Berjalan di produksi"),
+    // Generic engineering capabilities (no brand, no proprietary specifics) — NDA-safe.
     decisions: [
       t(
-        "Built each platform's OAuth to its own spec (Bluesky needed a username-first flow), with staggered cron token refresh to avoid expiry.",
-        "Membangun OAuth tiap platform sesuai spesifikasinya (Bluesky perlu alur username dulu), dengan refresh token via cron bergiliran agar tidak expired.",
+        "Cross-platform authentication — secure, scalable OAuth across 10+ social APIs with robust token-lifecycle management for stable connections.",
+        "Autentikasi lintas platform — OAuth aman & scalable di 10+ API sosial dengan manajemen siklus token agar koneksi stabil.",
       ),
       t(
-        "A per-minute cron worker batches scheduled posts across users — predictable CPU load, with realtime status over WebSockets.",
-        "Worker cron per menit mem-batch posting terjadwal lintas user — beban CPU terprediksi, status realtime via WebSocket.",
+        "Scalable job scheduling — a background processing system for high-volume scheduled publishing with predictable resource usage.",
+        "Job scheduling scalable — sistem background processing untuk publikasi terjadwal bervolume tinggi dengan pemakaian resource terprediksi.",
       ),
       t(
-        "Backend-side upload throttling to respect each platform's rate limits.",
-        "Throttling upload di sisi backend untuk menghormati rate limit tiap platform.",
+        "Real-time feedback — live client–server updates so users see task status instantly.",
+        "Umpan balik real-time — update client–server langsung agar user melihat status tugas seketika.",
+      ),
+      t(
+        "API traffic management — centralized request handling and throttling to respect diverse third-party rate limits without losing throughput.",
+        "Manajemen trafik API — penanganan request terpusat & throttling untuk mematuhi rate limit pihak ketiga tanpa menurunkan throughput.",
       ),
     ],
   },
   linkynbio: {
     role: t("Full Stack Engineer", "Full Stack Engineer"),
     context: "client",
+    decisions: [
+      t(
+        "Customizable link pages — manage, reorder, and toggle multiple links behind one shareable URL.",
+        "Halaman link yang dapat dikustomisasi — kelola, urutkan, dan aktif/nonaktifkan banyak link di balik satu URL.",
+      ),
+      t(
+        "Fast, SEO-friendly delivery — server-rendered profile pages optimized for quick load.",
+        "Delivery cepat & SEO-friendly — halaman profil server-rendered yang dioptimalkan untuk load cepat.",
+      ),
+      t(
+        "Auth & data — user accounts and saved profiles.",
+        "Auth & data — akun pengguna dan profil tersimpan.",
+      ),
+    ],
   },
   "create-carousels": {
     role: t("Full Stack Engineer", "Full Stack Engineer"),
     context: "client",
+    decisions: [
+      t(
+        "AI content generation — turns articles, ideas, or documents into structured, slide-ready copy with prompt design for consistent tone and format.",
+        "Generasi konten AI — mengubah artikel, ide, atau dokumen jadi naskah siap-slide yang terstruktur, dengan prompt design untuk tone & format konsisten.",
+      ),
+      t(
+        "Template-driven design — programmatic slide layouts so generated content maps to on-brand visuals automatically.",
+        "Desain berbasis template — layout slide programatik agar konten hasil otomatis terpetakan ke visual yang on-brand.",
+      ),
+      t(
+        "Export pipeline — renders finished carousels into post-ready images for direct publishing.",
+        "Pipeline export — merender carousel jadi gambar siap posting untuk publikasi langsung.",
+      ),
+    ],
   },
   kembangkan: { context: "client" },
   // Client / contract work.
@@ -858,11 +881,11 @@ export function getProjectById(id: string): Project | undefined {
 // Featured "hook" projects — the strongest for freelance clients (AI, SaaS,
 // real client products). University/competition work shows lower as "more work".
 const FEATURED_IDS = [
-  "pwc",
-  "omnisocials",
-  "linkynbio",
-  "robota-new",
-  "create-carousels",
+  "pwc", // award + AI + image
+  "robota-new", // B2B AI + image
+  "gmat", // international award + image
+  "omnisocials", // SaaS (NDA-safe, content-rich)
+  "foodcycle", // 1st place + image
 ];
 
 export const featuredSoftware: Project[] = FEATURED_IDS.map((id) =>
