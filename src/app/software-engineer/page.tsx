@@ -3,6 +3,7 @@ import TechStack from "@/components/TechStack";
 import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
+import FeaturedHero from "@/components/FeaturedHero";
 import Reveal from "@/components/Reveal";
 import About from "@/components/About";
 import Experience from "@/components/Experience";
@@ -55,9 +56,14 @@ export default function Home() {
               )}
             />
           </Reveal>
-          <div className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {featuredSoftware.map((project, i) => (
-              <Reveal key={project.id} delay={(i % 3) * 80} className="h-full">
+          {featuredSoftware.length > 0 && (
+            <Reveal className="mt-6">
+              <FeaturedHero project={featuredSoftware[0]} />
+            </Reveal>
+          )}
+          <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {featuredSoftware.slice(1).map((project, i) => (
+              <Reveal key={project.id} delay={(i % 4) * 70} className="h-full">
                 <ProjectCard {...project} />
               </Reveal>
             ))}

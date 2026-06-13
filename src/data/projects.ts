@@ -239,7 +239,10 @@ export const softwareProjects: Project[] = [
   },
   {
     id: "omnisocials",
-    title: "Social Media Management Platform",
+    title: "Omnisocials",
+    image: "/Porto/omnisocial.png",
+    images: ["/Porto/omnisocial.png", "/Porto/omnisocial-2.png"],
+    alt: "Omnisocials dashboard",
     description: t(
       "A SaaS platform to manage and schedule content across many social networks from one dashboard.",
       "Platform SaaS untuk mengelola dan menjadwalkan konten di banyak jejaring sosial dari satu dashboard.",
@@ -260,7 +263,7 @@ export const softwareProjects: Project[] = [
   },
   {
     id: "create-carousels",
-    title: "AI Carousel Generator",
+    title: "Create Carousels",
     description: t(
       "An AI tool that turns articles, ideas, or documents into ready-to-post social carousels.",
       "Alat AI yang mengubah artikel, ide, atau dokumen jadi carousel media sosial siap posting.",
@@ -278,6 +281,9 @@ export const softwareProjects: Project[] = [
       "Turns hours of content design into minutes.",
       "Mengubah berjam-jam desain konten jadi hitungan menit.",
     ),
+    image: "/Porto/create-carousels.png",
+    images: ["/Porto/create-carousels.png", "/Porto/create-carousels.jpeg"],
+    alt: "Create Carousels app",
   },
   {
     id: "festify",
@@ -328,7 +334,7 @@ export const softwareProjects: Project[] = [
   },
   {
     id: "linkynbio",
-    title: "Bio-Link Platform",
+    title: "Linkyin.bio",
     description: t(
       "A bio-link platform (like Linktree) for creators and businesses.",
       "Platform bio-link (seperti Linktree) untuk kreator dan bisnis.",
@@ -346,6 +352,8 @@ export const softwareProjects: Project[] = [
       "One link that holds a user's entire online presence.",
       "Satu link yang memuat seluruh kehadiran online pengguna.",
     ),
+    image: "/Porto/linkyinbio.jpeg",
+    alt: "Linkyin.bio",
   },
   {
     id: "robota-old",
@@ -621,7 +629,9 @@ export const projectMeta: Record<string, ProjectMeta> = {
   omnisocials: {
     role: t("Full Stack Engineer (freelance)", "Full Stack Engineer (freelance)"),
     context: "client",
-    // Generic engineering capabilities (no brand, no proprietary specifics) — NDA-safe.
+    status: t("In production", "Berjalan di produksi"),
+    // Name + screenshots cleared by client. Contributions kept generic (industry
+    // patterns) rather than proprietary internals, which weren't part of consent.
     decisions: [
       t(
         "Cross-platform authentication — secure, scalable OAuth across 10+ social APIs with robust token-lifecycle management for stable connections.",

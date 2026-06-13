@@ -55,6 +55,9 @@ export const dict = {
       "Cara saya menjaga pekerjaan data skala besar tetap andal, bersih, dan bertanggung jawab.",
     ),
   },
+  featured: {
+    eyebrow: t("Featured", "Unggulan"),
+  },
   howIWork: {
     title: t("How I Work", "Cara Saya Bekerja"),
     subtitle: t(
