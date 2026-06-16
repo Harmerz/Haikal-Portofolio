@@ -69,17 +69,23 @@ export default function HeroSection({
 
       <div className="flex flex-col items-center justify-center text-center">
         {/* Photo Profil */}
-        <div className="animate-fade-up mb-6 h-[100px] w-[100px] overflow-hidden rounded-full shadow-lg md:h-[120px] md:w-[120px]">
+        <a
+          href={ctaHref}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={ctaText ? t(ctaText) : "Discuss Your Project"}
+          className="animate-fade-up mb-6 h-[120px] w-[120px] overflow-hidden rounded-full shadow-lg md:h-[160px] md:w-[160px]"
+        >
           <Image
-            width={140}
-            height={140}
-            src="/haikal hilmi.JPG"
+            width={200}
+            height={200}
+            src="/IMG_7376.jpg"
             alt="Foto profil Haikal Hilmi"
-            className="h-full w-full object-cover grayscale filter"
+            className="h-full w-full object-cover"
             draggable={false}
             priority
           />
-        </div>
+        </a>
 
         {/* Nama / Eyebrow */}
         {eyebrow && (
