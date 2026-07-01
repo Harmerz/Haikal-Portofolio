@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import Header from "@/components/Header";
+import LanguageSuggestBanner from "@/components/LanguageSuggestBanner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Header />
           {children}
           {modal}
+          <LanguageSuggestBanner />
         </LanguageProvider>
       </body>
     </html>

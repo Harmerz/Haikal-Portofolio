@@ -40,9 +40,9 @@
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
-    "mtime": 1782891311.1862533,
-    "ast_hash": "a09ac2a64d77e183d91cdcdd42db23f9",
-    "semantic_hash": ""
+    "mtime": 1780907936.9797459,
+    "ast_hash": "f126d524057b665cc01d44affe93de58",
+    "semantic_hash": "f126d524057b665cc01d44affe93de58"
   },
   "src/app/page.tsx": {
     "mtime": 1782889471.6016414,
@@ -110,14 +110,14 @@
     "semantic_hash": ""
   },
   "src/components/HpcStats.tsx": {
-    "mtime": 1782892327.828198,
-    "ast_hash": "80fa983bba008f423505ecdffe8c6c33",
+    "mtime": 1782889440.2375104,
+    "ast_hash": "7a512b674dc833de66c05bc53c1b8478",
     "semantic_hash": ""
   },
   "src/components/LanguageToggle.tsx": {
-    "mtime": 1782891270.3131416,
-    "ast_hash": "0437981dcc82b263fa97ab5ca80382cd",
-    "semantic_hash": ""
+    "mtime": 1780590912.0045815,
+    "ast_hash": "cc73d2f88bc9b382ea52592b271b8120",
+    "semantic_hash": "cc73d2f88bc9b382ea52592b271b8120"
   },
   "src/components/Modal.tsx": {
     "mtime": 1780593830.6548135,
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "src/data/projects.ts": {
-    "mtime": 1782892317.2519798,
-    "ast_hash": "aac92e824cbd7051edff10c4a02e555c",
+    "mtime": 1782890410.3207173,
+    "ast_hash": "2be1f1b668fbd9622e70d90b62de9c75",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "src/i18n/LanguageProvider.tsx": {
-    "mtime": 1782891245.1204545,
-    "ast_hash": "dbe5017cf541bcaa179efa7039c8cce8",
+    "mtime": 1782889309.7815893,
+    "ast_hash": "d600512936530c08bd6914faa8505ac1",
     "semantic_hash": ""
   },
   "src/i18n/config.ts": {
@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   "src/i18n/dictionaries.ts": {
-    "mtime": 1782891258.5542283,
-    "ast_hash": "c15c169b481705432f9be71be9e2aa66",
+    "mtime": 1782889440.2425058,
+    "ast_hash": "991501f81df20faead9607d3f04c6c85",
     "semantic_hash": ""
   },
   "src/middleware.ts": {
@@ -692,11 +692,6 @@
   "public/Porto/PPSMB Quiz.mp4": {
     "mtime": 1757243198.0965095,
     "ast_hash": "c10130663b3df2c5b353bbb0ee2fad7f",
-    "semantic_hash": ""
-  },
-  "src/components/LanguageSuggestBanner.tsx": {
-    "mtime": 1782891295.4981956,
-    "ast_hash": "2130517a01f751ae2c302ae8ea521a23",
     "semantic_hash": ""
   }
 }

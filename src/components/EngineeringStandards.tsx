@@ -6,12 +6,54 @@ import { dict } from "@/i18n/dictionaries";
 
 // Practices Haikal actually follows (confirmed) — safe to claim.
 const STANDARDS: Localized[] = [
-  loc("Respect ToS & robots.txt", "Hormati ToS & robots.txt"),
-  loc("Rate-limiting + rotating proxies", "Rate-limiting + rotating proxy"),
-  loc("Schema validation & dedup", "Validasi schema & dedup"),
-  loc("Retry & dead-letter queues", "Retry & dead-letter queue"),
-  loc("PII anonymization", "Anonimisasi PII"),
-  loc("Data-freshness monitoring", "Monitoring data freshness"),
+  loc(
+    "Respect ToS & robots.txt",
+    "Hormati ToS & robots.txt",
+    "ToS & robots.txt respektieren",
+    "Respect des CGU & robots.txt",
+    "Respeto de los ToS y robots.txt",
+    "Rispetto di ToS e robots.txt",
+  ),
+  loc(
+    "Rate-limiting + rotating proxies",
+    "Rate-limiting + rotating proxy",
+    "Rate-Limiting + rotierende Proxys",
+    "Limitation de débit + proxys rotatifs",
+    "Limitación de tasa + proxies rotativos",
+    "Rate-limiting + proxy rotanti",
+  ),
+  loc(
+    "Schema validation & dedup",
+    "Validasi schema & dedup",
+    "Schema-Validierung & Deduplizierung",
+    "Validation de schéma & déduplication",
+    "Validación de esquemas y deduplicación",
+    "Validazione dello schema e deduplicazione",
+  ),
+  loc(
+    "Retry & dead-letter queues",
+    "Retry & dead-letter queue",
+    "Retry- & Dead-Letter-Queues",
+    "Files de nouvelle tentative & dead-letter",
+    "Colas de reintento y dead-letter",
+    "Code di retry e dead-letter",
+  ),
+  loc(
+    "PII anonymization",
+    "Anonimisasi PII",
+    "PII-Anonymisierung",
+    "Anonymisation des données personnelles",
+    "Anonimización de datos personales (PII)",
+    "Anonimizzazione dei dati personali (PII)",
+  ),
+  loc(
+    "Data-freshness monitoring",
+    "Monitoring data freshness",
+    "Überwachung der Datenaktualität",
+    "Surveillance de la fraîcheur des données",
+    "Monitoreo de la actualidad de los datos",
+    "Monitoraggio della freschezza dei dati",
+  ),
 ];
 
 export default function EngineeringStandards() {

@@ -36,10 +36,21 @@ const defaultTech: string[] = [
   "Linux",
 ];
 
-const DEFAULT_TITLE: Localized = { en: "Tech Stack", id: "Tech Stack" };
+const DEFAULT_TITLE: Localized = {
+  en: "Tech Stack",
+  id: "Tech Stack",
+  de: "Tech-Stack",
+  fr: "Stack technique",
+  es: "Stack tecnológico",
+  it: "Stack tecnologico",
+};
 const DEFAULT_DESC: Localized = {
   en: "Tools I reach for to ship scalable, production-ready applications.",
   id: "Alat yang saya gunakan untuk membangun aplikasi yang scalable dan siap produksi.",
+  de: "Werkzeuge, auf die ich zurückgreife, um skalierbare, produktionsreife Anwendungen zu entwickeln.",
+  fr: "Les outils que j'utilise pour livrer des applications évolutives et prêtes pour la production.",
+  es: "Las herramientas que utilizo para crear aplicaciones escalables y listas para producción.",
+  it: "Gli strumenti a cui ricorro per realizzare applicazioni scalabili e pronte per la produzione.",
 };
 
 interface TechStackProps {

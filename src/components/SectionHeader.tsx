@@ -14,6 +14,10 @@ interface SectionHeaderProps {
 const DEFAULT_LABEL: Localized = {
   en: "Explore More Projects",
   id: "Lihat Proyek Lainnya",
+  de: "Weitere Projekte entdecken",
+  fr: "Découvrir plus de projets",
+  es: "Explorar más proyectos",
+  it: "Esplora altri progetti",
 };
 
 const SectionHeader = ({

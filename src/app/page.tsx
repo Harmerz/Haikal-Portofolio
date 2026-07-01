@@ -22,13 +22,35 @@ export default function Home() {
         eyebrow={t(
           "Haikal Hilmi — Data & Software Architect",
           "Haikal Hilmi — Arsitek Data & Software",
+          "Haikal Hilmi — Daten- & Software-Architekt",
+          "Haikal Hilmi — Architecte Data & Software",
+          "Haikal Hilmi — Arquitecto Data & Software",
+          "Haikal Hilmi — Architetto Data & Software",
         )}
-        title={t("Scale without the chaos.", "Berkembang tanpa kekacauan.")}
+        title={t(
+          "Scale without the chaos.",
+          "Berkembang tanpa kekacauan.",
+          "Wachstum ohne Chaos.",
+          "Grandir sans le chaos.",
+          "Crecer sin el caos.",
+          "Crescere senza il caos.",
+        )}
         description={t(
           "I build resilient data & cloud systems that handle the heavy lifting—so you can focus on growing your business. Secure, compliant, and production-ready.",
           "Saya membangun sistem data & cloud yang tangguh untuk menangani pekerjaan berat—agar Anda bisa fokus mengembangkan bisnis. Aman, patuh, dan siap produksi.",
+          "Ich baue robuste Daten- und Cloud-Systeme, die die schwere Arbeit übernehmen—damit Sie sich auf das Wachstum Ihres Unternehmens konzentrieren können. Sicher, konform und produktionsreif.",
+          "Je conçois des systèmes data & cloud résilients qui absorbent la charge de travail—pour que vous puissiez vous concentrer sur la croissance de votre entreprise. Sécurisés, conformes et prêts pour la production.",
+          "Construyo sistemas de datos y cloud resilientes que se encargan del trabajo pesado, para que puedas concentrarte en hacer crecer tu negocio. Seguros, conformes y listos para producción.",
+          "Costruisco sistemi dati e cloud resilienti che si occupano del lavoro pesante, così puoi concentrarti sulla crescita della tua attività. Sicuri, conformi e pronti per la produzione.",
         )}
-        ctaText={t("Discuss Your Project", "Diskusikan Proyek Anda")}
+        ctaText={t(
+          "Discuss Your Project",
+          "Diskusikan Proyek Anda",
+          "Projekt besprechen",
+          "Discuter de votre projet",
+          "Hablemos de tu proyecto",
+          "Parliamo del tuo progetto",
+        )}
       />
 
       {/* Data Engineering Portfolio Section */}
@@ -36,10 +58,21 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6">
           <Reveal>
             <SectionHeader
-              title={t("Data Engineer Portfolio", "Portfolio Data Engineer")}
+              title={t(
+                "Data Engineer Portfolio",
+                "Portfolio Data Engineer",
+                "Data-Engineer-Portfolio",
+                "Portfolio Data Engineer",
+                "Portafolio de Data Engineer",
+                "Portfolio da Data Engineer",
+              )}
               subtitle={t(
                 "Large-scale scraping and pipelines processing millions of records daily",
                 "Scraping & pipeline skala besar yang memproses jutaan record setiap hari",
+                "Umfangreiches Scraping und Pipelines, die täglich Millionen von Datensätzen verarbeiten",
+                "Scraping à grande échelle et pipelines traitant des millions d'enregistrements par jour",
+                "Scraping a gran escala y pipelines que procesan millones de registros al día",
+                "Scraping su larga scala e pipeline che elaborano milioni di record al giorno",
               )}
               href="/data-engineer"
             />
@@ -62,10 +95,18 @@ export default function Home() {
               title={t(
                 "Software Engineer Portfolio",
                 "Portfolio Software Engineer",
+                "Software-Engineer-Portfolio",
+                "Portfolio Software Engineer",
+                "Portafolio de Software Engineer",
+                "Portfolio da Software Engineer",
               )}
               subtitle={t(
                 "Award-winning products and platforms shipped for real clients",
                 "Produk & platform pemenang penghargaan untuk klien nyata",
+                "Preisgekrönte Produkte und Plattformen für echte Kunden",
+                "Produits et plateformes primés livrés à de vrais clients",
+                "Productos y plataformas premiados entregados a clientes reales",
+                "Prodotti e piattaforme premiati realizzati per clienti reali",
               )}
               href="/software-engineer"
             />

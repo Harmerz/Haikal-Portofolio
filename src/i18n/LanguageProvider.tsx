@@ -7,28 +7,56 @@ import {
   useEffect,
   useState,
 } from "react";
-import { DEFAULT_LANG, type Lang, type Localized } from "./config";
+import { DEFAULT_LANG, LANGS, type Lang, type Localized } from "./config";
 
 interface LanguageContextValue {
   lang: Lang;
   setLang: (lang: Lang) => void;
-  toggle: () => void;
   /** Resolve a Localized value to the active language. */
   t: (value: Localized) => string;
+  /** True when the active language was auto-detected (not chosen) and isn't English yet. */
+  suggestEnglish: boolean;
+  /** Dismiss the "switch to English" suggestion without changing the language. */
+  dismissEnglishSuggestion: () => void;
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 const STORAGE_KEY = "lang";
+const DISMISSED_KEY = "lang-suggest-dismissed";
+
+/** Map a browser language tag (e.g. "de-DE") to a supported Lang, or null. */
+function detectBrowserLang(): Lang | null {
+  const candidates = navigator.languages?.length
+    ? navigator.languages
+    : [navigator.language];
+  for (const tag of candidates) {
+    const primary = tag.split("-")[0].toLowerCase();
+    const match = LANGS.find((l) => l === primary);
+    if (match) return match;
+  }
+  return null;
+}
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [lang, setLangState] = useState<Lang>(DEFAULT_LANG);
+  const [suggestEnglish, setSuggestEnglish] = useState(false);
 
-  // Hydrate from localStorage after mount (avoids SSR hydration mismatch).
+  // Hydrate from localStorage, or auto-detect, after mount (avoids SSR hydration mismatch).
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "en" || stored === "id") {
-      setLangState(stored);
+    if (LANGS.includes(stored as Lang)) {
+      setLangState(stored as Lang);
+      return;
+    }
+
+    const detected = detectBrowserLang();
+    if (detected) {
+      setLangState(detected);
+      const dismissed = window.localStorage.getItem(DISMISSED_KEY) === "true";
+      if (detected !== "en" && !dismissed) {
+        setSuggestEnglish(true);
+      }
     }
   }, []);
 
@@ -36,18 +64,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const setLang = useCallback((next: Lang) => {
-    setLangState(next);
-    window.localStorage.setItem(STORAGE_KEY, next);
+  const dismissEnglishSuggestion = useCallback(() => {
+    setSuggestEnglish(false);
+    window.localStorage.setItem(DISMISSED_KEY, "true");
   }, []);
 
-  const toggle = useCallback(() => {
-    setLangState((prev) => {
-      const next = prev === "en" ? "id" : "en";
+  const setLang = useCallback(
+    (next: Lang) => {
+      setLangState(next);
       window.localStorage.setItem(STORAGE_KEY, next);
-      return next;
-    });
-  }, []);
+      dismissEnglishSuggestion();
+    },
+    [dismissEnglishSuggestion],
+  );
 
   const translate = useCallback(
     (value: Localized) => value[lang],
@@ -56,7 +85,13 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <LanguageContext.Provider
-      value={{ lang, setLang, toggle, t: translate }}
+      value={{
+        lang,
+        setLang,
+        t: translate,
+        suggestEnglish,
+        dismissEnglishSuggestion,
+      }}
     >
       {children}
     </LanguageContext.Provider>
