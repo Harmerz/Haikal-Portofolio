@@ -1,0 +1,222 @@
+{
+  "D:\\Github\\my-portofolio-general\\.claude\\settings.json": {
+    "mtime": 1781594670.7203271,
+    "ast_hash": "7bf81dca0376bde3a32244b82bc7cbc0",
+    "semantic_hash": "7bf81dca0376bde3a32244b82bc7cbc0"
+  },
+  "D:\\Github\\my-portofolio-general\\eslint.config.mjs": {
+    "mtime": 1755960729.5564742,
+    "ast_hash": "f1e80e839db34357a0e228efe227e759",
+    "semantic_hash": "f1e80e839db34357a0e228efe227e759"
+  },
+  "D:\\Github\\my-portofolio-general\\next.config.ts": {
+    "mtime": 1771239616.3338964,
+    "ast_hash": "a83c4fd4ac28e358d2dd9fc5037187ec",
+    "semantic_hash": "a83c4fd4ac28e358d2dd9fc5037187ec"
+  },
+  "D:\\Github\\my-portofolio-general\\package.json": {
+    "mtime": 1780593992.653147,
+    "ast_hash": "bd018e8f1dfe5e621e6de1bf71b1f1c4",
+    "semantic_hash": "bd018e8f1dfe5e621e6de1bf71b1f1c4"
+  },
+  "D:\\Github\\my-portofolio-general\\postcss.config.mjs": {
+    "mtime": 1755960729.5695367,
+    "ast_hash": "675899342e765a4d16acd75a53389101",
+    "semantic_hash": "675899342e765a4d16acd75a53389101"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\@modal\\(.)projects\\[id]\\page.tsx": {
+    "mtime": 1780593870.8583477,
+    "ast_hash": "14eca64fe8b71bbb5ff5336769521978",
+    "semantic_hash": "14eca64fe8b71bbb5ff5336769521978"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\@modal\\default.tsx": {
+    "mtime": 1780593865.6202767,
+    "ast_hash": "3bf3aa874de03c1bf0d83b3e6508c50f",
+    "semantic_hash": "3bf3aa874de03c1bf0d83b3e6508c50f"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\data-engineer\\page.tsx": {
+    "mtime": 1780908131.8294249,
+    "ast_hash": "1c3db43ef406c40e19d2dff25eb0096c",
+    "semantic_hash": "1c3db43ef406c40e19d2dff25eb0096c"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\layout.tsx": {
+    "mtime": 1780907936.9797459,
+    "ast_hash": "f126d524057b665cc01d44affe93de58",
+    "semantic_hash": "f126d524057b665cc01d44affe93de58"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\page.tsx": {
+    "mtime": 1780909524.7166908,
+    "ast_hash": "c87e17ba136da002db8ea4f395a9f151",
+    "semantic_hash": "c87e17ba136da002db8ea4f395a9f151"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\projects\\[id]\\page.tsx": {
+    "mtime": 1780593858.4516056,
+    "ast_hash": "9f4dd04c232945040db74001bf65d76b",
+    "semantic_hash": "9f4dd04c232945040db74001bf65d76b"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\software-engineer\\page.tsx": {
+    "mtime": 1781242956.977798,
+    "ast_hash": "d3a96cde2b9e5168fea8ce288f606b19",
+    "semantic_hash": "d3a96cde2b9e5168fea8ce288f606b19"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\About.tsx": {
+    "mtime": 1780907670.815585,
+    "ast_hash": "ca28e1b264bbe564609fc5754db4cfd8",
+    "semantic_hash": "ca28e1b264bbe564609fc5754db4cfd8"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\ContextBadge.tsx": {
+    "mtime": 1780819325.0440784,
+    "ast_hash": "78ed0da38b12cc848e3d990da715f65f",
+    "semantic_hash": "78ed0da38b12cc848e3d990da715f65f"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\CrossLinkBanner.tsx": {
+    "mtime": 1780591124.1042,
+    "ast_hash": "277a37849635440acf9eadde49b30e66",
+    "semantic_hash": "277a37849635440acf9eadde49b30e66"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\EngineeringStandards.tsx": {
+    "mtime": 1780907664.0976827,
+    "ast_hash": "c3aa6039d9bcfa161806a90f416b87a2",
+    "semantic_hash": "c3aa6039d9bcfa161806a90f416b87a2"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\Experience.tsx": {
+    "mtime": 1780911857.3517978,
+    "ast_hash": "f4ed821451aadf4bc46fce6185f7ec60",
+    "semantic_hash": "f4ed821451aadf4bc46fce6185f7ec60"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\FeaturedHero.tsx": {
+    "mtime": 1781242932.0065372,
+    "ast_hash": "42ec892285fe32744089e3b29e2c22e9",
+    "semantic_hash": "42ec892285fe32744089e3b29e2c22e9"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\Footer.tsx": {
+    "mtime": 1780591130.6852517,
+    "ast_hash": "b2ea8076c8e701648c43834aa8343014",
+    "semantic_hash": "b2ea8076c8e701648c43834aa8343014"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\Header.tsx": {
+    "mtime": 1780593539.0253966,
+    "ast_hash": "b0c61621ef7ee784de3040544e28e182",
+    "semantic_hash": "b0c61621ef7ee784de3040544e28e182"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\HeroSection.tsx": {
+    "mtime": 1781599968.5126905,
+    "ast_hash": "1bb75f0a470102ce44b687c174af0b48",
+    "semantic_hash": "1bb75f0a470102ce44b687c174af0b48"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\HowIWork.tsx": {
+    "mtime": 1780908094.2781584,
+    "ast_hash": "43fa4562a530e7271f58579234241364",
+    "semantic_hash": "43fa4562a530e7271f58579234241364"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\HpcStats.tsx": {
+    "mtime": 1780591162.0656157,
+    "ast_hash": "b5084b45a8e068e6b28411baa10d4b2a",
+    "semantic_hash": "b5084b45a8e068e6b28411baa10d4b2a"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\LanguageToggle.tsx": {
+    "mtime": 1780590912.0045815,
+    "ast_hash": "cc73d2f88bc9b382ea52592b271b8120",
+    "semantic_hash": "cc73d2f88bc9b382ea52592b271b8120"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\Modal.tsx": {
+    "mtime": 1780593830.6548135,
+    "ast_hash": "e8339207d7587195e1df3eecb43cf516",
+    "semantic_hash": "e8339207d7587195e1df3eecb43cf516"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\PipelineDiagram.tsx": {
+    "mtime": 1780594539.4226289,
+    "ast_hash": "01212e26c7293160453b5a0b223c014c",
+    "semantic_hash": "01212e26c7293160453b5a0b223c014c"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\ProjectCard.tsx": {
+    "mtime": 1780819345.116813,
+    "ast_hash": "7c258edb26fa1b04c10ea3bfb950e457",
+    "semantic_hash": "7c258edb26fa1b04c10ea3bfb950e457"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\ProjectDetail.tsx": {
+    "mtime": 1780908443.6892054,
+    "ast_hash": "1363d5f5572c1b3080b491aa792e1482",
+    "semantic_hash": "1363d5f5572c1b3080b491aa792e1482"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\Reveal.tsx": {
+    "mtime": 1780593121.7483628,
+    "ast_hash": "2586c2369c1184ade3c293d20cbb5e11",
+    "semantic_hash": "2586c2369c1184ade3c293d20cbb5e11"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\SectionHeader.tsx": {
+    "mtime": 1780591106.1171522,
+    "ast_hash": "616f5757e0a980eec3411ec4f373b46e",
+    "semantic_hash": "616f5757e0a980eec3411ec4f373b46e"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\TechStack.tsx": {
+    "mtime": 1780591116.126576,
+    "ast_hash": "ce53d8f0f596b4ae50c0d45e53328ab3",
+    "semantic_hash": "ce53d8f0f596b4ae50c0d45e53328ab3"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\components\\Testimonials.tsx": {
+    "mtime": 1780924028.7136574,
+    "ast_hash": "a99e8eef5db1757cefd66c6609693fce",
+    "semantic_hash": "a99e8eef5db1757cefd66c6609693fce"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\config\\site.ts": {
+    "mtime": 1780857407.152948,
+    "ast_hash": "39dc8f9a80f9dee67d73c721c05d6932",
+    "semantic_hash": "39dc8f9a80f9dee67d73c721c05d6932"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\data\\experience.ts": {
+    "mtime": 1780911850.0768447,
+    "ast_hash": "01e687588590f0bbacd2cd4907c5de00",
+    "semantic_hash": "01e687588590f0bbacd2cd4907c5de00"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\data\\projects.ts": {
+    "mtime": 1781237378.4435284,
+    "ast_hash": "fa3e74e23e7baa68b2f182470dea0874",
+    "semantic_hash": "fa3e74e23e7baa68b2f182470dea0874"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\data\\testimonials.ts": {
+    "mtime": 1780926279.6766768,
+    "ast_hash": "32ea6e70d4e9d5d59e360728ac6013f7",
+    "semantic_hash": "32ea6e70d4e9d5d59e360728ac6013f7"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\i18n\\LanguageProvider.tsx": {
+    "mtime": 1780590901.6300447,
+    "ast_hash": "1890f14522604e74daf03443ce005286",
+    "semantic_hash": "1890f14522604e74daf03443ce005286"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\i18n\\config.ts": {
+    "mtime": 1780590862.8878677,
+    "ast_hash": "71ae6f09e5a1f6b619607621c5fc2af2",
+    "semantic_hash": "71ae6f09e5a1f6b619607621c5fc2af2"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\i18n\\dictionaries.ts": {
+    "mtime": 1781242939.31699,
+    "ast_hash": "872440f58951ee4b81de875a118e701d",
+    "semantic_hash": "872440f58951ee4b81de875a118e701d"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\middleware.ts": {
+    "mtime": 1780591943.4611762,
+    "ast_hash": "051947fc8ba180c30ea3be806cdedc2c",
+    "semantic_hash": "051947fc8ba180c30ea3be806cdedc2c"
+  },
+  "D:\\Github\\my-portofolio-general\\tsconfig.json": {
+    "mtime": 1755960751.1432686,
+    "ast_hash": "0cf97a81150d3b8904f285780896980d",
+    "semantic_hash": "0cf97a81150d3b8904f285780896980d"
+  },
+  "D:\\Github\\my-portofolio-general\\CLAUDE.md": {
+    "mtime": 1781408726.8161855,
+    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "semantic_hash": "8a6643a420fdad6bfb583523bc6cef16"
+  },
+  "D:\\Github\\my-portofolio-general\\README.md": {
+    "mtime": 1755960729.5389569,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "D:\\Github\\my-portofolio-general\\src\\app\\data-engineer\\test.html": {
+    "mtime": 1766398368.5894177,
+    "ast_hash": "9c9ee65a475ae2c81930095b212da6b5",
+    "semantic_hash": "9c9ee65a475ae2c81930095b212da6b5"
+  }
+}
