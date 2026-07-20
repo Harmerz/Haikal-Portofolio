@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "src/data/projects.ts": {
-    "mtime": 1783074525.7782547,
-    "ast_hash": "e374135d1be21890459a588432d55d79",
+    "mtime": 1782892317.2519798,
+    "ast_hash": "aac92e824cbd7051edff10c4a02e555c",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -697,46 +697,6 @@
   "src/components/LanguageSuggestBanner.tsx": {
     "mtime": 1782891295.4981956,
     "ast_hash": "2130517a01f751ae2c302ae8ea521a23",
-    "semantic_hash": ""
-  },
-  ".codex/hooks.json": {
-    "mtime": 1783174845.1812887,
-    "ast_hash": "64d1ded9263ec58e53f941a5a8cbb70c",
-    "semantic_hash": ""
-  },
-  "src/app/error.tsx": {
-    "mtime": 1784520279.9686637,
-    "ast_hash": "bc1e46a3b2dba40416e9796983ed9939",
-    "semantic_hash": ""
-  },
-  "src/app/global-error.tsx": {
-    "mtime": 1784520279.9696639,
-    "ast_hash": "9b0af5e698f26bea04d701b7465d6cf3",
-    "semantic_hash": ""
-  },
-  "src/app/loading.tsx": {
-    "mtime": 1784520279.9696639,
-    "ast_hash": "4158a0822d17ce2393304094438865e0",
-    "semantic_hash": ""
-  },
-  "src/app/not-found.tsx": {
-    "mtime": 1784520279.953644,
-    "ast_hash": "f64b15c8fdebfab9eeacd35badeeeb5a",
-    "semantic_hash": ""
-  },
-  "src/app/robots.ts": {
-    "mtime": 1784520279.9716668,
-    "ast_hash": "26a6e18c5a6597631ad5b1f4ad3b471a",
-    "semantic_hash": ""
-  },
-  "src/app/sitemap.ts": {
-    "mtime": 1784520279.9706664,
-    "ast_hash": "6fe9d09d6414c6349cd2cb12c45880ce",
-    "semantic_hash": ""
-  },
-  "AGENTS.md": {
-    "mtime": 1783174845.1742406,
-    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
     "semantic_hash": ""
   }
 }
