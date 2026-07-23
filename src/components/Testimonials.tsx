@@ -78,7 +78,7 @@ export default function Testimonials() {
                 <path d="M7.17 6A5.17 5.17 0 002 11.17V18h6.83v-6.83H5.5A1.67 1.67 0 017.17 9.5V6zm9 0A5.17 5.17 0 0011 11.17V18h6.83v-6.83H14.5A1.67 1.67 0 0116.17 9.5V6z" />
               </svg>
               <blockquote className="flex-1 text-sm leading-relaxed text-gray-700">
-                “{t(item.quote)}”
+                &quot;{t(item.quote)}&quot;
               </blockquote>
               <figcaption className="flex items-center gap-3 border-t border-gray-200 pt-4">
                 {item.avatar ? (

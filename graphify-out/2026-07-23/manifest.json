@@ -35,8 +35,8 @@
     "semantic_hash": "3bf3aa874de03c1bf0d83b3e6508c50f"
   },
   "src/app/data-engineer/page.tsx": {
-    "mtime": 1784793587.4773207,
-    "ast_hash": "8388bd5643733b9c26b42007c5fce91a",
+    "mtime": 1782889543.2419813,
+    "ast_hash": "1ce111af7133aacfa4db7c5caeee67e6",
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
@@ -105,8 +105,8 @@
     "semantic_hash": "1bb75f0a470102ce44b687c174af0b48"
   },
   "src/components/HowIWork.tsx": {
-    "mtime": 1784793587.480325,
-    "ast_hash": "42737e15824c6ebbd918d415e7454a59",
+    "mtime": 1784793246.1754904,
+    "ast_hash": "511c8c637e11359658d04fd85691f511",
     "semantic_hash": ""
   },
   "src/components/HpcStats.tsx": {
@@ -155,8 +155,8 @@
     "semantic_hash": ""
   },
   "src/components/Testimonials.tsx": {
-    "mtime": 1784793587.4823248,
-    "ast_hash": "eb6e8d292976113c238a7416ebb0dda4",
+    "mtime": 1784793445.0889528,
+    "ast_hash": "582d04944e5129f3116a459d5e4f8dea",
     "semantic_hash": ""
   },
   "src/config/site.ts": {
@@ -175,8 +175,8 @@
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
-    "mtime": 1784793587.4833279,
-    "ast_hash": "49e169279561c9917eab943761ff8f30",
+    "mtime": 1784793389.8216286,
+    "ast_hash": "a0da7062d2676ac64a2ae6f3b2d1c314",
     "semantic_hash": ""
   },
   "src/i18n/LanguageProvider.tsx": {
