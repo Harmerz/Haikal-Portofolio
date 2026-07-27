@@ -1,21 +1,20 @@
 # Graph Report - my-portofolio-general  (2026-07-27)
 
 ## Corpus Check
-- 53 files · ~723,352 words
+- 53 files · ~723,424 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 222 nodes · 430 edges · 40 communities (15 shown, 25 thin omitted)
+- 222 nodes · 428 edges · 39 communities (15 shown, 24 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e5e27eb4`
+- Built from commit: `1e7b9ce2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- Layout, Header & i18n Setup
 - Project Showcase Components
 - Package Manifest & Dependencies
 - page.tsx
@@ -58,30 +57,26 @@
 5. `getCtaUrl()` - 9 edges
 6. `getProjectMeta()` - 7 edges
 7. `isVideo()` - 7 edges
-8. `Footer()` - 6 edges
-9. `ProjectDetail()` - 6 edges
-10. `Project` - 6 edges
+8. `ProjectDetail()` - 6 edges
+9. `Project` - 6 edges
+10. `getProjectById()` - 6 edges
 
 ## Surprising Connections (you probably didn't know these)
+- `CrossLinkBannerProps` --references--> `Localized`  [EXTRACTED]
+  src/components/CrossLinkBanner.tsx → src/i18n/config.ts
+- `Footer()` --calls--> `useLanguage()`  [EXTRACTED]
+  src/components/Footer.tsx → src/i18n/LanguageProvider.tsx
 - `LanguageToggle()` --calls--> `useLanguage()`  [EXTRACTED]
   src/components/LanguageToggle.tsx → src/i18n/LanguageProvider.tsx
 - `Testimonials()` --calls--> `useLanguage()`  [EXTRACTED]
   src/components/Testimonials.tsx → src/i18n/LanguageProvider.tsx
 - `Testimonial` --references--> `Localized`  [EXTRACTED]
   src/data/testimonials.ts → src/i18n/config.ts
-- `same()` --calls--> `t()`  [EXTRACTED]
-  src/data/testimonials.ts → src/i18n/config.ts
-- `ProjectModal()` --calls--> `getProjectById()`  [EXTRACTED]
-  src/app/@modal/(.)projects/[id]/page.tsx → src/data/projects.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (40 total, 25 thin omitted)
-
-### Community 0 - "Layout, Header & i18n Setup"
-Cohesion: 0.40
-Nodes (4): Testimonials(), same(), Testimonial, testimonials
+## Communities (39 total, 24 thin omitted)
 
 ### Community 2 - "Package Manifest & Dependencies"
 Cohesion: 0.08
@@ -89,7 +84,7 @@ Nodes (24): dependencies, next, react, react-dom, devDependencies, eslint, eslin
 
 ### Community 3 - "page.tsx"
 Cohesion: 0.14
-Nodes (23): dataTech, Home(), metadata, Home(), Home(), metadata, About(), Experience() (+15 more)
+Nodes (22): dataTech, Home(), metadata, Home(), Home(), metadata, About(), CrossLinkBanner() (+14 more)
 
 ### Community 4 - "TypeScript Config"
 Cohesion: 0.10
@@ -100,8 +95,8 @@ Cohesion: 0.40
 Nodes (4): compat, __dirname, eslintConfig, __filename
 
 ### Community 12 - "Community 12"
-Cohesion: 0.10
-Nodes (25): CrossLinkBanner(), CrossLinkBannerProps, HowIWork(), Step, STEPS, LANG_LABELS, LanguageToggle(), DEFAULT_LABEL (+17 more)
+Cohesion: 0.11
+Nodes (23): HowIWork(), Step, STEPS, LANG_LABELS, LanguageToggle(), DEFAULT_LABEL, SectionHeader(), SectionHeaderProps (+15 more)
 
 ### Community 13 - "projects.ts"
 Cohesion: 0.23
@@ -111,6 +106,10 @@ Nodes (15): ContextBadge(), STYLES, EngineeringStandards(), STANDARDS, FeaturedH
 Cohesion: 0.50
 Nodes (3): Deploy on Vercel, Getting Started, Learn More
 
+### Community 16 - "useLanguage"
+Cohesion: 0.16
+Nodes (9): inter, metadata, Footer(), Header(), companies, HeroSection(), CTA_URL, PortfolioMode (+1 more)
+
 ### Community 17 - "page.tsx"
 Cohesion: 0.11
 Nodes (16): ProjectModal(), generateMetadata(), ProjectPage(), staticRoutes, SUBTITLE, TITLE, Modal(), allProjects (+8 more)
@@ -118,22 +117,22 @@ Nodes (16): ProjectModal(), generateMetadata(), ProjectPage(), staticRoutes, SUB
 ## Knowledge Gaps
 - **91 isolated node(s):** `__filename`, `__dirname`, `compat`, `eslintConfig`, `nextConfig` (+86 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **25 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useLanguage()` connect `projects.ts` to `Layout, Header & i18n Setup`, `page.tsx`, `page.tsx`, `Community 12`?**
-  _High betweenness centrality (0.059) - this node is a cross-community bridge._
-- **Why does `Localized` connect `Community 12` to `Layout, Header & i18n Setup`, `page.tsx`, `page.tsx`, `projects.ts`?**
+- **Why does `useLanguage()` connect `projects.ts` to `useLanguage`, `page.tsx`, `page.tsx`, `Community 12`?**
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
+- **Why does `Localized` connect `Community 12` to `useLanguage`, `page.tsx`, `page.tsx`, `projects.ts`?**
   _High betweenness centrality (0.032) - this node is a cross-community bridge._
-- **Why does `t()` connect `page.tsx` to `Layout, Header & i18n Setup`, `page.tsx`, `Community 12`, `projects.ts`?**
+- **Why does `t()` connect `page.tsx` to `useLanguage`, `page.tsx`, `Community 12`, `projects.ts`?**
   _High betweenness centrality (0.021) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `compat` to the rest of the system?**
   _94 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Package Manifest & Dependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._
 - **Should `page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.14393939393939395 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13978494623655913 - nodes in this community are weakly interconnected._
 - **Should `TypeScript Config` be split into smaller, more focused modules?**
   _Cohesion score 0.1 - nodes in this community are weakly interconnected._

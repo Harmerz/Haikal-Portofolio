@@ -1,6 +1,7 @@
 export type PortfolioMode = "general" | "upwork";
 
 export const TALLY_URL = "https://tally.so/r/81VNPz";
+export const LINKEDIN_URL = "https://www.linkedin.com/in/haikalhilmi/";
 export const UPWORK_URL =
   "https://www.upwork.com/freelancers/~01ff216c8a0f8a68a1";
 

@@ -197,7 +197,7 @@ export default async function Home() {
         )}
       />
 
-      <Footer />
+      <Footer mode={mode} />
     </div>
   );
 }

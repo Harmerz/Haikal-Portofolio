@@ -35,8 +35,8 @@
     "semantic_hash": "3bf3aa874de03c1bf0d83b3e6508c50f"
   },
   "src/app/data-engineer/page.tsx": {
-    "mtime": 1785085826.0378866,
-    "ast_hash": "8496a8ed7963fe75482fe28a80fd6980",
+    "mtime": 1785135867.2589872,
+    "ast_hash": "7c21f8c3fe359b0329fd29cb4b87754c",
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
@@ -45,18 +45,18 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1785085826.015741,
-    "ast_hash": "ca03ba41246850a37cf1e7da435d9cd8",
+    "mtime": 1785135867.250471,
+    "ast_hash": "4c69193066db612591394bbace62a828",
     "semantic_hash": ""
   },
   "src/app/projects/[id]/page.tsx": {
-    "mtime": 1780593858.4516056,
-    "ast_hash": "9f4dd04c232945040db74001bf65d76b",
-    "semantic_hash": "9f4dd04c232945040db74001bf65d76b"
+    "mtime": 1785135920.6410894,
+    "ast_hash": "48d6d1f0edc55d072bdaa0235addf7ca",
+    "semantic_hash": ""
   },
   "src/app/software-engineer/page.tsx": {
-    "mtime": 1785085826.0318637,
-    "ast_hash": "b23786a9a3b7d43de4064b4ef54ccba5",
+    "mtime": 1785135867.253986,
+    "ast_hash": "e739313764b6c16b05bebaae79176c59",
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
@@ -90,9 +90,9 @@
     "semantic_hash": "42ec892285fe32744089e3b29e2c22e9"
   },
   "src/components/Footer.tsx": {
-    "mtime": 1780591130.6852517,
-    "ast_hash": "b2ea8076c8e701648c43834aa8343014",
-    "semantic_hash": "b2ea8076c8e701648c43834aa8343014"
+    "mtime": 1785135867.2394364,
+    "ast_hash": "6dba817c7aded044fa611c6d36b09bf6",
+    "semantic_hash": ""
   },
   "src/components/Header.tsx": {
     "mtime": 1785085702.7950294,
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "src/config/site.ts": {
-    "mtime": 1785085538.7654903,
-    "ast_hash": "2441644467e0367c8037c3870e8cf500",
+    "mtime": 1785135867.2303998,
+    "ast_hash": "ef4a1ce230b00f8a104e24db83fab6a9",
     "semantic_hash": ""
   },
   "src/data/experience.ts": {

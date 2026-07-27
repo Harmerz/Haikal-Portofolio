@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { allProjects, getProjectById } from "@/data/projects";
@@ -28,6 +29,11 @@ export default async function ProjectPage({
 }: {
   params: Promise<{ id: string }>;
 }) {
+  const requestHeaders = await headers();
+  const mode =
+    requestHeaders.get("x-portfolio-mode") === "upwork"
+      ? "upwork"
+      : "general";
   const { id } = await params;
   const project = getProjectById(id);
   if (!project) notFound();
@@ -60,7 +66,7 @@ export default async function ProjectPage({
           <ProjectDetail project={project} />
         </div>
       </main>
-      <Footer />
+      <Footer mode={mode} />
     </>
   );
 }
