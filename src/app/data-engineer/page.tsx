@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
@@ -14,6 +15,10 @@ import CrossLinkBanner from "@/components/CrossLinkBanner";
 import Footer from "@/components/Footer";
 import { dataProjects } from "@/data/projects";
 import { t } from "@/i18n/config";
+import {
+  getCtaUrl,
+  UPWORK_PORTFOLIO_URLS,
+} from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Haikal Hilmi — Data Engineer",
@@ -50,11 +55,18 @@ const dataTech: string[] = [
   "IT Infrastructure",
 ];
 
-export default function Home() {
+export default async function Home() {
+  const requestHeaders = await headers();
+  const mode =
+    requestHeaders.get("x-portfolio-mode") === "upwork"
+      ? "upwork"
+      : "general";
+
   return (
     <div className="relative min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <HeroSection
+        ctaHref={getCtaUrl(mode)}
         eyebrow={t(
           "Specialized in Data Engineering",
           "Spesialisasi Data Engineering",
@@ -166,7 +178,7 @@ export default function Home() {
       <HowIWork />
 
       {/* Testimonials */}
-      <Testimonials />
+      <Testimonials showExternalLinks={mode !== "upwork"} />
 
       {/* Cross-link to Software Engineering */}
       <CrossLinkBanner
@@ -186,7 +198,11 @@ export default function Home() {
           "Más allá de los datos, entrego aplicaciones web full-stack listas para producción—desde la interfaz hasta la API y la base de datos.",
           "Oltre ai dati, realizzo applicazioni web full-stack pronte per la produzione—dall'interfaccia utente all'API fino al database.",
         )}
-        href="/software-engineer"
+        href={
+          mode === "upwork"
+            ? UPWORK_PORTFOLIO_URLS.software
+            : "/software-engineer"
+        }
         ctaLabel={t(
           "See my software engineering work",
           "Lihat karya software engineering saya",

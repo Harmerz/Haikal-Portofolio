@@ -6,7 +6,11 @@ import { useLanguage } from "@/i18n/LanguageProvider";
 import { dict } from "@/i18n/dictionaries";
 import { testimonials } from "@/data/testimonials";
 
-export default function Testimonials() {
+export default function Testimonials({
+  showExternalLinks = true,
+}: {
+  showExternalLinks?: boolean;
+}) {
   const { t } = useLanguage();
   const trackRef = useRef<HTMLDivElement>(null);
 
@@ -97,7 +101,7 @@ export default function Testimonials() {
                 <div className="min-w-0">
                   <p className="flex items-center gap-1.5 text-sm font-semibold text-gray-900">
                     {item.name}
-                    {item.linkedin && (
+                    {showExternalLinks && item.linkedin && (
                       <a
                         href={item.linkedin}
                         target="_blank"

@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
 import ProjectCard from "@/components/ProjectCard";
@@ -10,8 +11,14 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { featuredSoftware, dataProjects } from "@/data/projects";
 import { t } from "@/i18n/config";
+import { getCtaUrl } from "@/config/site";
 
-export default function Home() {
+export default async function Home() {
+  const requestHeaders = await headers();
+  const mode =
+    requestHeaders.get("x-portfolio-mode") === "upwork"
+      ? "upwork"
+      : "general";
   const homeSoftware = featuredSoftware.slice(0, 3);
   const featuredData = dataProjects.slice(0, 3);
 
@@ -19,6 +26,7 @@ export default function Home() {
     <div className="relative min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <HeroSection
+        ctaHref={getCtaUrl(mode)}
         eyebrow={t(
           "Haikal Hilmi — Data & Software Architect",
           "Haikal Hilmi — Arsitek Data & Software",
@@ -127,7 +135,7 @@ export default function Home() {
       <About />
       <Experience />
       <HowIWork />
-      <Testimonials />
+      <Testimonials showExternalLinks={mode !== "upwork"} />
       <Footer />
     </div>
   );

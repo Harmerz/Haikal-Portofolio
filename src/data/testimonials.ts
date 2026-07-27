@@ -18,6 +18,17 @@ const same = (value: string) => t(value, value, value, value, value, value);
 // Real client reviews. Upwork quotes are kept in their original English.
 export const testimonials: Testimonial[] = [
   {
+    id: "robert-ligthart",
+    quote: same(
+      "Haikal supported me for nearly two years on multiple digital products. He quickly understood the business goals, proposed practical solutions, and worked independently across software development, integrations, databases, and data processing. I would gladly work with him again.",
+    ),
+    name: "Robert Ligthart",
+    role: same("Founder of OmniSocials - Long-term SaaS Client"),
+    location: "Amsterdam, Netherlands",
+    avatar: "/home/review/robert-ligthart.jpg",
+    linkedin: "https://www.linkedin.com/in/robert-ligthart/",
+  },
+  {
     id: "widyawan",
     quote: t(
       "As commissioner of Semesta Data Digital and Global Data Inspirasi, I've seen first-hand how Haikal designs data infrastructure, runs large-scale pipelines and scraping with high reliability, and helped shape products like Robota. He was also my teaching assistant for a year - consistent, a fast learner, and highly dependable. He combines genuine technical depth with a strong sense of ownership.",

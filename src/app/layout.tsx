@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
@@ -17,18 +18,24 @@ export const metadata: Metadata = {
     "Portfolio website of Haikal Hilmi - Data Engineer & Software Engineer",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   modal,
 }: Readonly<{
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
+  const requestHeaders = await headers();
+  const portfolioMode =
+    requestHeaders.get("x-portfolio-mode") === "upwork"
+      ? "upwork"
+      : "general";
+
   return (
     <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
         <LanguageProvider>
-          <Header />
+          <Header mode={portfolioMode} />
           {children}
           {modal}
           <LanguageSuggestBanner />

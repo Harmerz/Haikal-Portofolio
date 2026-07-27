@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import TechStack from "@/components/TechStack";
 import HeroSection from "@/components/HeroSection";
 import SectionHeader from "@/components/SectionHeader";
@@ -13,6 +14,10 @@ import CrossLinkBanner from "@/components/CrossLinkBanner";
 import Footer from "@/components/Footer";
 import { featuredSoftware, moreSoftware } from "@/data/projects";
 import { t } from "@/i18n/config";
+import {
+  getCtaUrl,
+  UPWORK_PORTFOLIO_URLS,
+} from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Haikal Hilmi — Software Engineer",
@@ -20,11 +25,18 @@ export const metadata: Metadata = {
     "Production-ready full-stack web applications by Haikal Hilmi. React/Next.js, backend APIs, and database design.",
 };
 
-export default function Home() {
+export default async function Home() {
+  const requestHeaders = await headers();
+  const mode =
+    requestHeaders.get("x-portfolio-mode") === "upwork"
+      ? "upwork"
+      : "general";
+
   return (
     <div className="relative min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
       <HeroSection
+        ctaHref={getCtaUrl(mode)}
         eyebrow={t(
           "Specialized in Software Engineering",
           "Spesialisasi Software Engineering",
@@ -150,7 +162,7 @@ export default function Home() {
       <HowIWork />
 
       {/* Testimonials */}
-      <Testimonials />
+      <Testimonials showExternalLinks={mode !== "upwork"} />
 
       {/* Cross-link to Data Engineering */}
       <CrossLinkBanner
@@ -170,7 +182,11 @@ export default function Home() {
           "Más allá de las apps, construyo pipelines de datos, web scrapers y sistemas ETL fiables que mantienen tus datos limpios y listos para usar.",
           "Oltre alle app, costruisco pipeline di dati, web scraper e sistemi ETL affidabili che mantengono i tuoi dati puliti e pronti all'uso.",
         )}
-        href="/data-engineer"
+        href={
+          mode === "upwork"
+            ? UPWORK_PORTFOLIO_URLS.data
+            : "/data-engineer"
+        }
         ctaLabel={t(
           "See my data engineering work",
           "Lihat karya data engineering saya",
