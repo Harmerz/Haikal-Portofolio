@@ -1,37 +1,35 @@
-# Graph Report - my-portofolio-general  (2026-07-27)
+# Graph Report - my-portofolio-general  (2026-08-15)
 
 ## Corpus Check
-- 53 files · ~723,424 words
+- 58 files · ~813,534 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 222 nodes · 428 edges · 39 communities (15 shown, 24 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- 294 nodes · 537 edges · 38 communities (16 shown, 22 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1e7b9ce2`
+- Built from commit: `6eff8c77`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- Project Showcase Components
-- Package Manifest & Dependencies
-- page.tsx
-- TypeScript Config
-- Software Engineer Landing Page
-- Build Config & Subdomain Routing
-- Projects Data & Footer
-- Graphify Automation Hooks
-- Testimonial: Aksarakan Bhumi
-- PostCSS Config
-- Project Type Interface
-- Community 12
-- projects.ts
-- Community 14
-- Community 15
+- Software engineering projects
+- portfolio-export.ts
+- devDependencies
+- data-engineer/page.tsx
+- compilerOptions
+- FEATURED_IDS array
+- eslint.config.mjs
+- Global Data Inspirasi (client company)
+- Graphify Usage Rules
+- PT Aksarakan Bhumi Indonesia (client company)
+- postcss.config.mjs
+- Project interface
+- LanguageProvider.tsx
 - useLanguage
-- page.tsx
+- projects/[id]/page.tsx
 - middleware.ts
 - AGENTS.md
 - next.config.ts
@@ -53,86 +51,86 @@
 1. `useLanguage()` - 39 edges
 2. `Localized` - 22 edges
 3. `t()` - 21 edges
-4. `compilerOptions` - 16 edges
-5. `getCtaUrl()` - 9 edges
-6. `getProjectMeta()` - 7 edges
-7. `isVideo()` - 7 edges
-8. `ProjectDetail()` - 6 edges
-9. `Project` - 6 edges
-10. `getProjectById()` - 6 edges
+4. `Software engineering projects` - 18 edges
+5. `compilerOptions` - 16 edges
+6. `dict shared UI strings object` - 14 edges
+7. `getCtaUrl()` - 9 edges
+8. `getProjectMeta()` - 9 edges
+9. `Haikal Hilmi` - 9 edges
+10. `Data engineering projects` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `CrossLinkBannerProps` --references--> `Localized`  [EXTRACTED]
-  src/components/CrossLinkBanner.tsx → src/i18n/config.ts
 - `Footer()` --calls--> `useLanguage()`  [EXTRACTED]
   src/components/Footer.tsx → src/i18n/LanguageProvider.tsx
 - `LanguageToggle()` --calls--> `useLanguage()`  [EXTRACTED]
   src/components/LanguageToggle.tsx → src/i18n/LanguageProvider.tsx
 - `Testimonials()` --calls--> `useLanguage()`  [EXTRACTED]
   src/components/Testimonials.tsx → src/i18n/LanguageProvider.tsx
+- `ExperienceItem` --references--> `Localized`  [EXTRACTED]
+  src/data/experience.ts → src/i18n/config.ts
 - `Testimonial` --references--> `Localized`  [EXTRACTED]
   src/data/testimonials.ts → src/i18n/config.ts
 
 ## Import Cycles
 - None detected.
 
-## Communities (39 total, 24 thin omitted)
+## Communities (38 total, 22 thin omitted)
 
-### Community 2 - "Package Manifest & Dependencies"
-Cohesion: 0.08
-Nodes (24): dependencies, next, react, react-dom, devDependencies, eslint, eslint-config-next, @eslint/eslintrc (+16 more)
+### Community 0 - "Software engineering projects"
+Cohesion: 0.05
+Nodes (40): Atensi — Sentiment Monitoring, Auto-Engagement Bot, Blockchain Supply Chain, ByteDance, Client testimonials, Contact and profiles, Core capabilities, Create Carousels (+32 more)
 
-### Community 3 - "page.tsx"
+### Community 1 - "portfolio-export.ts"
+Cohesion: 0.15
+Nodes (16): GET(), GET(), pdfSafe(), plainMarkdown(), TextStyle, wrapText(), Testimonials(), experience (+8 more)
+
+### Community 2 - "devDependencies"
+Cohesion: 0.05
+Nodes (40): eslint, eslint-config-next, @eslint/eslintrc, next, dependencies, next, pdf-lib, react (+32 more)
+
+### Community 3 - "data-engineer/page.tsx"
 Cohesion: 0.14
-Nodes (22): dataTech, Home(), metadata, Home(), Home(), metadata, About(), CrossLinkBanner() (+14 more)
+Nodes (25): dataTech, Home(), metadata, Home(), Home(), metadata, About(), CrossLinkBanner() (+17 more)
 
-### Community 4 - "TypeScript Config"
-Cohesion: 0.10
-Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
+### Community 4 - "compilerOptions"
+Cohesion: 0.07
+Nodes (26): dom, dom.iterable, esnext, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx (+18 more)
 
-### Community 6 - "Build Config & Subdomain Routing"
+### Community 6 - "eslint.config.mjs"
 Cohesion: 0.40
 Nodes (4): compat, __dirname, eslintConfig, __filename
 
-### Community 12 - "Community 12"
-Cohesion: 0.11
-Nodes (23): HowIWork(), Step, STEPS, LANG_LABELS, LanguageToggle(), DEFAULT_LABEL, SectionHeader(), SectionHeaderProps (+15 more)
+### Community 12 - "LanguageProvider.tsx"
+Cohesion: 0.09
+Nodes (26): inter, metadata, CrossLinkBannerProps, HowIWork(), Step, STEPS, SUBTITLE, TITLE (+18 more)
 
-### Community 13 - "projects.ts"
-Cohesion: 0.23
-Nodes (15): ContextBadge(), STYLES, EngineeringStandards(), STANDARDS, FeaturedHero(), LanguageSuggestBanner(), ProjectCard(), ProjectCardProps (+7 more)
+### Community 13 - "useLanguage"
+Cohesion: 0.15
+Nodes (22): ContextBadge(), STYLES, EngineeringStandards(), STANDARDS, FeaturedHero(), LanguageSuggestBanner(), Modal(), ProjectCard() (+14 more)
 
-### Community 14 - "Community 14"
-Cohesion: 0.50
-Nodes (3): Deploy on Vercel, Getting Started, Learn More
-
-### Community 16 - "useLanguage"
-Cohesion: 0.16
-Nodes (9): inter, metadata, Footer(), Header(), companies, HeroSection(), CTA_URL, PortfolioMode (+1 more)
-
-### Community 17 - "page.tsx"
-Cohesion: 0.11
-Nodes (16): ProjectModal(), generateMetadata(), ProjectPage(), staticRoutes, SUBTITLE, TITLE, Modal(), allProjects (+8 more)
+### Community 17 - "projects/[id]/page.tsx"
+Cohesion: 0.24
+Nodes (6): ProjectModal(), generateMetadata(), ProjectPage(), staticRoutes, allProjects, getProjectById()
 
 ## Knowledge Gaps
-- **91 isolated node(s):** `__filename`, `__dirname`, `compat`, `eslintConfig`, `nextConfig` (+86 more)
+- **127 isolated node(s):** `__filename`, `__dirname`, `compat`, `eslintConfig`, `nextConfig` (+122 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useLanguage()` connect `projects.ts` to `useLanguage`, `page.tsx`, `page.tsx`, `Community 12`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `Localized` connect `Community 12` to `useLanguage`, `page.tsx`, `page.tsx`, `projects.ts`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
-- **Why does `t()` connect `page.tsx` to `useLanguage`, `page.tsx`, `Community 12`, `projects.ts`?**
-  _High betweenness centrality (0.021) - this node is a cross-community bridge._
+- **Why does `useLanguage()` connect `useLanguage` to `portfolio-export.ts`, `data-engineer/page.tsx`, `LanguageProvider.tsx`?**
+  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+- **Why does `Localized` connect `LanguageProvider.tsx` to `portfolio-export.ts`, `data-engineer/page.tsx`, `useLanguage`?**
+  _High betweenness centrality (0.020) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `compat` to the rest of the system?**
-  _94 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Package Manifest & Dependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
-- **Should `page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.13978494623655913 - nodes in this community are weakly interconnected._
-- **Should `TypeScript Config` be split into smaller, more focused modules?**
-  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
+  _127 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Should `Software engineering projects` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+- **Should `devDependencies` be split into smaller, more focused modules?**
+  _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
+- **Should `data-engineer/page.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.13781512605042018 - nodes in this community are weakly interconnected._
+- **Should `compilerOptions` be split into smaller, more focused modules?**
+  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._

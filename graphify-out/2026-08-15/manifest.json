@@ -15,9 +15,9 @@
     "semantic_hash": "a83c4fd4ac28e358d2dd9fc5037187ec"
   },
   "package.json": {
-    "mtime": 1786727077.7944548,
-    "ast_hash": "d566adcf436344e62301b4792def290b",
-    "semantic_hash": ""
+    "mtime": 1780593992.653147,
+    "ast_hash": "bd018e8f1dfe5e621e6de1bf71b1f1c4",
+    "semantic_hash": "bd018e8f1dfe5e621e6de1bf71b1f1c4"
   },
   "postcss.config.mjs": {
     "mtime": 1755960729.5695367,
@@ -90,8 +90,8 @@
     "semantic_hash": "42ec892285fe32744089e3b29e2c22e9"
   },
   "src/components/Footer.tsx": {
-    "mtime": 1786727676.4174156,
-    "ast_hash": "135784b8c956f0715222834c2dda0a60",
+    "mtime": 1785135867.2394364,
+    "ast_hash": "6dba817c7aded044fa611c6d36b09bf6",
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
@@ -190,8 +190,8 @@
     "semantic_hash": ""
   },
   "src/i18n/dictionaries.ts": {
-    "mtime": 1786727676.447888,
-    "ast_hash": "40d46c43bb2629b95b4f2fa8ec2e7a3e",
+    "mtime": 1782891258.5542283,
+    "ast_hash": "c15c169b481705432f9be71be9e2aa66",
     "semantic_hash": ""
   },
   "src/middleware.ts": {
@@ -742,106 +742,6 @@
   "public/home/review/robert-ligthart.jpg": {
     "mtime": 1785079600.226017,
     "ast_hash": "701d2332264e0b3ff9b33044403d95a8",
-    "semantic_hash": ""
-  },
-  "src/app/llms.txt/route.ts": {
-    "mtime": 1786727473.0157778,
-    "ast_hash": "871972990aa30a1351eed5b8a7c46f4b",
-    "semantic_hash": ""
-  },
-  "src/app/portfolio.md/route.ts": {
-    "mtime": 1786727676.32237,
-    "ast_hash": "8360113c3494e23fdab653a51962ca8f",
-    "semantic_hash": ""
-  },
-  "src/app/portfolio.pdf/route.ts": {
-    "mtime": 1786727676.3744783,
-    "ast_hash": "35ef2f8c0c2651d9652fd0d6ee4ef8ab",
-    "semantic_hash": ""
-  },
-  "src/lib/portfolio-export.ts": {
-    "mtime": 1786727676.2920723,
-    "ast_hash": "6d8e3ab0f74a6410cccb9e1a9d15db59",
-    "semantic_hash": ""
-  },
-  "tmp/export-qa/llms.txt": {
-    "mtime": 1786727857.7871075,
-    "ast_hash": "d15fc5bb66ae776658067f8883360972",
-    "semantic_hash": ""
-  },
-  "tmp/export-qa/portfolio.md": {
-    "mtime": 1786727856.9314134,
-    "ast_hash": "d0187ea02ea6b90c6904e21bc2276d81",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/portfolio.pdf": {
-    "mtime": 1786727857.706396,
-    "ast_hash": "581c00e672ae491fb7532dbf7a66e97f",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/contact-sheet-small.jpg": {
-    "mtime": 1786728043.3254697,
-    "ast_hash": "393a944dff899d15bc0e1736d577e20a",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/contact-sheet.png": {
-    "mtime": 1786727956.166634,
-    "ast_hash": "3df81fe560e9997469990530c1cf9c62",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-01.png": {
-    "mtime": 1786727936.086279,
-    "ast_hash": "c07a742fc7b63b690b7f3a1ae94bb603",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-02.png": {
-    "mtime": 1786727936.243755,
-    "ast_hash": "bbb41d706fda7eeefcdf1b2f00eff94b",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-03.png": {
-    "mtime": 1786727936.4394312,
-    "ast_hash": "43a83974267a66a417c08d62a27ef600",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-04.png": {
-    "mtime": 1786727936.632351,
-    "ast_hash": "b6ef5aae3f42a3e0f592fe8fc8a6a6fe",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-05.png": {
-    "mtime": 1786727936.841871,
-    "ast_hash": "f193919b8a0a080981ba8b7675940933",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-06.png": {
-    "mtime": 1786727937.0771236,
-    "ast_hash": "ffed2b0940a0e406710f12cad0a7be2d",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-07.png": {
-    "mtime": 1786727937.2913754,
-    "ast_hash": "e0e3d0bf711ea8c49ee2f0d18471dc17",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-08.png": {
-    "mtime": 1786727937.5029657,
-    "ast_hash": "0bbe4c2d2181fef9c283e17363e16c3a",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-09.png": {
-    "mtime": 1786727937.723317,
-    "ast_hash": "4e6ad42afc8baddd6a9e7781f0c8f2d8",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-10.png": {
-    "mtime": 1786727937.9412932,
-    "ast_hash": "53f7758845cba0653f805a0b7b31e00f",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-11.png": {
-    "mtime": 1786727938.0953958,
-    "ast_hash": "7eda9b1819d1bffefcee9f8c31148324",
     "semantic_hash": ""
   }
 }
