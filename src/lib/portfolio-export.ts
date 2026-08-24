@@ -12,6 +12,77 @@ import { testimonials } from "@/data/testimonials";
 
 const SITE_URL = "https://haikalhilmi.my.id";
 
+export type PortfolioScope = "general" | "se" | "de";
+
+const scopeConfig = {
+  general: {
+    title: "Haikal Hilmi - Data and Software Engineer Portfolio",
+    heading: "Haikal Hilmi",
+    canonical: SITE_URL,
+    filename: "haikal-hilmi-portfolio",
+    summary:
+      "Data and Software Engineer specializing in resilient data pipelines, large-scale scraping, cloud systems, HPC infrastructure, and full-stack products. Backend Engineer intern at ByteDance working on systems handling 100,000+ requests per second, a 5.0-star Upwork freelancer, and a multiple international hackathon winner.",
+    capabilities: [
+      "Data engineering: scraping, ingestion, ETL, orchestration, queues, search, observability, and production reliability.",
+      "Software engineering: full-stack web products, APIs, microservices, integrations, authentication, and scalable architecture.",
+      "Infrastructure: on-premise HPC, Docker workloads, monitoring, capacity planning, and cloud deployment.",
+      "Applied AI: LLM products, sentiment analysis, speech-to-text, retrieval, automation, and data enrichment.",
+    ],
+  },
+  se: {
+    title: "Haikal Hilmi - Software Engineer Portfolio",
+    heading: "Haikal Hilmi - Software Engineer",
+    canonical: `${SITE_URL}/software-engineer`,
+    filename: "haikal-hilmi-software-engineer-portfolio",
+    summary:
+      "Software Engineer building production-ready full-stack products, scalable APIs, microservices, integrations, and AI-powered applications. Experienced with high-throughput backend systems, client products, and award-winning platforms.",
+    capabilities: [
+      "Full-stack products: responsive interfaces, APIs, databases, authentication, and production deployment.",
+      "Backend engineering: microservices, event-driven systems, high-throughput services, and third-party integrations.",
+      "Product engineering: architecture decisions, rapid delivery, maintainability, security, and observability.",
+      "Applied AI: LLM assistants, automation, recommendation systems, and AI-enabled SaaS products.",
+    ],
+  },
+  de: {
+    title: "Haikal Hilmi - Data Engineer Portfolio",
+    heading: "Haikal Hilmi - Data Engineer",
+    canonical: `${SITE_URL}/data-engineer`,
+    filename: "haikal-hilmi-data-engineer-portfolio",
+    summary:
+      "Data Engineer specializing in large-scale scraping, resilient data pipelines, ETL, search infrastructure, observability, and on-premise HPC. Experienced processing high-volume social, news, video, and business data in production.",
+    capabilities: [
+      "Data pipelines: ingestion, ETL, orchestration, queues, search, monitoring, and failure recovery.",
+      "Web scraping: high-volume collection, anti-fragile workers, scheduling, enrichment, and structured delivery.",
+      "Infrastructure: on-premise HPC, Docker workloads, Elasticsearch, PostgreSQL, Grafana, and Prometheus.",
+      "Applied AI: sentiment analysis, speech-to-text, entity extraction, retrieval, and data enrichment.",
+    ],
+  },
+} satisfies Record<
+  PortfolioScope,
+  {
+    title: string;
+    heading: string;
+    canonical: string;
+    filename: string;
+    summary: string;
+    capabilities: string[];
+  }
+>;
+
+export function parsePortfolioScope(value: string | null): PortfolioScope {
+  return value === "se" || value === "de" ? value : "general";
+}
+
+export function getPortfolioExportMeta(scope: PortfolioScope) {
+  const config = scopeConfig[scope];
+  const query = scope === "general" ? "" : `?scope=${scope}`;
+  return {
+    ...config,
+    markdownUrl: `${SITE_URL}/portfolio.md${query}`,
+    pdfUrl: `${SITE_URL}/portfolio.pdf${query}`,
+  };
+}
+
 const clean = (value: string) => value.replace(/\s+/g, " ").trim();
 
 const projectToMarkdown = (project: Project): string => {
@@ -54,9 +125,16 @@ const projectToMarkdown = (project: Project): string => {
   return lines.join("\n");
 };
 
-/** Canonical AI-friendly representation of the public portfolio. */
-export function buildPortfolioMarkdown(): string {
-  const experienceMarkdown = experience
+/** Canonical AI-friendly representation of a public portfolio scope. */
+export function buildPortfolioMarkdown(
+  scope: PortfolioScope = "general"
+): string {
+  const config = getPortfolioExportMeta(scope);
+  const scopedExperience =
+    scope === "general"
+      ? experience
+      : experience.filter((item) => item.area.includes(scope));
+  const experienceMarkdown = scopedExperience
     .map((item) => {
       const lines = [
         `### ${item.company}`,
@@ -81,7 +159,22 @@ export function buildPortfolioMarkdown(): string {
     )
     .join("\n");
 
-  const testimonialMarkdown = testimonials
+  const testimonialIds =
+    scope === "se"
+      ? new Set(["robert-ligthart", "alamsyah-pangestu"])
+      : scope === "de"
+        ? new Set([
+            "widyawan",
+            "jeesun-kim",
+            "sam-white",
+            "claire-bartolozzi",
+            "cristian-buda",
+          ])
+        : null;
+  const scopedTestimonials = testimonialIds
+    ? testimonials.filter((item) => testimonialIds.has(item.id))
+    : testimonials;
+  const testimonialMarkdown = scopedTestimonials
     .map((item) => {
       const attribution = [clean(item.role.en), item.location]
         .filter(Boolean)
@@ -90,17 +183,32 @@ export function buildPortfolioMarkdown(): string {
     })
     .join("\n\n");
 
+  const projectSections = [
+    scope !== "de"
+      ? `## Software engineering projects\n\n${softwareProjects.map(projectToMarkdown).join("\n\n")}`
+      : "",
+    scope !== "se"
+      ? `## Data engineering projects\n\n${dataProjects.map(projectToMarkdown).join("\n\n")}`
+      : "",
+  ].filter(Boolean);
+
+  const infrastructureSection =
+    scope === "se"
+      ? ""
+      : `## Selected scale and infrastructure\n\n${hpcMarkdown}`;
+
   return `---
-title: Haikal Hilmi - Data and Software Engineer Portfolio
-canonical: ${SITE_URL}
+title: ${config.title}
+canonical: ${config.canonical}
 language: en
 content_type: professional_portfolio
+portfolio_scope: ${scope}
 license: public portfolio content; contact the owner for reuse
 ---
 
-# Haikal Hilmi
+# ${config.heading}
 
-Data and Software Engineer specializing in resilient data pipelines, large-scale scraping, cloud systems, HPC infrastructure, and full-stack products. Backend Engineer intern at ByteDance working on systems handling 100,000+ requests per second, a 5.0-star Upwork freelancer, and a multiple international hackathon winner.
+${config.summary}
 
 This document is optimized for search, retrieval-augmented generation (RAG), and AI knowledge bases. It is generated from the live portfolio data source.
 
@@ -113,26 +221,15 @@ This document is optimized for search, retrieval-augmented generation (RAG), and
 
 ## Core capabilities
 
-- Data engineering: scraping, ingestion, ETL, orchestration, queues, search, observability, and production reliability.
-- Software engineering: full-stack web products, APIs, microservices, integrations, authentication, and scalable architecture.
-- Infrastructure: on-premise HPC, Docker workloads, monitoring, capacity planning, and cloud deployment.
-- Applied AI: LLM products, sentiment analysis, speech-to-text, retrieval, automation, and data enrichment.
+${config.capabilities.map((capability) => `- ${capability}`).join("\n")}
 
-## Selected scale and infrastructure
-
-${hpcMarkdown}
+${infrastructureSection}
 
 ## Professional experience
 
 ${experienceMarkdown}
 
-## Software engineering projects
-
-${softwareProjects.map(projectToMarkdown).join("\n\n")}
-
-## Data engineering projects
-
-${dataProjects.map(projectToMarkdown).join("\n\n")}
+${projectSections.join("\n\n")}
 
 ## Client testimonials
 
@@ -140,9 +237,10 @@ ${testimonialMarkdown}
 
 ## Source and freshness
 
-- Canonical portfolio: ${SITE_URL}
-- Markdown export: ${SITE_URL}/portfolio.md
-- PDF export: ${SITE_URL}/portfolio.pdf
+- Canonical portfolio: ${config.canonical}
+- Portfolio scope: ${scope}
+- Markdown export: ${config.markdownUrl}
+- PDF export: ${config.pdfUrl}
 - AI discovery file: ${SITE_URL}/llms.txt
 - The export is generated from the same typed project and experience data used by the website.
 `;

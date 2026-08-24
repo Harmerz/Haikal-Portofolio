@@ -6,6 +6,10 @@ const content = `# Haikal Hilmi Portfolio
 
 - [AI-ready portfolio (Markdown)](https://haikalhilmi.my.id/portfolio.md): Complete structured portfolio, experience, projects, architecture decisions, technology stacks, metrics, and testimonials.
 - [Human-readable portfolio (PDF)](https://haikalhilmi.my.id/portfolio.pdf): Portable PDF generated from the same canonical data.
+- [Software Engineer portfolio (Markdown)](https://haikalhilmi.my.id/portfolio.md?scope=se): Software engineering experience, projects, decisions, technologies, and relevant testimonials.
+- [Software Engineer portfolio (PDF)](https://haikalhilmi.my.id/portfolio.pdf?scope=se): Portable software engineering portfolio.
+- [Data Engineer portfolio (Markdown)](https://haikalhilmi.my.id/portfolio.md?scope=de): Data engineering experience, projects, pipelines, infrastructure, and relevant testimonials.
+- [Data Engineer portfolio (PDF)](https://haikalhilmi.my.id/portfolio.pdf?scope=de): Portable data engineering portfolio.
 - [Website](https://haikalhilmi.my.id): Interactive portfolio and project pages.
 - [Data Engineering](https://haikalhilmi.my.id/data-engineer): Data engineering projects and infrastructure.
 - [Software Engineering](https://haikalhilmi.my.id/software-engineer): Software engineering projects and products.

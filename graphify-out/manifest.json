@@ -35,8 +35,8 @@
     "semantic_hash": "3bf3aa874de03c1bf0d83b3e6508c50f"
   },
   "src/app/data-engineer/page.tsx": {
-    "mtime": 1785135867.2589872,
-    "ast_hash": "7c21f8c3fe359b0329fd29cb4b87754c",
+    "mtime": 1786789705.048798,
+    "ast_hash": "b02c486307fc5faaf065902222552d0f",
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
@@ -45,18 +45,18 @@
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
-    "mtime": 1785135867.250471,
-    "ast_hash": "4c69193066db612591394bbace62a828",
+    "mtime": 1786789704.7442117,
+    "ast_hash": "50082084ea5a2023b2c52b16ad462f8a",
     "semantic_hash": ""
   },
   "src/app/projects/[id]/page.tsx": {
-    "mtime": 1785135920.6410894,
-    "ast_hash": "48d6d1f0edc55d072bdaa0235addf7ca",
+    "mtime": 1786789792.1928062,
+    "ast_hash": "c33b49db61a5c5676f134334405a2346",
     "semantic_hash": ""
   },
   "src/app/software-engineer/page.tsx": {
-    "mtime": 1785135867.253986,
-    "ast_hash": "e739313764b6c16b05bebaae79176c59",
+    "mtime": 1786789704.8942423,
+    "ast_hash": "c621f5c868d572db488a4a25c763144c",
     "semantic_hash": ""
   },
   "src/components/About.tsx": {
@@ -90,8 +90,8 @@
     "semantic_hash": "42ec892285fe32744089e3b29e2c22e9"
   },
   "src/components/Footer.tsx": {
-    "mtime": 1786727676.4174156,
-    "ast_hash": "135784b8c956f0715222834c2dda0a60",
+    "mtime": 1787547311.2152207,
+    "ast_hash": "1c997e65c43c9ba206df99b435e24cbb",
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
@@ -135,9 +135,9 @@
     "semantic_hash": "7c258edb26fa1b04c10ea3bfb950e457"
   },
   "src/components/ProjectDetail.tsx": {
-    "mtime": 1780908443.6892054,
-    "ast_hash": "1363d5f5572c1b3080b491aa792e1482",
-    "semantic_hash": "1363d5f5572c1b3080b491aa792e1482"
+    "mtime": 1787545862.5825944,
+    "ast_hash": "00554a4be260d5fd3b7e668c8642e9db",
+    "semantic_hash": ""
   },
   "src/components/Reveal.tsx": {
     "mtime": 1780593121.7483628,
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "src/data/projects.ts": {
-    "mtime": 1783074525.7782547,
-    "ast_hash": "e374135d1be21890459a588432d55d79",
+    "mtime": 1787546771.3406992,
+    "ast_hash": "d25c63fd912aa9c8a63536ffc5d8410d",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -735,8 +735,8 @@
     "semantic_hash": ""
   },
   "AGENTS.md": {
-    "mtime": 1783174845.1742406,
-    "ast_hash": "8a6643a420fdad6bfb583523bc6cef16",
+    "mtime": 1787548209.8238974,
+    "ast_hash": "54b5a2989b873a5f71a3e047d55a550a",
     "semantic_hash": ""
   },
   "public/home/review/robert-ligthart.jpg": {
@@ -745,103 +745,28 @@
     "semantic_hash": ""
   },
   "src/app/llms.txt/route.ts": {
-    "mtime": 1786727473.0157778,
-    "ast_hash": "871972990aa30a1351eed5b8a7c46f4b",
+    "mtime": 1786789734.1605463,
+    "ast_hash": "ab911a16c7cfbd15da5f8f2809a48bb0",
     "semantic_hash": ""
   },
   "src/app/portfolio.md/route.ts": {
-    "mtime": 1786727676.32237,
-    "ast_hash": "8360113c3494e23fdab653a51962ca8f",
+    "mtime": 1786789792.082291,
+    "ast_hash": "4258af8a7f980a49b73e55fb04677d93",
     "semantic_hash": ""
   },
   "src/app/portfolio.pdf/route.ts": {
-    "mtime": 1786727676.3744783,
-    "ast_hash": "35ef2f8c0c2651d9652fd0d6ee4ef8ab",
+    "mtime": 1786789792.126287,
+    "ast_hash": "30c359b03ce7610b69fe63626aa642ae",
     "semantic_hash": ""
   },
   "src/lib/portfolio-export.ts": {
-    "mtime": 1786727676.2920723,
-    "ast_hash": "6d8e3ab0f74a6410cccb9e1a9d15db59",
+    "mtime": 1787545647.718159,
+    "ast_hash": "75b599c0d0207f350decf7229d10746e",
     "semantic_hash": ""
   },
-  "tmp/export-qa/llms.txt": {
-    "mtime": 1786727857.7871075,
-    "ast_hash": "d15fc5bb66ae776658067f8883360972",
-    "semantic_hash": ""
-  },
-  "tmp/export-qa/portfolio.md": {
-    "mtime": 1786727856.9314134,
-    "ast_hash": "d0187ea02ea6b90c6904e21bc2276d81",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/portfolio.pdf": {
-    "mtime": 1786727857.706396,
-    "ast_hash": "581c00e672ae491fb7532dbf7a66e97f",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/contact-sheet-small.jpg": {
-    "mtime": 1786728043.3254697,
-    "ast_hash": "393a944dff899d15bc0e1736d577e20a",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/contact-sheet.png": {
-    "mtime": 1786727956.166634,
-    "ast_hash": "3df81fe560e9997469990530c1cf9c62",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-01.png": {
-    "mtime": 1786727936.086279,
-    "ast_hash": "c07a742fc7b63b690b7f3a1ae94bb603",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-02.png": {
-    "mtime": 1786727936.243755,
-    "ast_hash": "bbb41d706fda7eeefcdf1b2f00eff94b",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-03.png": {
-    "mtime": 1786727936.4394312,
-    "ast_hash": "43a83974267a66a417c08d62a27ef600",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-04.png": {
-    "mtime": 1786727936.632351,
-    "ast_hash": "b6ef5aae3f42a3e0f592fe8fc8a6a6fe",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-05.png": {
-    "mtime": 1786727936.841871,
-    "ast_hash": "f193919b8a0a080981ba8b7675940933",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-06.png": {
-    "mtime": 1786727937.0771236,
-    "ast_hash": "ffed2b0940a0e406710f12cad0a7be2d",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-07.png": {
-    "mtime": 1786727937.2913754,
-    "ast_hash": "e0e3d0bf711ea8c49ee2f0d18471dc17",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-08.png": {
-    "mtime": 1786727937.5029657,
-    "ast_hash": "0bbe4c2d2181fef9c283e17363e16c3a",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-09.png": {
-    "mtime": 1786727937.723317,
-    "ast_hash": "4e6ad42afc8baddd6a9e7781f0c8f2d8",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-10.png": {
-    "mtime": 1786727937.9412932,
-    "ast_hash": "53f7758845cba0653f805a0b7b31e00f",
-    "semantic_hash": ""
-  },
-  "tmp/pdfs/page-11.png": {
-    "mtime": 1786727938.0953958,
-    "ast_hash": "7eda9b1819d1bffefcee9f8c31148324",
+  "graphify-out/memory/query_20260824_045636_where_should_a_reusable_copy_page_as_markdown_acti.md": {
+    "mtime": 1787547396.5794642,
+    "ast_hash": "0b2cbc1b9a3f99a60bccd788d46c573e",
     "semantic_hash": ""
   }
 }

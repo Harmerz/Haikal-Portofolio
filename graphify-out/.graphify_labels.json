@@ -1,5 +1,5 @@
 {
-  "0": "Software engineering projects",
+  "0": "projects.ts",
   "1": "portfolio-export.ts",
   "2": "devDependencies",
   "3": "data-engineer/page.tsx",
@@ -11,10 +11,12 @@
   "9": "PT Aksarakan Bhumi Indonesia (client company)",
   "10": "postcss.config.mjs",
   "11": "Project interface",
-  "12": "LanguageProvider.tsx",
+  "12": "Localized",
   "13": "useLanguage",
   "14": "llms.txt/route.ts",
-  "17": "projects/[id]/page.tsx",
+  "15": "LanguageProvider.tsx",
+  "16": "Experience.tsx",
+  "17": "package.json",
   "18": "middleware.ts",
   "19": "AGENTS.md",
   "20": "next.config.ts",
@@ -36,5 +38,6 @@
   "36": "Jeesun Kim testimonial entry",
   "37": "Widyawan testimonial entry",
   "38": "SUBDOMAIN_ROUTES map",
-  "39": "TypeScript Config (@/* path alias)"
+  "39": "TypeScript Config (@/* path alias)",
+  "40": "Q: Where should a reusable Copy page as Markdown action live for project detail pages, and how can project data be serialized to Markdown?"
 }

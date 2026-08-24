@@ -1,5 +1,9 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont } from "pdf-lib";
-import { buildPortfolioMarkdown } from "@/lib/portfolio-export";
+import {
+  buildPortfolioMarkdown,
+  getPortfolioExportMeta,
+  parsePortfolioScope,
+} from "@/lib/portfolio-export";
 
 export const runtime = "nodejs";
 
@@ -62,11 +66,15 @@ function wrapText(
   return lines;
 }
 
-export async function GET() {
+export async function GET(request: Request) {
+  const scope = parsePortfolioScope(
+    new URL(request.url).searchParams.get("scope")
+  );
+  const meta = getPortfolioExportMeta(scope);
   const document = await PDFDocument.create();
-  document.setTitle("Haikal Hilmi - Data and Software Engineer Portfolio");
+  document.setTitle(meta.title);
   document.setAuthor("Haikal Hilmi");
-  document.setSubject("AI-ready professional portfolio export");
+  document.setSubject(`${meta.title} - AI-ready professional portfolio export`);
   document.setKeywords([
     "data engineer",
     "software engineer",
@@ -117,7 +125,7 @@ export async function GET() {
     y -= style.gapAfter ?? 0;
   };
 
-  const markdownLines = buildPortfolioMarkdown().split("\n");
+  const markdownLines = buildPortfolioMarkdown(scope).split("\n");
   let inFrontmatter = false;
   let frontmatterSeen = false;
 
@@ -184,7 +192,7 @@ export async function GET() {
 
   const pages = document.getPages();
   pages.forEach((currentPage, index) => {
-    const footer = `Haikal Hilmi | haikalhilmi.my.id | ${index + 1} / ${pages.length}`;
+    const footer = `${meta.heading} | haikalhilmi.my.id | ${index + 1} / ${pages.length}`;
     const footerSize = 8;
     currentPage.drawLine({
       start: { x: MARGIN_X, y: 35 },
@@ -205,8 +213,7 @@ export async function GET() {
   return new Response(Buffer.from(bytes), {
     headers: {
       "Content-Type": "application/pdf",
-      "Content-Disposition":
-        'attachment; filename="haikal-hilmi-portfolio.pdf"',
+      "Content-Disposition": `attachment; filename="${meta.filename}.pdf"`,
       "Cache-Control": "public, max-age=3600, s-maxage=86400",
     },
   });

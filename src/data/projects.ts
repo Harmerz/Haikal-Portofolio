@@ -23,64 +23,6 @@ export interface Project {
 // ----------------------------------------------------------------------------
 export const softwareProjects: Project[] = [
   {
-    id: "android-ad-evidence",
-    title: "Android Ad Evidence Capture & DSP Attribution",
-    source: "https://github.com/Harmerz/Android-advertising-verification-PoC",
-    scale: t(
-      "463 flows · 10 ad networks · 7-minute lab session",
-      "463 flow · 10 jaringan iklan · sesi lab 7 menit",
-      "463 Flows · 10 Werbenetzwerke · 7-minütige Laborsitzung",
-      "463 flux · 10 réseaux publicitaires · session de laboratoire de 7 minutes",
-      "463 flujos · 10 redes publicitarias · sesión de laboratorio de 7 minutos",
-      "463 flussi · 10 reti pubblicitarie · sessione di laboratorio di 7 minuti",
-    ),
-    description: t(
-      "An automated Android ad-inspection system that captures creatives, UI evidence, click destinations, and network traffic to verify delivery paths and investigate DSP attribution such as Smadex.",
-      "Sistem inspeksi iklan Android otomatis yang menangkap materi iklan, bukti UI, tujuan klik, dan trafik jaringan untuk memverifikasi jalur penayangan serta menyelidiki atribusi DSP seperti Smadex.",
-      "Ein automatisiertes System zur Prüfung von Android-Werbung, das Werbemittel, UI-Belege, Klickziele und Netzwerkverkehr erfasst, um Auslieferungspfade zu verifizieren und DSP-Zuordnungen wie Smadex zu untersuchen.",
-      "Un système automatisé d'inspection publicitaire Android qui capture les créations, les preuves d'interface, les destinations de clic et le trafic réseau afin de vérifier les chaînes de diffusion et d'étudier l'attribution à un DSP tel que Smadex.",
-      "Un sistema automatizado de inspección de anuncios Android que captura creatividades, pruebas de interfaz, destinos de clic y tráfico de red para verificar las rutas de entrega e investigar la atribución a un DSP como Smadex.",
-      "Un sistema automatizzato di ispezione degli annunci Android che acquisisce creatività, prove dell'interfaccia, destinazioni dei clic e traffico di rete per verificare i percorsi di distribuzione e indagare l'attribuzione a DSP come Smadex.",
-    ),
-    problem: t(
-      "A screenshot cannot prove which buying platform delivered an ad, while dynamic creatives, stale intents, certificate restrictions, freezes, and non-rooted devices make reliable evidence collection difficult.",
-      "Screenshot tidak dapat membuktikan platform pembelian mana yang menayangkan iklan, sementara materi dinamis, intent usang, pembatasan sertifikat, aplikasi freeze, dan perangkat non-root membuat pengumpulan bukti yang andal menjadi sulit.",
-      "Ein Screenshot kann nicht belegen, welche Einkaufsplattform eine Anzeige ausgeliefert hat; zugleich erschweren dynamische Werbemittel, veraltete Intents, Zertifikatsbeschränkungen, App-Hänger und nicht gerootete Geräte eine verlässliche Beweissicherung.",
-      "Une capture d'écran ne peut pas prouver quelle plateforme d'achat a diffusé une publicité, tandis que les créations dynamiques, les intents obsolètes, les restrictions de certificats, les blocages et les appareils non rootés compliquent la collecte de preuves fiables.",
-      "Una captura de pantalla no puede demostrar qué plataforma de compra entregó un anuncio, mientras que las creatividades dinámicas, los intents obsoletos, las restricciones de certificados, los bloqueos y los dispositivos sin root dificultan una recopilación fiable de pruebas.",
-      "Uno screenshot non può dimostrare quale piattaforma di acquisto abbia distribuito un annuncio; inoltre creatività dinamiche, intent obsoleti, restrizioni dei certificati, blocchi e dispositivi non rooted rendono difficile una raccolta affidabile delle prove.",
-    ),
-    solution: t(
-      "Built a dual-path pipeline: ADB and uiautomator2 record what users see and safely inspect interactions, while mitmproxy captures delivery-chain signals for rule-based correlation and tamper-evident archiving.",
-      "Membangun pipeline dua jalur: ADB dan uiautomator2 merekam apa yang dilihat pengguna serta memeriksa interaksi dengan aman, sementara mitmproxy menangkap sinyal rantai penayangan untuk korelasi berbasis aturan dan arsip tahan manipulasi.",
-      "Entwicklung einer zweigleisigen Pipeline: ADB und uiautomator2 zeichnen die sichtbare Nutzeroberfläche auf und prüfen Interaktionen sicher, während mitmproxy Signale der Auslieferungskette für regelbasierte Korrelation und manipulationssichere Archivierung erfasst.",
-      "Création d'un pipeline à deux voies : ADB et uiautomator2 enregistrent ce que voit l'utilisateur et inspectent les interactions en toute sécurité, tandis que mitmproxy capture les signaux de la chaîne de diffusion pour une corrélation par règles et un archivage infalsifiable.",
-      "Construcción de un pipeline de doble vía: ADB y uiautomator2 registran lo que ve el usuario e inspeccionan las interacciones de forma segura, mientras mitmproxy captura señales de la cadena de entrega para correlacionarlas mediante reglas y archivarlas de forma inviolable.",
-      "Realizzazione di una pipeline a doppio percorso: ADB e uiautomator2 registrano ciò che vede l'utente e ispezionano le interazioni in sicurezza, mentre mitmproxy acquisisce i segnali della catena di distribuzione per la correlazione basata su regole e l'archiviazione antimanomissione.",
-    ),
-    tech: [
-      "Python 3.11",
-      "uiautomator2",
-      "ADB",
-      "mitmproxy",
-      "Pillow",
-      "ImageHash",
-      "PowerShell",
-      "Pytest",
-      "mypy",
-      "JSON Lines",
-      "SHA-256",
-    ],
-    result: t(
-      "Captured 463 flows across 10 ad networks; found no Smadex evidence in the observed window; delivered SHA-256-verified evidence bundles with 95.69% coverage across 90 automated tests.",
-      "Menangkap 463 flow dari 10 jaringan iklan; tidak menemukan bukti Smadex pada periode observasi; menghasilkan bundle bukti terverifikasi SHA-256 dengan coverage 95,69% dari 90 automated test.",
-      "463 Flows aus 10 Werbenetzwerken erfasst; im Beobachtungsfenster keine Smadex-Belege gefunden; SHA-256-verifizierte Beweispakete mit 95,69 % Abdeckung durch 90 automatisierte Tests geliefert.",
-      "463 flux capturés sur 10 réseaux publicitaires ; aucune preuve de Smadex trouvée pendant la fenêtre observée ; livraison de dossiers de preuves vérifiés par SHA-256 avec une couverture de 95,69 % sur 90 tests automatisés.",
-      "Se capturaron 463 flujos de 10 redes publicitarias; no se hallaron pruebas de Smadex durante la ventana observada; se entregaron paquetes de evidencias verificados con SHA-256 y una cobertura del 95,69 % en 90 pruebas automatizadas.",
-      "Acquisiti 463 flussi da 10 reti pubblicitarie; nessuna prova di Smadex nella finestra osservata; consegnati pacchetti di prove verificati con SHA-256 e copertura del 95,69% su 90 test automatizzati.",
-    ),
-  },
-  {
     id: "pwc",
     title: "PwC Securing AI",
     image: "/Porto/lensight_ori_pwc.png",
@@ -769,6 +711,64 @@ export const softwareProjects: Project[] = [
 // ----------------------------------------------------------------------------
 export const dataProjects: Project[] = [
   {
+    id: "android-ad-evidence",
+    title: "Android Ad Evidence Capture & DSP Attribution",
+    source: "https://github.com/Harmerz/Android-advertising-verification-PoC",
+    scale: t(
+      "463 flows · 10 ad networks · 7-minute lab session",
+      "463 flow · 10 jaringan iklan · sesi lab 7 menit",
+      "463 Flows · 10 Werbenetzwerke · 7-minütige Laborsitzung",
+      "463 flux · 10 réseaux publicitaires · session de laboratoire de 7 minutes",
+      "463 flujos · 10 redes publicitarias · sesión de laboratorio de 7 minutos",
+      "463 flussi · 10 reti pubblicitarie · sessione di laboratorio di 7 minuti",
+    ),
+    description: t(
+      "An automated Android ad-inspection system that captures creatives, UI evidence, click destinations, and network traffic to verify delivery paths and investigate DSP attribution such as Smadex.",
+      "Sistem inspeksi iklan Android otomatis yang menangkap materi iklan, bukti UI, tujuan klik, dan trafik jaringan untuk memverifikasi jalur penayangan serta menyelidiki atribusi DSP seperti Smadex.",
+      "Ein automatisiertes System zur Prüfung von Android-Werbung, das Werbemittel, UI-Belege, Klickziele und Netzwerkverkehr erfasst, um Auslieferungspfade zu verifizieren und DSP-Zuordnungen wie Smadex zu untersuchen.",
+      "Un système automatisé d'inspection publicitaire Android qui capture les créations, les preuves d'interface, les destinations de clic et le trafic réseau afin de vérifier les chaînes de diffusion et d'étudier l'attribution à un DSP tel que Smadex.",
+      "Un sistema automatizado de inspección de anuncios Android que captura creatividades, pruebas de interfaz, destinos de clic y tráfico de red para verificar las rutas de entrega e investigar la atribución a un DSP como Smadex.",
+      "Un sistema automatizzato di ispezione degli annunci Android che acquisisce creatività, prove dell'interfaccia, destinazioni dei clic e traffico di rete per verificare i percorsi di distribuzione e indagare l'attribuzione a DSP come Smadex.",
+    ),
+    problem: t(
+      "A screenshot cannot prove which buying platform delivered an ad, while dynamic creatives, stale intents, certificate restrictions, freezes, and non-rooted devices make reliable evidence collection difficult.",
+      "Screenshot tidak dapat membuktikan platform pembelian mana yang menayangkan iklan, sementara materi dinamis, intent usang, pembatasan sertifikat, aplikasi freeze, dan perangkat non-root membuat pengumpulan bukti yang andal menjadi sulit.",
+      "Ein Screenshot kann nicht belegen, welche Einkaufsplattform eine Anzeige ausgeliefert hat; zugleich erschweren dynamische Werbemittel, veraltete Intents, Zertifikatsbeschränkungen, App-Hänger und nicht gerootete Geräte eine verlässliche Beweissicherung.",
+      "Une capture d'écran ne peut pas prouver quelle plateforme d'achat a diffusé une publicité, tandis que les créations dynamiques, les intents obsolètes, les restrictions de certificats, les blocages et les appareils non rootés compliquent la collecte de preuves fiables.",
+      "Una captura de pantalla no puede demostrar qué plataforma de compra entregó un anuncio, mientras que las creatividades dinámicas, los intents obsoletos, las restricciones de certificados, los bloqueos y los dispositivos sin root dificultan una recopilación fiable de pruebas.",
+      "Uno screenshot non può dimostrare quale piattaforma di acquisto abbia distribuito un annuncio; inoltre creatività dinamiche, intent obsoleti, restrizioni dei certificati, blocchi e dispositivi non rooted rendono difficile una raccolta affidabile delle prove.",
+    ),
+    solution: t(
+      "Built a dual-path pipeline: ADB and uiautomator2 record what users see and safely inspect interactions, while mitmproxy captures delivery-chain signals for rule-based correlation and tamper-evident archiving.",
+      "Membangun pipeline dua jalur: ADB dan uiautomator2 merekam apa yang dilihat pengguna serta memeriksa interaksi dengan aman, sementara mitmproxy menangkap sinyal rantai penayangan untuk korelasi berbasis aturan dan arsip tahan manipulasi.",
+      "Entwicklung einer zweigleisigen Pipeline: ADB und uiautomator2 zeichnen die sichtbare Nutzeroberfläche auf und prüfen Interaktionen sicher, während mitmproxy Signale der Auslieferungskette für regelbasierte Korrelation und manipulationssichere Archivierung erfasst.",
+      "Création d'un pipeline à deux voies : ADB et uiautomator2 enregistrent ce que voit l'utilisateur et inspectent les interactions en toute sécurité, tandis que mitmproxy capture les signaux de la chaîne de diffusion pour une corrélation par règles et un archivage infalsifiable.",
+      "Construcción de un pipeline de doble vía: ADB y uiautomator2 registran lo que ve el usuario e inspeccionan las interacciones de forma segura, mientras mitmproxy captura señales de la cadena de entrega para correlacionarlas mediante reglas y archivarlas de forma inviolable.",
+      "Realizzazione di una pipeline a doppio percorso: ADB e uiautomator2 registrano ciò che vede l'utente e ispezionano le interazioni in sicurezza, mentre mitmproxy acquisisce i segnali della catena di distribuzione per la correlazione basata su regole e l'archiviazione antimanomissione.",
+    ),
+    tech: [
+      "Python 3.11",
+      "uiautomator2",
+      "ADB",
+      "mitmproxy",
+      "Pillow",
+      "ImageHash",
+      "PowerShell",
+      "Pytest",
+      "mypy",
+      "JSON Lines",
+      "SHA-256",
+    ],
+    result: t(
+      "Tamper-evident evidence bundles · 95.69% coverage across 90 tests.",
+      "Bundle bukti tahan manipulasi · coverage 95,69% dari 90 test.",
+      "Manipulationssichere Beweispakete · 95,69 % Abdeckung bei 90 Tests.",
+      "Dossiers de preuves infalsifiables · couverture de 95,69 % sur 90 tests.",
+      "Paquetes de evidencias inviolables · cobertura del 95,69 % en 90 pruebas.",
+      "Pacchetti di prove antimanomissione · copertura del 95,69% su 90 test.",
+    ),
+  },
+  {
     id: "competitor-seo-monitoring",
     title: "Competitor SEO Monitoring Pipeline",
     source: "https://github.com/Harmerz/Competitor-SEO-Monitoring-Pipeline",
@@ -816,12 +816,12 @@ export const dataProjects: Project[] = [
       "unittest",
     ],
     result: t(
-      "Validated 40 live page fetches with zero failures and retained 25 HTTP 200 articles with title, meta description, and H1; a 32-request paid plan stayed below $1 ($0.991560 max), without claiming rejected enrichment data.",
-      "Memvalidasi 40 live page fetch tanpa kegagalan dan menyimpan 25 artikel HTTP 200 lengkap dengan title, meta description, dan H1; rencana 32 paid request tetap di bawah $1 (maks. $0,991560), tanpa mengklaim data enrichment yang ditolak provider.",
-      "40 Live-Seitenabrufe ohne Fehler validiert und 25 vollständige HTTP-200-Artikel mit Titel, Meta-Beschreibung und H1 gespeichert; ein Plan mit 32 kostenpflichtigen Anfragen blieb unter 1 $ (max. 0,991560 $), ohne abgelehnte Anreicherungsdaten zu beanspruchen.",
-      "40 récupérations de pages en direct validées sans échec et 25 articles HTTP 200 complets conservés avec titre, méta-description et H1 ; un plan de 32 requêtes payantes est resté sous 1 $ (0,991560 $ max), sans revendiquer les données d'enrichissement rejetées.",
-      "Se validaron 40 consultas de páginas en vivo sin fallos y se conservaron 25 artículos HTTP 200 completos con título, meta description y H1; un plan de 32 solicitudes de pago se mantuvo por debajo de 1 $ (0,991560 $ máx.), sin atribuirse datos de enriquecimiento rechazados.",
-      "Validate 40 acquisizioni di pagine live senza errori e conservati 25 articoli HTTP 200 completi di titolo, meta description e H1; un piano di 32 richieste a pagamento è rimasto sotto 1 $ (massimo 0,991560 $), senza rivendicare dati di arricchimento rifiutati.",
+      "Complete article records · paid enrichment capped below $1.",
+      "Record artikel lengkap · enrichment berbayar dibatasi di bawah $1.",
+      "Vollständige Artikeldatensätze · kostenpflichtige Anreicherung unter 1 $ begrenzt.",
+      "Articles complets · enrichissement payant plafonné sous 1 $.",
+      "Registros de artículos completos · enriquecimiento de pago limitado a menos de 1 $.",
+      "Record completi degli articoli · arricchimento a pagamento limitato a meno di 1 $.",
     ),
   },
   {
@@ -1865,7 +1865,6 @@ export function getProjectById(id: string): Project | undefined {
 // Featured "hook" projects — the strongest for freelance clients (AI, SaaS,
 // real client products). University/competition work shows lower as "more work".
 const FEATURED_IDS = [
-  "android-ad-evidence", // client automation + evidence pipeline + strong metrics
   "pwc", // award + AI + image
   "robota-new", // B2B AI + image
   "gmat", // international award + image

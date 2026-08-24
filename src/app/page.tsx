@@ -136,7 +136,7 @@ export default async function Home() {
       <Experience />
       <HowIWork />
       <Testimonials showExternalLinks={mode !== "upwork"} />
-      <Footer mode={mode} />
+      <Footer mode={mode} exportScope="general" />
     </div>
   );
 }

@@ -197,7 +197,7 @@ export default async function Home() {
         )}
       />
 
-      <Footer mode={mode} />
+      <Footer mode={mode} exportScope="se" />
     </div>
   );
 }
