@@ -14,6 +14,7 @@ export interface Project {
   images?: string[]; // gallery shown in the detail view / modal (add more here)
   alt?: string;
   link?: string; // public live URL (shown as "Visit live site" in the detail)
+  source?: string; // public source/evidence repository
 }
 
 // ----------------------------------------------------------------------------
@@ -21,6 +22,64 @@ export interface Project {
 // Copy is benefit-led and framed for US/EU clients (no opaque local context).
 // ----------------------------------------------------------------------------
 export const softwareProjects: Project[] = [
+  {
+    id: "android-ad-evidence",
+    title: "Android Ad Evidence Capture & DSP Attribution",
+    source: "https://github.com/Harmerz/Android-advertising-verification-PoC",
+    scale: t(
+      "463 flows · 10 ad networks · 7-minute lab session",
+      "463 flow · 10 jaringan iklan · sesi lab 7 menit",
+      "463 Flows · 10 Werbenetzwerke · 7-minütige Laborsitzung",
+      "463 flux · 10 réseaux publicitaires · session de laboratoire de 7 minutes",
+      "463 flujos · 10 redes publicitarias · sesión de laboratorio de 7 minutos",
+      "463 flussi · 10 reti pubblicitarie · sessione di laboratorio di 7 minuti",
+    ),
+    description: t(
+      "An automated Android ad-inspection system that captures creatives, UI evidence, click destinations, and network traffic to verify delivery paths and investigate DSP attribution such as Smadex.",
+      "Sistem inspeksi iklan Android otomatis yang menangkap materi iklan, bukti UI, tujuan klik, dan trafik jaringan untuk memverifikasi jalur penayangan serta menyelidiki atribusi DSP seperti Smadex.",
+      "Ein automatisiertes System zur Prüfung von Android-Werbung, das Werbemittel, UI-Belege, Klickziele und Netzwerkverkehr erfasst, um Auslieferungspfade zu verifizieren und DSP-Zuordnungen wie Smadex zu untersuchen.",
+      "Un système automatisé d'inspection publicitaire Android qui capture les créations, les preuves d'interface, les destinations de clic et le trafic réseau afin de vérifier les chaînes de diffusion et d'étudier l'attribution à un DSP tel que Smadex.",
+      "Un sistema automatizado de inspección de anuncios Android que captura creatividades, pruebas de interfaz, destinos de clic y tráfico de red para verificar las rutas de entrega e investigar la atribución a un DSP como Smadex.",
+      "Un sistema automatizzato di ispezione degli annunci Android che acquisisce creatività, prove dell'interfaccia, destinazioni dei clic e traffico di rete per verificare i percorsi di distribuzione e indagare l'attribuzione a DSP come Smadex.",
+    ),
+    problem: t(
+      "A screenshot cannot prove which buying platform delivered an ad, while dynamic creatives, stale intents, certificate restrictions, freezes, and non-rooted devices make reliable evidence collection difficult.",
+      "Screenshot tidak dapat membuktikan platform pembelian mana yang menayangkan iklan, sementara materi dinamis, intent usang, pembatasan sertifikat, aplikasi freeze, dan perangkat non-root membuat pengumpulan bukti yang andal menjadi sulit.",
+      "Ein Screenshot kann nicht belegen, welche Einkaufsplattform eine Anzeige ausgeliefert hat; zugleich erschweren dynamische Werbemittel, veraltete Intents, Zertifikatsbeschränkungen, App-Hänger und nicht gerootete Geräte eine verlässliche Beweissicherung.",
+      "Une capture d'écran ne peut pas prouver quelle plateforme d'achat a diffusé une publicité, tandis que les créations dynamiques, les intents obsolètes, les restrictions de certificats, les blocages et les appareils non rootés compliquent la collecte de preuves fiables.",
+      "Una captura de pantalla no puede demostrar qué plataforma de compra entregó un anuncio, mientras que las creatividades dinámicas, los intents obsoletos, las restricciones de certificados, los bloqueos y los dispositivos sin root dificultan una recopilación fiable de pruebas.",
+      "Uno screenshot non può dimostrare quale piattaforma di acquisto abbia distribuito un annuncio; inoltre creatività dinamiche, intent obsoleti, restrizioni dei certificati, blocchi e dispositivi non rooted rendono difficile una raccolta affidabile delle prove.",
+    ),
+    solution: t(
+      "Built a dual-path pipeline: ADB and uiautomator2 record what users see and safely inspect interactions, while mitmproxy captures delivery-chain signals for rule-based correlation and tamper-evident archiving.",
+      "Membangun pipeline dua jalur: ADB dan uiautomator2 merekam apa yang dilihat pengguna serta memeriksa interaksi dengan aman, sementara mitmproxy menangkap sinyal rantai penayangan untuk korelasi berbasis aturan dan arsip tahan manipulasi.",
+      "Entwicklung einer zweigleisigen Pipeline: ADB und uiautomator2 zeichnen die sichtbare Nutzeroberfläche auf und prüfen Interaktionen sicher, während mitmproxy Signale der Auslieferungskette für regelbasierte Korrelation und manipulationssichere Archivierung erfasst.",
+      "Création d'un pipeline à deux voies : ADB et uiautomator2 enregistrent ce que voit l'utilisateur et inspectent les interactions en toute sécurité, tandis que mitmproxy capture les signaux de la chaîne de diffusion pour une corrélation par règles et un archivage infalsifiable.",
+      "Construcción de un pipeline de doble vía: ADB y uiautomator2 registran lo que ve el usuario e inspeccionan las interacciones de forma segura, mientras mitmproxy captura señales de la cadena de entrega para correlacionarlas mediante reglas y archivarlas de forma inviolable.",
+      "Realizzazione di una pipeline a doppio percorso: ADB e uiautomator2 registrano ciò che vede l'utente e ispezionano le interazioni in sicurezza, mentre mitmproxy acquisisce i segnali della catena di distribuzione per la correlazione basata su regole e l'archiviazione antimanomissione.",
+    ),
+    tech: [
+      "Python 3.11",
+      "uiautomator2",
+      "ADB",
+      "mitmproxy",
+      "Pillow",
+      "ImageHash",
+      "PowerShell",
+      "Pytest",
+      "mypy",
+      "JSON Lines",
+      "SHA-256",
+    ],
+    result: t(
+      "Captured 463 flows across 10 ad networks; found no Smadex evidence in the observed window; delivered SHA-256-verified evidence bundles with 95.69% coverage across 90 automated tests.",
+      "Menangkap 463 flow dari 10 jaringan iklan; tidak menemukan bukti Smadex pada periode observasi; menghasilkan bundle bukti terverifikasi SHA-256 dengan coverage 95,69% dari 90 automated test.",
+      "463 Flows aus 10 Werbenetzwerken erfasst; im Beobachtungsfenster keine Smadex-Belege gefunden; SHA-256-verifizierte Beweispakete mit 95,69 % Abdeckung durch 90 automatisierte Tests geliefert.",
+      "463 flux capturés sur 10 réseaux publicitaires ; aucune preuve de Smadex trouvée pendant la fenêtre observée ; livraison de dossiers de preuves vérifiés par SHA-256 avec une couverture de 95,69 % sur 90 tests automatisés.",
+      "Se capturaron 463 flujos de 10 redes publicitarias; no se hallaron pruebas de Smadex durante la ventana observada; se entregaron paquetes de evidencias verificados con SHA-256 y una cobertura del 95,69 % en 90 pruebas automatizadas.",
+      "Acquisiti 463 flussi da 10 reti pubblicitarie; nessuna prova di Smadex nella finestra osservata; consegnati pacchetti di prove verificati con SHA-256 e copertura del 95,69% su 90 test automatizzati.",
+    ),
+  },
   {
     id: "pwc",
     title: "PwC Securing AI",
@@ -710,6 +769,62 @@ export const softwareProjects: Project[] = [
 // ----------------------------------------------------------------------------
 export const dataProjects: Project[] = [
   {
+    id: "competitor-seo-monitoring",
+    title: "Competitor SEO Monitoring Pipeline",
+    source: "https://github.com/Harmerz/Competitor-SEO-Monitoring-Pipeline",
+    scale: t(
+      "40 live fetches · 25 complete articles · 0 failures",
+      "40 live fetch · 25 artikel lengkap · 0 kegagalan",
+      "40 Live-Abrufe · 25 vollständige Artikel · 0 Fehler",
+      "40 récupérations en direct · 25 articles complets · 0 échec",
+      "40 consultas en vivo · 25 artículos completos · 0 fallos",
+      "40 acquisizioni live · 25 articoli completi · 0 errori",
+    ),
+    description: t(
+      "A local-first pipeline for monitoring competitor content and SEO changes, using Daypass as the primary website and ResortPass as the competitor.",
+      "Pipeline local-first untuk memantau perubahan konten dan SEO kompetitor, menggunakan Daypass sebagai website utama dan ResortPass sebagai kompetitor.",
+      "Eine Local-first-Pipeline zur Überwachung von Wettbewerberinhalten und SEO-Änderungen, mit Daypass als primärer Website und ResortPass als Wettbewerber.",
+      "Un pipeline local-first pour surveiller le contenu concurrent et les changements SEO, avec Daypass comme site principal et ResortPass comme concurrent.",
+      "Un pipeline local-first para monitorizar el contenido y los cambios SEO de la competencia, usando Daypass como sitio principal y ResortPass como competidor.",
+      "Una pipeline local-first per monitorare contenuti e cambiamenti SEO dei concorrenti, usando Daypass come sito principale e ResortPass come concorrente.",
+    ),
+    problem: t(
+      "Recurring competitor SEO reviews are slow and hard to audit when assembled manually, while raw HTML comparisons create noisy alerts from navigation, timestamps, and dynamic widgets.",
+      "Review SEO kompetitor berulang menjadi lambat dan sulit diaudit jika disusun manual, sementara perbandingan HTML mentah menghasilkan alert bising dari navigasi, timestamp, dan widget dinamis.",
+      "Wiederkehrende SEO-Wettbewerbsanalysen sind bei manueller Zusammenstellung langsam und schwer prüfbar; rohe HTML-Vergleiche erzeugen zudem Fehlalarme durch Navigation, Zeitstempel und dynamische Widgets.",
+      "Les analyses SEO concurrentielles récurrentes sont lentes et difficiles à auditer lorsqu'elles sont assemblées manuellement, tandis que les comparaisons HTML brutes génèrent des alertes parasites dues à la navigation, aux horodatages et aux widgets dynamiques.",
+      "Las revisiones SEO periódicas de competidores son lentas y difíciles de auditar cuando se preparan manualmente, mientras que las comparaciones de HTML sin procesar generan alertas ruidosas por la navegación, las marcas de tiempo y los widgets dinámicos.",
+      "Le analisi SEO ricorrenti dei concorrenti sono lente e difficili da verificare quando vengono assemblate manualmente, mentre i confronti dell'HTML grezzo generano falsi allarmi da navigazione, timestamp e widget dinamici.",
+    ),
+    solution: t(
+      "Built two isolated paths: a free crawler, snapshot, diff, dashboard, and workbook workflow; plus optional DataForSEO enrichment guarded by dry runs, environment-only credentials, caching, and a hard cost ceiling.",
+      "Membangun dua jalur terisolasi: workflow gratis untuk crawler, snapshot, diff, dashboard, dan workbook; serta enrichment DataForSEO opsional yang dilindungi dry run, credential hanya dari environment, cache, dan batas biaya keras.",
+      "Zwei isolierte Pfade: ein kostenloser Workflow für Crawler, Snapshots, Diffs, Dashboard und Arbeitsmappe sowie optionale DataForSEO-Anreicherung mit Dry-Runs, ausschließlich umgebungsbasierten Zugangsdaten, Cache und harter Kostengrenze.",
+      "Deux voies isolées : un workflow gratuit de crawl, snapshots, comparaison, tableau de bord et classeur ; puis un enrichissement DataForSEO facultatif protégé par des dry runs, des identifiants uniquement en environnement, un cache et un plafond de coût strict.",
+      "Dos rutas aisladas: un flujo gratuito de rastreo, snapshots, diferencias, panel y libro de trabajo; además de enriquecimiento opcional de DataForSEO protegido por simulaciones, credenciales solo de entorno, caché y un límite estricto de coste.",
+      "Due percorsi isolati: un flusso gratuito per crawler, snapshot, diff, dashboard e workbook; più un arricchimento DataForSEO opzionale protetto da dry run, credenziali solo da ambiente, cache e un tetto rigido dei costi.",
+    ),
+    tech: [
+      "Python 3.11+",
+      "JSONL / JSON",
+      "DataForSEO API v3",
+      "Node.js",
+      "@oai/artifact-tool",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "unittest",
+    ],
+    result: t(
+      "Validated 40 live page fetches with zero failures and retained 25 HTTP 200 articles with title, meta description, and H1; a 32-request paid plan stayed below $1 ($0.991560 max), without claiming rejected enrichment data.",
+      "Memvalidasi 40 live page fetch tanpa kegagalan dan menyimpan 25 artikel HTTP 200 lengkap dengan title, meta description, dan H1; rencana 32 paid request tetap di bawah $1 (maks. $0,991560), tanpa mengklaim data enrichment yang ditolak provider.",
+      "40 Live-Seitenabrufe ohne Fehler validiert und 25 vollständige HTTP-200-Artikel mit Titel, Meta-Beschreibung und H1 gespeichert; ein Plan mit 32 kostenpflichtigen Anfragen blieb unter 1 $ (max. 0,991560 $), ohne abgelehnte Anreicherungsdaten zu beanspruchen.",
+      "40 récupérations de pages en direct validées sans échec et 25 articles HTTP 200 complets conservés avec titre, méta-description et H1 ; un plan de 32 requêtes payantes est resté sous 1 $ (0,991560 $ max), sans revendiquer les données d'enrichissement rejetées.",
+      "Se validaron 40 consultas de páginas en vivo sin fallos y se conservaron 25 artículos HTTP 200 completos con título, meta description y H1; un plan de 32 solicitudes de pago se mantuvo por debajo de 1 $ (0,991560 $ máx.), sin atribuirse datos de enriquecimiento rechazados.",
+      "Validate 40 acquisizioni di pagine live senza errori e conservati 25 articoli HTTP 200 completi di titolo, meta description e H1; un piano di 32 richieste a pagamento è rimasto sotto 1 $ (massimo 0,991560 $), senza rivendicare dati di arricchimento rifiutati.",
+    ),
+  },
+  {
     id: "pipeline",
     title: "Social Media Data Pipeline",
     scale: t(
@@ -1082,7 +1197,137 @@ export interface ProjectMeta {
 }
 
 export const projectMeta: Record<string, ProjectMeta> = {
+  "competitor-seo-monitoring": {
+    role: t(
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+    ),
+    context: "owned",
+    status: t(
+      "Portfolio project · Local-first PoC",
+      "Proyek portofolio · PoC local-first",
+      "Portfolio-Projekt · Local-first-PoC",
+      "Projet portfolio · PoC local-first",
+      "Proyecto de portfolio · PoC local-first",
+      "Progetto portfolio · PoC local-first",
+    ),
+    decisions: [
+      t(
+        "Used standard-library Python for the core crawler so the collection path stays reproducible without third-party Python dependencies.",
+        "Menggunakan standard-library Python untuk crawler inti agar jalur collection tetap reproducible tanpa dependency Python pihak ketiga.",
+        "Die Kern-Crawler-Pipeline nutzt nur die Python-Standardbibliothek und bleibt dadurch ohne externe Python-Abhängigkeiten reproduzierbar.",
+        "Le crawler principal utilise la bibliothèque standard Python afin de rester reproductible sans dépendances Python tierces.",
+        "El crawler principal usa la biblioteca estándar de Python para mantener el proceso reproducible sin dependencias Python de terceros.",
+        "Il crawler principale usa la libreria standard di Python per mantenere il percorso riproducibile senza dipendenze Python di terze parti.",
+      ),
+      t(
+        "Chose robots-aware sequential crawling for ethical, auditable rate control instead of maximum throughput.",
+        "Memilih crawling sekuensial yang mematuhi robots.txt untuk rate control yang etis dan dapat diaudit, bukan throughput maksimum.",
+        "Robots-konformes sequenzielles Crawling priorisiert ethische, prüfbare Ratenkontrolle statt maximalem Durchsatz.",
+        "Le crawl séquentiel respectant robots.txt privilégie un contrôle de débit éthique et auditable plutôt que le débit maximal.",
+        "El rastreo secuencial que respeta robots.txt prioriza un control de velocidad ético y auditable frente al máximo rendimiento.",
+        "Il crawling sequenziale conforme a robots.txt privilegia un controllo etico e verificabile della frequenza rispetto al throughput massimo.",
+      ),
+      t(
+        "Compared normalized main text for meaningful changes; raw HTML hashes remain diagnostic signals only.",
+        "Membandingkan main text yang dinormalisasi untuk perubahan bermakna; hash HTML mentah hanya menjadi sinyal diagnostik.",
+        "Für aussagekräftige Änderungen wird normalisierter Haupttext verglichen; rohe HTML-Hashes dienen nur der Diagnose.",
+        "Le texte principal normalisé sert à détecter les changements significatifs ; les hash HTML bruts restent uniquement des signaux de diagnostic.",
+        "El texto principal normalizado se usa para detectar cambios significativos; los hashes de HTML sin procesar son solo señales de diagnóstico.",
+        "Il testo principale normalizzato rileva i cambiamenti significativi; gli hash dell'HTML grezzo restano solo segnali diagnostici.",
+      ),
+      t(
+        "Made dated JSONL snapshots immutable unless replacement is explicitly requested with --force.",
+        "Membuat snapshot JSONL bertanggal immutable kecuali replacement diminta secara eksplisit dengan --force.",
+        "Datierte JSONL-Snapshots sind unveränderlich, sofern ein Ersatz nicht ausdrücklich mit --force angefordert wird.",
+        "Les snapshots JSONL datés sont immuables sauf remplacement explicitement demandé avec --force.",
+        "Los snapshots JSONL fechados son inmutables salvo que se solicite explícitamente reemplazarlos con --force.",
+        "Gli snapshot JSONL datati sono immutabili salvo sostituzione richiesta esplicitamente con --force.",
+      ),
+      t(
+        "Put DataForSEO behind a trust boundary: dry-run by default, environment-only credentials, allowlisted hosts, immutable caching, and a cost check before every request.",
+        "Menempatkan DataForSEO di balik trust boundary: dry-run secara default, credential hanya dari environment, host allowlist, cache immutable, dan cost check sebelum setiap request.",
+        "DataForSEO liegt hinter einer Vertrauensgrenze: standardmäßiger Dry-Run, Zugangsdaten nur aus der Umgebung, erlaubte Hosts, unveränderlicher Cache und Kostenprüfung vor jeder Anfrage.",
+        "DataForSEO est placé derrière une frontière de confiance : dry-run par défaut, identifiants uniquement dans l'environnement, hôtes autorisés, cache immuable et contrôle du coût avant chaque requête.",
+        "DataForSEO queda tras un límite de confianza: simulación por defecto, credenciales solo de entorno, hosts permitidos, caché inmutable y control de coste antes de cada solicitud.",
+        "DataForSEO è dietro un confine di fiducia: dry run predefinito, credenziali solo da ambiente, host consentiti, cache immutabile e controllo dei costi prima di ogni richiesta.",
+      ),
+      t(
+        "Never fabricates missing SEO metrics; workbook formulas reference raw-data sheets and the dashboard binds only to loopback.",
+        "Tidak pernah memfabrikasi metrik SEO yang hilang; formula workbook merujuk raw-data sheet dan dashboard hanya bind ke loopback.",
+        "Fehlende SEO-Metriken werden nie erfunden; Arbeitsmappenformeln verweisen auf Rohdatenblätter und das Dashboard bindet nur an Loopback.",
+        "Les métriques SEO manquantes ne sont jamais inventées ; les formules du classeur référencent les feuilles brutes et le tableau de bord écoute uniquement sur loopback.",
+        "Las métricas SEO ausentes nunca se inventan; las fórmulas del libro apuntan a hojas de datos sin procesar y el panel solo se enlaza a loopback.",
+        "Le metriche SEO mancanti non vengono mai inventate; le formule del workbook fanno riferimento ai fogli raw e la dashboard si collega solo al loopback.",
+      ),
+    ],
+  },
   // Client work — built from scratch (incl. tech selection), owned by the client.
+  "android-ad-evidence": {
+    role: t(
+      "Automation Engineer / Python Engineer",
+      "Automation Engineer / Python Engineer",
+      "Automation Engineer / Python Engineer",
+      "Automation Engineer / Python Engineer",
+      "Automation Engineer / Python Engineer",
+      "Automation Engineer / Python Engineer",
+    ),
+    context: "client",
+    status: t(
+      "Android advertising verification PoC",
+      "PoC verifikasi iklan Android",
+      "PoC zur Verifizierung von Android-Werbung",
+      "PoC de vérification publicitaire Android",
+      "PoC de verificación de publicidad Android",
+      "PoC di verifica della pubblicità Android",
+    ),
+    decisions: [
+      t(
+        "Kept UI and network capture independent: Android automation proves what the user saw, while intercepted flows provide delivery-chain evidence.",
+        "Memisahkan capture UI dan jaringan: otomasi Android membuktikan apa yang dilihat pengguna, sementara flow yang diintersepsi memberi bukti rantai penayangan.",
+        "UI- und Netzwerkerfassung blieben unabhängig: Die Android-Automatisierung belegt die Nutzersicht, während abgefangene Flows Beweise zur Auslieferungskette liefern.",
+        "Séparation de la capture UI et réseau : l'automatisation Android prouve ce que l'utilisateur a vu, tandis que les flux interceptés fournissent les preuves de la chaîne de diffusion.",
+        "Se mantuvieron independientes las capturas de interfaz y red: la automatización Android demuestra lo que vio el usuario y los flujos interceptados aportan pruebas de la cadena de entrega.",
+        "Acquisizione UI e di rete mantenute indipendenti: l'automazione Android dimostra ciò che ha visto l'utente, mentre i flussi intercettati forniscono prove sulla catena di distribuzione.",
+      ),
+      t(
+        "Required explicit Ad Info, redirect, client-signature, or reporting signals for confirmed DSP attribution; creatives alone remain candidates, never proof.",
+        "Mewajibkan sinyal Ad Info, redirect, signature client, atau reporting yang eksplisit untuk atribusi DSP terkonfirmasi; materi iklan saja hanya kandidat, bukan bukti.",
+        "Für eine bestätigte DSP-Zuordnung waren explizite Ad-Info-, Redirect-, Client-Signatur- oder Reporting-Signale erforderlich; Werbemittel allein bleiben Kandidaten und sind nie ein Beweis.",
+        "Une attribution DSP confirmée exige un signal explicite d'Ad Info, de redirection, de signature client ou de reporting ; une création seule reste un candidat, jamais une preuve.",
+        "La atribución DSP confirmada exige señales explícitas de Ad Info, redirección, firma del cliente o informes; una creatividad por sí sola sigue siendo candidata, nunca una prueba.",
+        "Per confermare l'attribuzione DSP sono necessari segnali espliciti da Ad Info, redirect, firma client o reporting; la sola creatività resta un candidato, mai una prova.",
+      ),
+      t(
+        "Captured broadly, matched later, and recorded creative URLs without fetching them—preserving limited-window evidence without creating accidental impressions or clicks.",
+        "Menangkap secara luas lalu mencocokkan setelahnya, serta mencatat URL materi tanpa mengambilnya—menjaga bukti pada waktu terbatas tanpa memicu impression atau klik tidak sengaja.",
+        "Breit erfasst und später abgeglichen; Creative-URLs wurden ohne Abruf protokolliert, um Beweise im begrenzten Zeitfenster zu sichern, ohne unbeabsichtigte Impressions oder Klicks auszulösen.",
+        "Capture large puis filtrage ultérieur, avec enregistrement des URL créatives sans les charger afin de préserver les preuves d'une fenêtre limitée sans générer d'impressions ni de clics accidentels.",
+        "Captura amplia y filtrado posterior, registrando las URL de las creatividades sin solicitarlas para preservar las pruebas de una ventana limitada sin generar impresiones ni clics accidentales.",
+        "Acquisizione ampia e filtro successivo, registrando gli URL delle creatività senza richiederli per preservare le prove della finestra limitata senza generare impression o clic accidentali.",
+      ),
+      t(
+        "Externalized provider indicators in JSON and separated attribution into confirmed, candidate, and not_detected states.",
+        "Memindahkan indikator provider ke JSON dan memisahkan atribusi menjadi status confirmed, candidate, dan not_detected.",
+        "Provider-Indikatoren wurden in JSON ausgelagert; die Zuordnung wurde in confirmed, candidate und not_detected getrennt.",
+        "Externalisation des indicateurs fournisseurs dans JSON, avec séparation de l'attribution en états confirmed, candidate et not_detected.",
+        "Se externalizaron en JSON los indicadores de proveedores y se separó la atribución en estados confirmed, candidate y not_detected.",
+        "Indicatori dei provider esternalizzati in JSON, separando l'attribuzione negli stati confirmed, candidate e not_detected.",
+      ),
+      t(
+        "Protected artifacts with append-only SHA-256 manifests, recorded measured geo metadata, and added ANR recovery, cold restarts, and proxy restoration for long sessions.",
+        "Melindungi artefak dengan manifest SHA-256 append-only, mencatat metadata geo terukur, serta menambahkan recovery ANR, cold restart, dan pemulihan proxy untuk sesi panjang.",
+        "Artefakte wurden durch append-only SHA-256-Manifeste geschützt; gemessene Geodaten sowie ANR-Wiederherstellung, Kaltstarts und Proxy-Restoration sichern lange Sitzungen ab.",
+        "Protection des artefacts par des manifestes SHA-256 en ajout seul, mesure des métadonnées géographiques et ajout de la récupération ANR, des redémarrages à froid et de la restauration du proxy pour les longues sessions.",
+        "Los artefactos se protegieron con manifiestos SHA-256 de solo adición; se registraron metadatos geográficos medidos y se añadieron recuperación de ANR, reinicios en frío y restauración del proxy para sesiones largas.",
+        "Artefatti protetti con manifest SHA-256 append-only, metadati geografici misurati e recupero ANR, riavvii a freddo e ripristino del proxy per le sessioni lunghe.",
+      ),
+    ],
+  },
   omnisocials: {
     role: t(
       "Full Stack Engineer (freelance)",
@@ -1535,6 +1780,21 @@ export interface PipelineStage {
 }
 
 export const pipelines: Record<string, PipelineStage[]> = {
+  "competitor-seo-monitoring": [
+    { role: "Discover", label: "robots.txt + sitemaps + links" },
+    { role: "Crawl", label: "Bounded Python crawler" },
+    { role: "Extract", label: "Metadata + normalized content" },
+    { role: "Store & compare", label: "Immutable JSONL + diffs" },
+    { role: "Enrich", label: "Approved DataForSEO requests" },
+    { role: "Report", label: "Dashboard + auditable XLSX" },
+  ],
+  "android-ad-evidence": [
+    { role: "Launch", label: "PowerShell + Python CLI" },
+    { role: "Control & detect", label: "ADB + uiautomator2" },
+    { role: "Capture evidence", label: "UI + screenshots + safe clicks" },
+    { role: "Capture network", label: "ADB reverse + mitmproxy" },
+    { role: "Attribute & archive", label: "Rules + JSONL + SHA-256" },
+  ],
   pipeline: [
     { role: "Sources", label: "Scrapers" },
     { role: "Queue", label: "RabbitMQ" },
@@ -1605,6 +1865,7 @@ export function getProjectById(id: string): Project | undefined {
 // Featured "hook" projects — the strongest for freelance clients (AI, SaaS,
 // real client products). University/competition work shows lower as "more work".
 const FEATURED_IDS = [
+  "android-ad-evidence", // client automation + evidence pipeline + strong metrics
   "pwc", // award + AI + image
   "robota-new", // B2B AI + image
   "gmat", // international award + image

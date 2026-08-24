@@ -33,6 +33,7 @@ const projectToMarkdown = (project: Project): string => {
     project.result ? `- Result: ${clean(project.result.en)}` : "",
     `- Technologies: ${project.tech.join(", ")}`,
     project.link ? `- Live URL: ${project.link}` : "",
+    project.source ? `- Source & evidence: ${project.source}` : "",
     project.image ? `- Cover image: ${SITE_URL}${project.image}` : "",
   ].filter(Boolean);
 

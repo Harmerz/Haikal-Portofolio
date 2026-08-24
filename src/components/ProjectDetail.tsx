@@ -13,6 +13,15 @@ import { dict } from "@/i18n/dictionaries";
 import PipelineDiagram from "./PipelineDiagram";
 import ContextBadge from "./ContextBadge";
 
+const sourceLabel = {
+  en: "View source & evidence",
+  id: "Lihat kode sumber & bukti",
+  de: "Quellcode & Nachweise ansehen",
+  fr: "Voir le code source et les preuves",
+  es: "Ver código fuente y evidencias",
+  it: "Vedi codice sorgente e prove",
+};
+
 export default function ProjectDetail({ project }: { project: Project }) {
   const { t } = useLanguage();
   const images = getProjectImages(project);
@@ -91,6 +100,31 @@ export default function ProjectDetail({ project }: { project: Project }) {
             className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
           >
             {t(dict.card.visit)}
+            <svg
+              className="h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </a>
+        )}
+
+        {project.source && (
+          <a
+            href={project.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex w-fit items-center gap-1.5 rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-gray-700"
+          >
+            {t(sourceLabel)}
             <svg
               className="h-4 w-4"
               fill="none"
