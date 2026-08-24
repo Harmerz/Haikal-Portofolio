@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import LanguageToggle from "./LanguageToggle";
+import PortfolioCopyMenu from "./PortfolioCopyMenu";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { dict } from "@/i18n/dictionaries";
 import {
@@ -96,7 +97,10 @@ export default function Header({ mode }: { mode: PortfolioMode }) {
           )}
         </nav>
 
-        <LanguageToggle />
+        <div className="flex items-center gap-2">
+          <PortfolioCopyMenu />
+          <LanguageToggle />
+        </div>
       </div>
     </header>
   );

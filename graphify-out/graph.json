@@ -560,8 +560,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_modal_projects_id_page",
-      "community": 0,
-      "community_name": "projects.ts",
+      "community": 13,
+      "community_name": "useLanguage",
       "norm_label": "(.)projects/[id]/page.tsx"
     },
     {
@@ -637,8 +637,8 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "src_app_data_engineer_page_home",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "home()"
     },
     {
@@ -692,7 +692,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_app_layout",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "layout.tsx"
     },
@@ -703,7 +703,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_app_layout_inter",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "inter"
     },
@@ -714,7 +714,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_app_layout_metadata",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "metadata"
     },
@@ -725,7 +725,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "src_app_layout_rootlayout",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "rootlayout()"
     },
@@ -1100,7 +1100,7 @@
       "_origin": "ast",
       "id": "src_components_crosslinkbanner",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "crosslinkbanner.tsx"
     },
     {
@@ -1111,7 +1111,7 @@
       "_origin": "ast",
       "id": "src_components_crosslinkbanner_crosslinkbannerprops",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "crosslinkbannerprops"
     },
     {
@@ -1121,8 +1121,8 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_crosslinkbanner_crosslinkbanner",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "crosslinkbanner()"
     },
     {
@@ -1132,8 +1132,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_engineeringstandards",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 13,
+      "community_name": "useLanguage",
       "norm_label": "engineeringstandards.tsx"
     },
     {
@@ -1143,8 +1143,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_engineeringstandards_standards",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 13,
+      "community_name": "useLanguage",
       "norm_label": "standards"
     },
     {
@@ -1154,8 +1154,8 @@
       "source_location": "L59",
       "_origin": "ast",
       "id": "src_components_engineeringstandards_engineeringstandards",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 13,
+      "community_name": "useLanguage",
       "norm_label": "engineeringstandards()"
     },
     {
@@ -1214,21 +1214,10 @@
       "norm_label": "footer.tsx"
     },
     {
-      "label": "copyLabels",
-      "file_type": "code",
-      "source_file": "src/components/Footer.tsx",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "src_components_footer_copylabels",
-      "community": 3,
-      "community_name": "data-engineer/page.tsx",
-      "norm_label": "copylabels"
-    },
-    {
       "label": "Footer()",
       "file_type": "code",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L44",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_footer_footer",
       "community": 3,
@@ -1250,7 +1239,7 @@
       "label": "Header()",
       "file_type": "code",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "_origin": "ast",
       "id": "src_components_header_header",
       "community": 3,
@@ -1298,7 +1287,7 @@
       "_origin": "ast",
       "id": "src_components_howiwork",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "howiwork.tsx"
     },
     {
@@ -1309,7 +1298,7 @@
       "_origin": "ast",
       "id": "src_components_howiwork_step",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "step"
     },
     {
@@ -1320,7 +1309,7 @@
       "_origin": "ast",
       "id": "src_components_howiwork_icon",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "icon()"
     },
     {
@@ -1331,7 +1320,7 @@
       "_origin": "ast",
       "id": "src_components_howiwork_steps",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "steps"
     },
     {
@@ -1342,7 +1331,7 @@
       "_origin": "ast",
       "id": "src_components_howiwork_howiwork",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "howiwork()"
     },
     {
@@ -1352,8 +1341,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_hpcstats",
-      "community": 3,
-      "community_name": "data-engineer/page.tsx",
+      "community": 0,
+      "community_name": "projects.ts",
       "norm_label": "hpcstats.tsx"
     },
     {
@@ -1363,8 +1352,8 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_hpcstats_title",
-      "community": 3,
-      "community_name": "data-engineer/page.tsx",
+      "community": 0,
+      "community_name": "projects.ts",
       "norm_label": "title"
     },
     {
@@ -1374,8 +1363,8 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_hpcstats_subtitle",
-      "community": 3,
-      "community_name": "data-engineer/page.tsx",
+      "community": 0,
+      "community_name": "projects.ts",
       "norm_label": "subtitle"
     },
     {
@@ -1418,7 +1407,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_languagetoggle",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "languagetoggle.tsx"
     },
@@ -1429,7 +1418,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_languagetoggle_lang_labels",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "lang_labels"
     },
@@ -1440,7 +1429,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_components_languagetoggle_languagetoggle",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "languagetoggle()"
     },
@@ -1487,6 +1476,39 @@
       "community": 0,
       "community_name": "projects.ts",
       "norm_label": "pipelinediagram()"
+    },
+    {
+      "label": "PortfolioCopyMenu.tsx",
+      "file_type": "code",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "src_components_portfoliocopymenu",
+      "community": 13,
+      "community_name": "useLanguage",
+      "norm_label": "portfoliocopymenu.tsx"
+    },
+    {
+      "label": "labels",
+      "file_type": "code",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "src_components_portfoliocopymenu_labels",
+      "community": 13,
+      "community_name": "useLanguage",
+      "norm_label": "labels"
+    },
+    {
+      "label": "PortfolioCopyMenu()",
+      "file_type": "code",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "src_components_portfoliocopymenu_portfoliocopymenu",
+      "community": 13,
+      "community_name": "useLanguage",
+      "norm_label": "portfoliocopymenu()"
     },
     {
       "label": "ProjectCard.tsx",
@@ -1595,7 +1617,7 @@
       "_origin": "ast",
       "id": "src_components_sectionheader",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "sectionheader.tsx"
     },
     {
@@ -1606,7 +1628,7 @@
       "_origin": "ast",
       "id": "src_components_sectionheader_sectionheaderprops",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "sectionheaderprops"
     },
     {
@@ -1617,7 +1639,7 @@
       "_origin": "ast",
       "id": "src_components_sectionheader_default_label",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "default_label"
     },
     {
@@ -1628,7 +1650,7 @@
       "_origin": "ast",
       "id": "src_components_sectionheader_sectionheader",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "sectionheader()"
     },
     {
@@ -1638,8 +1660,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_techstack",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "techstack.tsx"
     },
     {
@@ -1649,8 +1671,8 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_techstack_defaulttech",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "defaulttech"
     },
     {
@@ -1660,8 +1682,8 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_components_techstack_default_title",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "default_title"
     },
     {
@@ -1671,8 +1693,8 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_components_techstack_default_desc",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "default_desc"
     },
     {
@@ -1682,8 +1704,8 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "src_components_techstack_techstackprops",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "techstackprops"
     },
     {
@@ -1693,8 +1715,8 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "src_components_techstack_techstack",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "techstack()"
     },
     {
@@ -1704,8 +1726,8 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_testimonials",
-      "community": 13,
-      "community_name": "useLanguage",
+      "community": 12,
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "testimonials.tsx"
     },
     {
@@ -1715,8 +1737,8 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_testimonials_testimonials",
-      "community": 13,
-      "community_name": "useLanguage",
+      "community": 12,
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "testimonials()"
     },
     {
@@ -1869,8 +1891,8 @@
       "source_location": "L1192",
       "_origin": "ast",
       "id": "src_data_projects_projectmeta",
-      "community": 0,
-      "community_name": "projects.ts",
+      "community": 12,
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "projectmeta"
     },
     {
@@ -1968,8 +1990,8 @@
       "source_location": "L1879",
       "_origin": "ast",
       "id": "src_data_projects_moresoftware",
-      "community": 0,
-      "community_name": "projects.ts",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "moresoftware"
     },
     {
@@ -2001,8 +2023,8 @@
       "source_location": "L1895",
       "_origin": "ast",
       "id": "src_data_projects_hpcstats",
-      "community": 3,
-      "community_name": "data-engineer/page.tsx",
+      "community": 0,
+      "community_name": "projects.ts",
       "norm_label": "hpcstats"
     },
     {
@@ -2013,7 +2035,7 @@
       "_origin": "ast",
       "id": "src_data_testimonials",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "testimonials.ts"
     },
     {
@@ -2024,7 +2046,7 @@
       "_origin": "ast",
       "id": "src_data_testimonials_testimonial",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "testimonial"
     },
     {
@@ -2035,7 +2057,7 @@
       "_origin": "ast",
       "id": "src_data_testimonials_same",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "same()"
     },
     {
@@ -2045,8 +2067,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_data_testimonials_testimonials",
-      "community": 13,
-      "community_name": "useLanguage",
+      "community": 12,
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "testimonials"
     },
     {
@@ -2056,7 +2078,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_i18n_languageprovider",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "languageprovider.tsx"
     },
@@ -2067,7 +2089,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "src_i18n_languageprovider_languagecontextvalue",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "languagecontextvalue"
     },
@@ -2078,7 +2100,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "src_i18n_languageprovider_languagecontext",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "languagecontext"
     },
@@ -2089,7 +2111,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "src_i18n_languageprovider_detectbrowserlang",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "detectbrowserlang()"
     },
@@ -2100,7 +2122,7 @@
       "source_location": "L41",
       "_origin": "ast",
       "id": "src_i18n_languageprovider_languageprovider",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "languageprovider()"
     },
@@ -2123,7 +2145,7 @@
       "_origin": "ast",
       "id": "src_i18n_config",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "config.ts"
     },
     {
@@ -2133,7 +2155,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_i18n_config_lang",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "lang"
     },
@@ -2144,7 +2166,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "src_i18n_config_langs",
-      "community": 15,
+      "community": 12,
       "community_name": "LanguageProvider.tsx",
       "norm_label": "langs"
     },
@@ -2156,7 +2178,7 @@
       "_origin": "ast",
       "id": "src_i18n_config_localized",
       "community": 12,
-      "community_name": "Localized",
+      "community_name": "LanguageProvider.tsx",
       "norm_label": "localized"
     },
     {
@@ -2166,8 +2188,8 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "src_i18n_config_t",
-      "community": 12,
-      "community_name": "Localized",
+      "community": 3,
+      "community_name": "data-engineer/page.tsx",
       "norm_label": "t()"
     },
     {
@@ -2685,6 +2707,61 @@
       "id": "graphify_out_memory_query_20260824_045636_where_should_a_reusable_copy_page_as_markdown_acti_source_nodes",
       "community": 40,
       "community_name": "Q: Where should a reusable Copy page as Markdown action live for project detail pages, and how can project data be serialized to Markdown?",
+      "norm_label": "source nodes"
+    },
+    {
+      "label": "query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke",
+      "community": 15,
+      "community_name": "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?",
+      "norm_label": "query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md"
+    },
+    {
+      "label": "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_q_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_portofolio_md",
+      "community": 15,
+      "community_name": "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?",
+      "norm_label": "q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?"
+    },
+    {
+      "label": "Answer",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_answer",
+      "community": 15,
+      "community_name": "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?",
+      "norm_label": "answer"
+    },
+    {
+      "label": "Outcome",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_outcome",
+      "community": 15,
+      "community_name": "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?",
+      "norm_label": "outcome"
+    },
+    {
+      "label": "Source Nodes",
+      "file_type": "document",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_source_nodes",
+      "community": 15,
+      "community_name": "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?",
       "norm_label": "source nodes"
     },
     {
@@ -5926,18 +6003,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "_origin": "ast",
-      "source": "src_components_footer",
-      "target": "src_components_footer_copylabels",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/Footer.tsx",
-      "source_location": "L44",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -5949,7 +6015,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -5961,7 +6027,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L6",
+      "source_location": "L5",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -5973,7 +6039,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -5985,7 +6051,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L5",
+      "source_location": "L4",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -5997,7 +6063,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -6009,7 +6075,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L4",
+      "source_location": "L3",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -6021,7 +6087,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -6033,7 +6099,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L7",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer",
@@ -6046,7 +6112,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Footer.tsx",
-      "source_location": "L51",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_footer_footer",
@@ -6056,7 +6122,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L13",
+      "source_location": "L14",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6080,7 +6146,19 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L7",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_header",
+      "target": "src_components_portfoliocopymenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/Header.tsx",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6092,7 +6170,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6104,7 +6182,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6116,7 +6194,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6128,7 +6206,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6140,7 +6218,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L6",
+      "source_location": "L7",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6152,7 +6230,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6164,7 +6242,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/Header.tsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header",
@@ -6177,7 +6255,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Header.tsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header_header",
@@ -6189,7 +6267,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/Header.tsx",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "_origin": "ast",
       "source": "src_components_header_header",
@@ -6912,6 +6990,88 @@
       "source": "src_components_projectdetail",
       "target": "src_components_pipelinediagram",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu",
+      "target": "src_components_portfoliocopymenu_labels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu",
+      "target": "src_components_portfoliocopymenu_portfoliocopymenu",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu",
+      "target": "src_i18n_dictionaries",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu",
+      "target": "src_i18n_dictionaries_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu",
+      "target": "src_i18n_languageprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu",
+      "target": "src_i18n_languageprovider_uselanguage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/PortfolioCopyMenu.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "src_components_portfoliocopymenu_portfoliocopymenu",
+      "target": "src_i18n_languageprovider_uselanguage"
     },
     {
       "relation": "contains",
@@ -9025,8 +9185,52 @@
       "source": "graphify_out_memory_query_20260824_045636_where_should_a_reusable_copy_page_as_markdown_acti_q_where_should_a_reusable_copy_page_as_markdown_action_live_for_project_detail_pages_and_how_can_project_data_be_serialized_to_markdown",
       "target": "graphify_out_memory_query_20260824_045636_where_should_a_reusable_copy_page_as_markdown_acti_source_nodes",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke",
+      "target": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_q_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_portofolio_md",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_q_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_portofolio_md",
+      "target": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_answer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_q_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_portofolio_md",
+      "target": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_outcome",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_q_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_portofolio_md",
+      "target": "graphify_out_memory_query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke_source_nodes",
+      "confidence_score": 1.0
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "e9df55b61049c578407b899b2a0d89e29a92fa61"
+  "built_at_commit": "fed039691169feb4665f8a756c844d6a4fde320c"
 }

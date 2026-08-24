@@ -90,13 +90,13 @@
     "semantic_hash": "42ec892285fe32744089e3b29e2c22e9"
   },
   "src/components/Footer.tsx": {
-    "mtime": 1787547311.2152207,
-    "ast_hash": "1c997e65c43c9ba206df99b435e24cbb",
+    "mtime": 1787550168.4877234,
+    "ast_hash": "5060c1f694b0f779fc877f7d38659cef",
     "semantic_hash": ""
   },
   "src/components/Header.tsx": {
-    "mtime": 1785085702.7950294,
-    "ast_hash": "aaa2d759d60334892a34ef4c4279642f",
+    "mtime": 1787550125.294398,
+    "ast_hash": "ebf338778c7377a942f01a92dea8141d",
     "semantic_hash": ""
   },
   "src/components/HeroSection.tsx": {
@@ -767,6 +767,16 @@
   "graphify-out/memory/query_20260824_045636_where_should_a_reusable_copy_page_as_markdown_acti.md": {
     "mtime": 1787547396.5794642,
     "ast_hash": "0b2cbc1b9a3f99a60bccd788d46c573e",
+    "semantic_hash": ""
+  },
+  "src/components/PortfolioCopyMenu.tsx": {
+    "mtime": 1787550125.2411268,
+    "ast_hash": "ae61739e2513311d5a28af4a365db1d8",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md": {
+    "mtime": 1787548318.5188186,
+    "ast_hash": "535bbb380badabd93d6c8a5de65e3e9a",
     "semantic_hash": ""
   }
 }
