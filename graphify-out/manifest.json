@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "src/data/projects.ts": {
-    "mtime": 1787546771.3406992,
-    "ast_hash": "d25c63fd912aa9c8a63536ffc5d8410d",
+    "mtime": 1787645848.8445387,
+    "ast_hash": "03ab63ddc78f693990192d09654b4bd5",
     "semantic_hash": ""
   },
   "src/data/testimonials.ts": {
@@ -777,6 +777,11 @@
   "graphify-out/memory/query_20260824_051158_sekarang_apakah_yang_dua_porto_tadi_sudah_masuk_ke.md": {
     "mtime": 1787548318.5188186,
     "ast_hash": "535bbb380badabd93d6c8a5de65e3e9a",
+    "semantic_hash": ""
+  },
+  "graphify-out/memory/query_20260824_054455_taruh_copy_pagenya_di_navbar_sebelah_ganti_bahasa.md": {
+    "mtime": 1787550295.6289883,
+    "ast_hash": "dd773f147c854afd16449867559e67e8",
     "semantic_hash": ""
   }
 }

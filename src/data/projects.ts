@@ -825,6 +825,62 @@ export const dataProjects: Project[] = [
     ),
   },
   {
+    id: "cross-platform-review-scraper",
+    title: "Cross-Platform Customer Review Scraper",
+    source:
+      "https://github.com/Harmerz/Cross-Platform-Customer-Review-Scraper",
+    scale: t(
+      "3 review platforms · 25 sample records",
+      "3 platform ulasan · 25 record sampel",
+      "3 Bewertungsplattformen · 25 Beispieldatensätze",
+      "3 plateformes d’avis · 25 exemples",
+      "3 plataformas de reseñas · 25 registros de muestra",
+      "3 piattaforme di recensioni · 25 record di esempio",
+    ),
+    description: t(
+      "A Python scraping toolkit that collects public customer reviews and app metadata from Trustpilot, Google Play, and the Apple App Store for customer research and sentiment analysis.",
+      "Toolkit scraping Python yang mengumpulkan ulasan pelanggan publik dan metadata aplikasi dari Trustpilot, Google Play, dan Apple App Store untuk riset pelanggan dan analisis sentimen.",
+      "Ein Python-Scraping-Toolkit, das öffentliche Kundenbewertungen und App-Metadaten von Trustpilot, Google Play und dem Apple App Store für Kundenforschung und Sentiment-Analysen erfasst.",
+      "Un toolkit de scraping Python qui collecte les avis clients publics et les métadonnées d’applications de Trustpilot, Google Play et de l’Apple App Store pour la recherche client et l’analyse de sentiment.",
+      "Un toolkit de scraping en Python que recopila reseñas públicas y metadatos de aplicaciones de Trustpilot, Google Play y Apple App Store para investigación de clientes y análisis de sentimiento.",
+      "Un toolkit di scraping Python che raccoglie recensioni pubbliche e metadati delle app da Trustpilot, Google Play e Apple App Store per la ricerca sui clienti e l’analisi del sentiment.",
+    ),
+    problem: t(
+      "Review research is fragmented across platforms with different delivery models: dynamic Next.js data on Trustpilot, paginated tokens on Google Play, and limited page-rendered public review data on the App Store.",
+      "Riset ulasan terfragmentasi di berbagai platform dengan model penyajian berbeda: data Next.js dinamis di Trustpilot, token pagination di Google Play, dan data ulasan publik berbasis halaman yang terbatas di App Store.",
+      "Bewertungsrecherche ist über Plattformen mit unterschiedlichen Bereitstellungsmodellen fragmentiert: dynamische Next.js-Daten bei Trustpilot, paginierte Tokens bei Google Play und begrenzte öffentlich gerenderte Bewertungsdaten im App Store.",
+      "La recherche d’avis est fragmentée entre des plateformes aux modèles différents : données Next.js dynamiques sur Trustpilot, jetons de pagination sur Google Play et avis publics limités aux pages rendues sur l’App Store.",
+      "La investigación de reseñas está fragmentada entre plataformas con modelos distintos: datos dinámicos de Next.js en Trustpilot, tokens paginados en Google Play y reseñas públicas limitadas a páginas renderizadas en App Store.",
+      "La ricerca delle recensioni è frammentata tra piattaforme con modelli diversi: dati Next.js dinamici su Trustpilot, token paginati su Google Play e recensioni pubbliche limitate alle pagine renderizzate su App Store.",
+    ),
+    solution: t(
+      "Built isolated scrapers for each source, then normalized review text, ratings, authors, dates, metadata, and source URLs into analysis-friendly JSON with deterministic deduplication and committed samples.",
+      "Membangun scraper terpisah untuk setiap sumber, lalu menormalisasi teks ulasan, rating, penulis, tanggal, metadata, dan URL sumber menjadi JSON siap analisis dengan deduplikasi deterministik dan sampel yang disimpan di repository.",
+      "Separate Scraper je Quelle normalisieren Bewertungstext, Sterne, Autoren, Daten, Metadaten und Quell-URLs zu analysefreundlichem JSON mit deterministischer Deduplizierung und versionierten Beispielen.",
+      "Des scrapers isolés par source normalisent le texte, les notes, les auteurs, les dates, les métadonnées et les URL sources en JSON prêt pour l’analyse, avec déduplication déterministe et exemples versionnés.",
+      "Scrapers separados por fuente normalizan texto, puntuaciones, autores, fechas, metadatos y URL de origen en JSON listo para análisis, con deduplicación determinista y muestras versionadas.",
+      "Scraper separati per fonte normalizzano testo, valutazioni, autori, date, metadati e URL di origine in JSON pronto per l’analisi, con deduplicazione deterministica ed esempi versionati.",
+    ),
+    tech: [
+      "Python 3.11+",
+      "Patchright",
+      "google-play-scraper",
+      "Apple iTunes Lookup API",
+      "App Store public web JSON",
+      "JSON",
+      "PowerShell",
+      "Google-style docstrings",
+    ],
+    result: t(
+      "Normalized review JSON · source URLs preserved.",
+      "JSON ulasan ternormalisasi · URL sumber dipertahankan.",
+      "Normalisierte Bewertungs-JSONs · Quell-URLs erhalten.",
+      "Avis normalisés en JSON · URL sources conservées.",
+      "Reseñas normalizadas en JSON · URL de origen conservadas.",
+      "Recensioni normalizzate in JSON · URL di origine conservati.",
+    ),
+  },
+  {
     id: "pipeline",
     title: "Social Media Data Pipeline",
     scale: t(
@@ -1197,6 +1253,67 @@ export interface ProjectMeta {
 }
 
 export const projectMeta: Record<string, ProjectMeta> = {
+  "cross-platform-review-scraper": {
+    role: t(
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+      "Data / Backend Engineer",
+    ),
+    context: "owned",
+    status: t(
+      "Portfolio project · Cross-platform review extraction",
+      "Proyek portofolio · Ekstraksi ulasan lintas platform",
+      "Portfolio-Projekt · Plattformübergreifende Bewertungsextraktion",
+      "Projet portfolio · Extraction d’avis multiplateforme",
+      "Proyecto de portfolio · Extracción de reseñas multiplataforma",
+      "Progetto portfolio · Estrazione di recensioni multipiattaforma",
+    ),
+    decisions: [
+      t(
+        "Kept one script per platform so source-specific fetching, pagination, and fallback behavior remain isolated and maintainable.",
+        "Memisahkan satu script per platform agar fetching, pagination, dan fallback spesifik sumber tetap terisolasi dan mudah dipelihara.",
+        "Ein Skript pro Plattform hält quellenspezifischen Abruf, Paginierung und Fallback-Verhalten isoliert und wartbar.",
+        "Un script par plateforme maintient isolés et faciles à maintenir la récupération, la pagination et les mécanismes de repli propres à chaque source.",
+        "Un script por plataforma mantiene aislados y fáciles de mantener la obtención, la paginación y los fallbacks específicos de cada fuente.",
+        "Uno script per piattaforma mantiene isolati e manutenibili recupero, paginazione e fallback specifici della fonte.",
+      ),
+      t(
+        "Used a Patchright browser context for Trustpilot before reading public Next.js JSON, reusing a realistic session without scraping visual markup.",
+        "Menggunakan konteks browser Patchright untuk Trustpilot sebelum membaca JSON Next.js publik, sehingga sesi realistis dapat digunakan tanpa scraping markup visual.",
+        "Für Trustpilot wird vor dem Lesen öffentlicher Next.js-JSON-Daten ein realistischer Patchright-Browserkontext aufgebaut, statt visuelles Markup zu scrapen.",
+        "Un contexte navigateur Patchright est établi pour Trustpilot avant la lecture du JSON public Next.js, évitant de scraper le balisage visuel.",
+        "Se usa un contexto de navegador Patchright para Trustpilot antes de leer el JSON público de Next.js, sin extraer el marcado visual.",
+        "Per Trustpilot viene creato un contesto browser Patchright prima di leggere il JSON pubblico Next.js, evitando lo scraping del markup visivo.",
+      ),
+      t(
+        "Prioritized App Store page-rendered JSON and retained the legacy RSS path only as a fallback because the public RSS feed is often empty.",
+        "Memprioritaskan JSON yang dirender halaman App Store dan mempertahankan jalur RSS lama hanya sebagai fallback karena feed RSS publik sering kosong.",
+        "Gerenderte App-Store-JSON-Daten haben Vorrang; der ältere RSS-Pfad bleibt nur als Fallback, da der öffentliche Feed häufig leer ist.",
+        "Le JSON rendu par les pages App Store est prioritaire ; l’ancien flux RSS n’est conservé qu’en secours car il est souvent vide.",
+        "Se prioriza el JSON renderizado por App Store y se conserva el RSS antiguo solo como fallback porque suele estar vacío.",
+        "Il JSON renderizzato dalle pagine App Store ha priorità; il vecchio percorso RSS resta solo come fallback perché spesso è vuoto.",
+      ),
+      t(
+        "Preserved source URLs, deterministic review IDs, and fallback text/date keys so records remain auditable and deduplicated across runs.",
+        "Mempertahankan URL sumber, ID ulasan deterministik, serta key fallback teks/tanggal agar record tetap dapat diaudit dan terdeduplikasi antar-run.",
+        "Quell-URLs, deterministische Bewertungs-IDs und Text-/Datums-Fallback-Schlüssel halten Datensätze prüfbar und über Läufe hinweg dedupliziert.",
+        "Les URL sources, identifiants déterministes et clés de secours texte/date garantissent des données auditables et dédupliquées entre les exécutions.",
+        "Las URL de origen, los ID deterministas y las claves alternativas de texto/fecha mantienen los registros auditables y deduplicados entre ejecuciones.",
+        "URL di origine, ID deterministici e chiavi fallback testo/data mantengono i record verificabili e deduplicati tra le esecuzioni.",
+      ),
+      t(
+        "Stored trimmed portfolio samples separately from full generated outputs and documented platform limitations rather than hiding or estimating missing coverage.",
+        "Menyimpan sampel portofolio yang dipangkas terpisah dari output penuh dan mendokumentasikan batasan platform tanpa menyembunyikan atau mengestimasi coverage yang hilang.",
+        "Gekürzte Portfolio-Beispiele liegen getrennt von vollständigen Ausgaben; Plattformgrenzen werden dokumentiert statt fehlende Abdeckung zu schätzen.",
+        "Les exemples portfolio allégés sont séparés des sorties complètes et les limites des plateformes sont documentées sans estimer la couverture manquante.",
+        "Las muestras reducidas se separan de las salidas completas y las limitaciones se documentan sin estimar cobertura inexistente.",
+        "Gli esempi ridotti sono separati dagli output completi e i limiti delle piattaforme sono documentati senza stimare copertura mancante.",
+      ),
+    ],
+  },
   "competitor-seo-monitoring": {
     role: t(
       "Data / Backend Engineer",
@@ -1780,6 +1897,14 @@ export interface PipelineStage {
 }
 
 export const pipelines: Record<string, PipelineStage[]> = {
+  "cross-platform-review-scraper": [
+    { role: "Discover", label: "Profile URLs + package/app IDs" },
+    { role: "Fetch", label: "Patchright + platform endpoints" },
+    { role: "Extract", label: "Reviews + app/business metadata" },
+    { role: "Normalize", label: "Analysis-friendly JSON records" },
+    { role: "Deduplicate", label: "Review IDs + fallback keys" },
+    { role: "Store", label: "JSON outputs + trimmed samples" },
+  ],
   "competitor-seo-monitoring": [
     { role: "Discover", label: "robots.txt + sitemaps + links" },
     { role: "Crawl", label: "Bounded Python crawler" },
