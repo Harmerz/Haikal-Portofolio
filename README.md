@@ -2,7 +2,7 @@
 
 Personal portfolio for Haikal Hilmi, showcasing data engineering and software engineering work through a multilingual, exportable Next.js application.
 
-**Live site:** [haikalhilmi.my.id](https://haikalhilmi.my.id)
+**Live site:** [www.haikalhilmi.my.id](https://www.haikalhilmi.my.id)
 
 ## Highlights
 
@@ -13,7 +13,8 @@ Personal portfolio for Haikal Hilmi, showcasing data engineering and software en
 - General and Upwork-specific experiences selected by subdomain
 - Portfolio exports generated from the same typed data as the website
 - AI discovery through `/llms.txt` and structured Markdown exports
-- Dynamic sitemap and project-level SEO routes
+- Dynamic sitemap, canonical metadata, social cards, and structured data
+- Google Analytics 4 and a Google Search Console-ready sitemap
 
 ## Portfolio routes
 
@@ -33,7 +34,7 @@ The export routes accept an optional `scope` query parameter:
 - `?scope=se` — Software Engineering only
 - No query parameter — combined portfolio
 
-Examples: [`/portfolio.md?scope=de`](https://haikalhilmi.my.id/portfolio.md?scope=de) and [`/portfolio.pdf?scope=se`](https://haikalhilmi.my.id/portfolio.pdf?scope=se).
+Examples: [`/portfolio.md?scope=de`](https://www.haikalhilmi.my.id/portfolio.md?scope=de) and [`/portfolio.pdf?scope=se`](https://www.haikalhilmi.my.id/portfolio.pdf?scope=se).
 
 ## Tech stack
 
@@ -60,6 +61,10 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000). No environment variables are required for local development.
+
+### Search and analytics setup
+
+GA4 uses measurement ID `G-14R2Q6ER1M` by default. To use another property, set `NEXT_PUBLIC_GA_MEASUREMENT_ID`. Google Search Console is verified as a Domain Property through DNS; submit `https://www.haikalhilmi.my.id/sitemap.xml` there after deployment.
 
 ## Available scripts
 

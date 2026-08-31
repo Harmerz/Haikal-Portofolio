@@ -23,6 +23,15 @@ const SUBDOMAIN_ROUTES: Record<string, SubdomainConfig> = {
 
 export function middleware(req: NextRequest) {
   const url = req.nextUrl;
+  const hostname = req.headers.get("host")?.split(":")[0] ?? "";
+
+  if (hostname === "haikalhilmi.my.id") {
+    const canonicalUrl = req.nextUrl.clone();
+    canonicalUrl.hostname = "www.haikalhilmi.my.id";
+    canonicalUrl.port = "";
+    canonicalUrl.protocol = "https";
+    return NextResponse.redirect(canonicalUrl, 308);
+  }
 
   if (
     url.pathname.startsWith("/_next") ||
@@ -32,12 +41,8 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  const hostname = req.headers.get("host")?.split(":")[0] ?? "";
   const config = SUBDOMAIN_ROUTES[hostname];
-  const mode =
-    config?.mode === "upwork"
-      ? "upwork"
-      : "general";
+  const mode = config?.mode === "upwork" ? "upwork" : "general";
   const requestHeaders = new Headers(req.headers);
   requestHeaders.set("x-portfolio-mode", mode);
 

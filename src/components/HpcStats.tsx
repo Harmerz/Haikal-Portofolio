@@ -29,7 +29,7 @@ export default function HpcStats() {
       <div className="mx-auto max-w-5xl px-6">
         <div className="mb-8 text-center">
           <h2 className="mb-2 text-2xl font-bold">{t(TITLE)}</h2>
-          <p className="text-gray-400">{t(SUBTITLE)}</p>
+          <p className="text-gray-300">{t(SUBTITLE)}</p>
         </div>
         <div className="grid grid-cols-2 gap-6 md:grid-cols-3">
           {hpcStats.map((stat) => (
@@ -40,13 +40,13 @@ export default function HpcStats() {
               <p className="mt-1 text-sm font-medium text-gray-200">
                 {t(stat.label)}
               </p>
-              <p className="text-xs text-gray-500">{t(stat.detail)}</p>
+              <p className="text-xs text-gray-300">{t(stat.detail)}</p>
             </div>
           ))}
         </div>
-        <p className="mt-8 text-center text-xs text-gray-500">
-          2× AMD EPYC 7502P (64-core) · 2× AMD EPYC 7252 (32-core) · 4× 16-core ·
-          Ubuntu 22.04 &amp; CentOS · NVIDIA DGX Station: Xeon E5-2698 v4
+        <p className="mt-8 text-center text-xs text-gray-300">
+          2× AMD EPYC 7502P (64-core) · 2× AMD EPYC 7252 (32-core) · 4× 16-core
+          · Ubuntu 22.04 &amp; CentOS · NVIDIA DGX Station: Xeon E5-2698 v4
           (20c/40t) · 251GB RAM · 4× Tesla V100 32GB
         </p>
       </div>

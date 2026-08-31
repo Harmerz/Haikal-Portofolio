@@ -192,7 +192,7 @@ export async function GET(request: Request) {
 
   const pages = document.getPages();
   pages.forEach((currentPage, index) => {
-    const footer = `${meta.heading} | haikalhilmi.my.id | ${index + 1} / ${pages.length}`;
+    const footer = `${meta.heading} | www.haikalhilmi.my.id | ${index + 1} / ${pages.length}`;
     const footerSize = 8;
     currentPage.drawLine({
       start: { x: MARGIN_X, y: 35 },
@@ -215,6 +215,8 @@ export async function GET(request: Request) {
       "Content-Type": "application/pdf",
       "Content-Disposition": `attachment; filename="${meta.filename}.pdf"`,
       "Cache-Control": "public, max-age=3600, s-maxage=86400",
+      "X-Robots-Tag": "noindex, follow",
+      Link: `<${meta.canonical}>; rel="canonical"`,
     },
   });
 }

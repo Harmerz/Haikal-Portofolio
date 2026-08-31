@@ -1,4 +1,4 @@
-import { LINKEDIN_URL, UPWORK_URL } from "@/config/site";
+import { LINKEDIN_URL, SITE_URL, UPWORK_URL } from "@/config/site";
 import { experience } from "@/data/experience";
 import {
   dataProjects,
@@ -9,8 +9,6 @@ import {
   type Project,
 } from "@/data/projects";
 import { testimonials } from "@/data/testimonials";
-
-const SITE_URL = "https://haikalhilmi.my.id";
 
 export type PortfolioScope = "general" | "se" | "de";
 

@@ -45,8 +45,8 @@ export default function LanguageToggle() {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="listbox"
         aria-expanded={open}
-        aria-label="Language switch"
-        className="inline-flex items-center gap-1 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold uppercase text-gray-700 transition-colors hover:text-gray-900"
+        aria-label={`${lang.toUpperCase()} — switch language`}
+        className="inline-flex items-center gap-1 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-semibold text-gray-700 uppercase transition-colors hover:text-gray-900"
       >
         {lang}
         <svg

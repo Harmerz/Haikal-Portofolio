@@ -23,21 +23,21 @@ export default function Experience({ area }: { area?: "se" | "de" }) {
 
         <ol className="relative ml-3 border-l border-gray-200">
           {items.map((item, i) => (
-            <Reveal key={item.id} delay={i * 60}>
-              <li className="mb-8 ml-6 last:mb-0">
+            <li key={item.id} className="mb-8 ml-6 last:mb-0">
+              <Reveal delay={i * 60}>
                 <span className="absolute -left-[7px] mt-1.5 h-3 w-3 rounded-full border-2 border-white bg-gray-900" />
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3">
                   <h3 className="text-base font-semibold text-gray-900">
                     {item.company}
                   </h3>
-                  <span className="text-xs font-medium text-gray-400">
+                  <span className="text-xs font-medium text-gray-600">
                     {t(item.period)}
                   </span>
                 </div>
                 <p className="mt-0.5 text-sm font-medium text-gray-800">
                   {t(item.headline)}
                 </p>
-                <p className="text-xs text-gray-400">
+                <p className="text-xs text-gray-600">
                   {t(item.role)} · {item.location}
                 </p>
                 {item.note && (
@@ -55,8 +55,8 @@ export default function Experience({ area }: { area?: "se" | "de" }) {
                     </li>
                   ))}
                 </ul>
-              </li>
-            </Reveal>
+              </Reveal>
+            </li>
           ))}
         </ol>
       </div>

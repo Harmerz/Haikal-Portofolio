@@ -65,7 +65,7 @@ export default function Testimonials({
 
         <div
           ref={trackRef}
-          className="no-scrollbar flex snap-x snap-mandatory scroll-smooth gap-5 overflow-x-auto pb-2"
+          className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-2"
         >
           {testimonials.map((item) => (
             <figure
@@ -120,9 +120,11 @@ export default function Testimonials({
                       </a>
                     )}
                   </p>
-                  <p className="truncate text-xs text-gray-500">{t(item.role)}</p>
+                  <p className="truncate text-xs text-gray-500">
+                    {t(item.role)}
+                  </p>
                   {item.location && (
-                    <p className="mt-0.5 flex items-center gap-1 text-xs text-gray-400">
+                    <p className="mt-0.5 flex items-center gap-1 text-xs text-gray-600">
                       <svg
                         className="h-3 w-3 shrink-0"
                         fill="none"

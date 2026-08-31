@@ -15,6 +15,8 @@ export function GET(request: Request) {
       "Content-Type": "text/markdown; charset=utf-8",
       "Content-Disposition": `attachment; filename="${meta.filename}.md"`,
       "Cache-Control": "public, max-age=3600, s-maxage=86400",
+      "X-Robots-Tag": "noindex, follow",
+      Link: `<${meta.canonical}>; rel="canonical"`,
     },
   });
 }

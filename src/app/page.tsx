@@ -11,19 +11,28 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import { featuredSoftware, dataProjects } from "@/data/projects";
 import { t } from "@/i18n/config";
-import { getCtaUrl } from "@/config/site";
+import { getCtaUrl, SITE_URL } from "@/config/site";
+import JsonLd from "@/components/JsonLd";
 
 export default async function Home() {
   const requestHeaders = await headers();
   const mode =
-    requestHeaders.get("x-portfolio-mode") === "upwork"
-      ? "upwork"
-      : "general";
+    requestHeaders.get("x-portfolio-mode") === "upwork" ? "upwork" : "general";
   const homeSoftware = featuredSoftware.slice(0, 3);
   const featuredData = dataProjects.slice(0, 3);
 
   return (
-    <div className="relative min-h-screen bg-white text-gray-900">
+    <main className="relative min-h-screen bg-white text-gray-900">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          "@id": `${SITE_URL}/#profile`,
+          url: SITE_URL,
+          name: "Haikal Hilmi — Data & Software Engineer",
+          mainEntity: { "@id": `${SITE_URL}/#person` },
+        }}
+      />
       {/* Hero Section */}
       <HeroSection
         ctaHref={getCtaUrl(mode)}
@@ -33,7 +42,7 @@ export default async function Home() {
           "Haikal Hilmi — Daten- & Software-Architekt",
           "Haikal Hilmi — Architecte Data & Software",
           "Haikal Hilmi — Arquitecto Data & Software",
-          "Haikal Hilmi — Architetto Data & Software",
+          "Haikal Hilmi — Architetto Data & Software"
         )}
         title={t(
           "Scale without the chaos.",
@@ -41,7 +50,7 @@ export default async function Home() {
           "Wachstum ohne Chaos.",
           "Grandir sans le chaos.",
           "Crecer sin el caos.",
-          "Crescere senza il caos.",
+          "Crescere senza il caos."
         )}
         description={t(
           "I build resilient data & cloud systems that handle the heavy lifting—so you can focus on growing your business. Secure, compliant, and production-ready.",
@@ -49,7 +58,7 @@ export default async function Home() {
           "Ich baue robuste Daten- und Cloud-Systeme, die die schwere Arbeit übernehmen—damit Sie sich auf das Wachstum Ihres Unternehmens konzentrieren können. Sicher, konform und produktionsreif.",
           "Je conçois des systèmes data & cloud résilients qui absorbent la charge de travail—pour que vous puissiez vous concentrer sur la croissance de votre entreprise. Sécurisés, conformes et prêts pour la production.",
           "Construyo sistemas de datos y cloud resilientes que se encargan del trabajo pesado, para que puedas concentrarte en hacer crecer tu negocio. Seguros, conformes y listos para producción.",
-          "Costruisco sistemi dati e cloud resilienti che si occupano del lavoro pesante, così puoi concentrarti sulla crescita della tua attività. Sicuri, conformi e pronti per la produzione.",
+          "Costruisco sistemi dati e cloud resilienti che si occupano del lavoro pesante, così puoi concentrarti sulla crescita della tua attività. Sicuri, conformi e pronti per la produzione."
         )}
         ctaText={t(
           "Discuss Your Project",
@@ -57,7 +66,7 @@ export default async function Home() {
           "Projekt besprechen",
           "Discuter de votre projet",
           "Hablemos de tu proyecto",
-          "Parliamo del tuo progetto",
+          "Parliamo del tuo progetto"
         )}
       />
 
@@ -72,7 +81,7 @@ export default async function Home() {
                 "Data-Engineer-Portfolio",
                 "Portfolio Data Engineer",
                 "Portafolio de Data Engineer",
-                "Portfolio da Data Engineer",
+                "Portfolio da Data Engineer"
               )}
               subtitle={t(
                 "Large-scale scraping and pipelines processing millions of records daily",
@@ -80,7 +89,7 @@ export default async function Home() {
                 "Umfangreiches Scraping und Pipelines, die täglich Millionen von Datensätzen verarbeiten",
                 "Scraping à grande échelle et pipelines traitant des millions d'enregistrements par jour",
                 "Scraping a gran escala y pipelines que procesan millones de registros al día",
-                "Scraping su larga scala e pipeline che elaborano milioni di record al giorno",
+                "Scraping su larga scala e pipeline che elaborano milioni di record al giorno"
               )}
               href="/data-engineer"
             />
@@ -106,7 +115,7 @@ export default async function Home() {
                 "Software-Engineer-Portfolio",
                 "Portfolio Software Engineer",
                 "Portafolio de Software Engineer",
-                "Portfolio da Software Engineer",
+                "Portfolio da Software Engineer"
               )}
               subtitle={t(
                 "Award-winning products and platforms shipped for real clients",
@@ -114,7 +123,7 @@ export default async function Home() {
                 "Preisgekrönte Produkte und Plattformen für echte Kunden",
                 "Produits et plateformes primés livrés à de vrais clients",
                 "Productos y plataformas premiados entregados a clientes reales",
-                "Prodotti e piattaforme premiati realizzati per clienti reali",
+                "Prodotti e piattaforme premiati realizzati per clienti reali"
               )}
               href="/software-engineer"
             />
@@ -137,6 +146,6 @@ export default async function Home() {
       <HowIWork />
       <Testimonials showExternalLinks={mode !== "upwork"} />
       <Footer mode={mode} exportScope="general" />
-    </div>
+    </main>
   );
 }

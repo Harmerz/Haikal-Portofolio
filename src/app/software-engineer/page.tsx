@@ -14,26 +14,36 @@ import CrossLinkBanner from "@/components/CrossLinkBanner";
 import Footer from "@/components/Footer";
 import { featuredSoftware, moreSoftware } from "@/data/projects";
 import { t } from "@/i18n/config";
-import {
-  getCtaUrl,
-  UPWORK_PORTFOLIO_URLS,
-} from "@/config/site";
+import { getCtaUrl, SITE_URL, UPWORK_PORTFOLIO_URLS } from "@/config/site";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Haikal Hilmi — Software Engineer",
-  description:
-    "Production-ready full-stack web applications by Haikal Hilmi. React/Next.js, backend APIs, and database design.",
-};
+const description =
+  "Production-ready full-stack web applications by Haikal Hilmi. React/Next.js, backend APIs, and database design.";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Software Engineer",
+  description,
+  path: "/software-engineer",
+});
 
 export default async function Home() {
   const requestHeaders = await headers();
   const mode =
-    requestHeaders.get("x-portfolio-mode") === "upwork"
-      ? "upwork"
-      : "general";
+    requestHeaders.get("x-portfolio-mode") === "upwork" ? "upwork" : "general";
 
   return (
-    <div className="relative min-h-screen bg-white text-gray-900">
+    <main className="relative min-h-screen bg-white text-gray-900">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ProfilePage",
+          url: `${SITE_URL}/software-engineer`,
+          name: "Haikal Hilmi — Software Engineer",
+          description,
+          mainEntity: { "@id": `${SITE_URL}/#person` },
+        }}
+      />
       {/* Hero Section */}
       <HeroSection
         ctaHref={getCtaUrl(mode)}
@@ -43,7 +53,7 @@ export default async function Home() {
           "Spezialisiert auf Software Engineering",
           "Spécialisé en Software Engineering",
           "Especializado en Software Engineering",
-          "Specializzato in Software Engineering",
+          "Specializzato in Software Engineering"
         )}
         title={t(
           "Production-ready web applications.",
@@ -51,7 +61,7 @@ export default async function Home() {
           "Produktionsreife Webanwendungen.",
           "Applications web prêtes pour la production.",
           "Aplicaciones web listas para producción.",
-          "Applicazioni web pronte per la produzione.",
+          "Applicazioni web pronte per la produzione."
         )}
         description={t(
           "Full-stack development that combines seamless user interfaces with high-performance backends. Secure, maintainable, and built for growth.",
@@ -59,7 +69,7 @@ export default async function Home() {
           "Full-Stack-Entwicklung, die nahtlose Benutzeroberflächen mit leistungsstarken Backends verbindet. Sicher, wartbar und für Wachstum gebaut.",
           "Un développement full-stack qui allie interfaces utilisateur fluides et backends hautement performants. Sécurisé, maintenable et conçu pour évoluer.",
           "Desarrollo full-stack que combina interfaces de usuario fluidas con backends de alto rendimiento. Seguro, mantenible y construido para crecer.",
-          "Sviluppo full-stack che unisce interfacce utente fluide a backend ad alte prestazioni. Sicuro, manutenibile e costruito per crescere.",
+          "Sviluppo full-stack che unisce interfacce utente fluide a backend ad alte prestazioni. Sicuro, manutenibile e costruito per crescere."
         )}
         supportingLine={t(
           "React/Next.js • Backend APIs • Database Design • Fullstack",
@@ -67,7 +77,7 @@ export default async function Home() {
           "React/Next.js • Backend-APIs • Datenbankdesign • Fullstack",
           "React/Next.js • API Backend • Conception de bases de données • Fullstack",
           "React/Next.js • APIs de Backend • Diseño de Bases de Datos • Fullstack",
-          "React/Next.js • API Backend • Progettazione Database • Fullstack",
+          "React/Next.js • API Backend • Progettazione Database • Fullstack"
         )}
         ctaText={t(
           "Discuss Your Product",
@@ -75,7 +85,7 @@ export default async function Home() {
           "Produkt besprechen",
           "Discuter de votre produit",
           "Hablemos de tu producto",
-          "Parliamo del tuo prodotto",
+          "Parliamo del tuo prodotto"
         )}
       />
 
@@ -90,7 +100,7 @@ export default async function Home() {
                 "Ausgewählte Arbeiten",
                 "Travaux phares",
                 "Trabajos destacados",
-                "Lavori in evidenza",
+                "Lavori in evidenza"
               )}
               subtitle={t(
                 "AI products, SaaS, and platforms I've shipped for real clients",
@@ -98,7 +108,7 @@ export default async function Home() {
                 "KI-Produkte, SaaS und Plattformen, die ich für echte Kunden umgesetzt habe",
                 "Produits IA, SaaS et plateformes livrés à de vrais clients",
                 "Productos de IA, SaaS y plataformas que he entregado a clientes reales",
-                "Prodotti IA, SaaS e piattaforme realizzati per clienti reali",
+                "Prodotti IA, SaaS e piattaforme realizzati per clienti reali"
               )}
             />
           </Reveal>
@@ -128,7 +138,7 @@ export default async function Home() {
                 "Weitere Projekte",
                 "Autres projets",
                 "Más proyectos",
-                "Altri progetti",
+                "Altri progetti"
               )}
               subtitle={t(
                 "Award-winning competition builds and other client work",
@@ -136,7 +146,7 @@ export default async function Home() {
                 "Preisgekrönte Wettbewerbsprojekte und weitere Kundenarbeiten",
                 "Projets de compétition primés et autres travaux clients",
                 "Proyectos de competición premiados y otros trabajos para clientes",
-                "Progetti di competizione premiati e altri lavori per clienti",
+                "Progetti di competizione premiati e altri lavori per clienti"
               )}
             />
           </Reveal>
@@ -172,7 +182,7 @@ export default async function Home() {
           "Brauchen Sie auch Datenarbeit?",
           "Besoin de travail sur vos données aussi ?",
           "¿También necesitas trabajo con datos?",
-          "Hai bisogno anche di lavoro sui dati?",
+          "Hai bisogno anche di lavoro sui dati?"
         )}
         description={t(
           "Beyond apps, I build reliable data pipelines, web scrapers, and ETL systems that keep your data clean and ready to use.",
@@ -180,24 +190,20 @@ export default async function Home() {
           "Neben Apps baue ich zuverlässige Datenpipelines, Web-Scraper und ETL-Systeme, die Ihre Daten sauber und einsatzbereit halten.",
           "Au-delà des applications, je construis des pipelines de données, des web scrapers et des systèmes ETL fiables qui gardent vos données propres et prêtes à l'emploi.",
           "Más allá de las apps, construyo pipelines de datos, web scrapers y sistemas ETL fiables que mantienen tus datos limpios y listos para usar.",
-          "Oltre alle app, costruisco pipeline di dati, web scraper e sistemi ETL affidabili che mantengono i tuoi dati puliti e pronti all'uso.",
+          "Oltre alle app, costruisco pipeline di dati, web scraper e sistemi ETL affidabili che mantengono i tuoi dati puliti e pronti all'uso."
         )}
-        href={
-          mode === "upwork"
-            ? UPWORK_PORTFOLIO_URLS.data
-            : "/data-engineer"
-        }
+        href={mode === "upwork" ? UPWORK_PORTFOLIO_URLS.data : "/data-engineer"}
         ctaLabel={t(
           "See my data engineering work",
           "Lihat karya data engineering saya",
           "Meine Data-Engineering-Arbeit ansehen",
           "Voir mon travail en data engineering",
           "Ver mi trabajo de data engineering",
-          "Guarda il mio lavoro di data engineering",
+          "Guarda il mio lavoro di data engineering"
         )}
       />
 
       <Footer mode={mode} exportScope="se" />
-    </div>
+    </main>
   );
 }

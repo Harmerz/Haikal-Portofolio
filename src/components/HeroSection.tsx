@@ -77,10 +77,11 @@ export default function HeroSection({
           className="animate-fade-up mb-6 h-[120px] w-[120px] overflow-hidden rounded-full shadow-lg md:h-[160px] md:w-[160px]"
         >
           <Image
-            width={200}
-            height={200}
-            src="/IMG_7376.jpg"
+            width={160}
+            height={160}
+            src="/haikal-hilmi-profile.jpg"
             alt="Foto profil Haikal Hilmi"
+            sizes="(min-width: 768px) 160px, 120px"
             className="h-full w-full object-cover"
             draggable={false}
             priority
@@ -161,7 +162,10 @@ export default function HeroSection({
         </div>
 
         {/* Company Logos */}
-        <div className="animate-fade-up mt-16" style={{ animationDelay: "480ms" }}>
+        <div
+          className="animate-fade-up mt-16"
+          style={{ animationDelay: "480ms" }}
+        >
           <div className="flex items-center justify-center -space-x-2 sm:-space-x-3">
             {companies.map((company, index) => (
               <div
