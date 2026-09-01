@@ -90,36 +90,24 @@ export default function HeroSection({
 
         {/* Nama / Eyebrow */}
         {eyebrow && (
-          <p
-            className="animate-fade-up mb-3 text-[18px] font-bold text-gray-900 md:text-[20px]"
-            style={{ animationDelay: "100ms" }}
-          >
+          <p className="mb-3 text-[18px] font-bold text-gray-900 md:text-[20px]">
             {t(eyebrow)}
           </p>
         )}
 
         {/* Headline */}
-        <h1
-          className="animate-fade-up mb-6 max-w-[800px] text-[32px] leading-[110%] font-bold text-gray-900 md:text-[56px] md:leading-[120%]"
-          style={{ animationDelay: "180ms" }}
-        >
+        <h1 className="mb-6 max-w-[800px] text-[32px] leading-[110%] font-bold text-gray-900 md:text-[56px] md:leading-[120%]">
           {t(title)}
         </h1>
 
         {/* Sub-headline */}
-        <div
-          className="animate-fade-up mb-8 max-w-[600px] text-[16px] leading-[160%] font-normal text-gray-600 md:text-[20px]"
-          style={{ animationDelay: "260ms" }}
-        >
+        <div className="mb-8 max-w-[600px] text-[16px] leading-[160%] font-normal text-gray-600 md:text-[20px]">
           {t(description)}
         </div>
 
         {/* Supporting Line */}
         {supportingLine && (
-          <p
-            className="animate-fade-up mb-8 text-[14px] font-medium tracking-wide text-gray-500 uppercase md:text-[16px]"
-            style={{ animationDelay: "320ms" }}
-          >
+          <p className="mb-8 text-[14px] font-medium tracking-wide text-gray-500 uppercase md:text-[16px]">
             {t(supportingLine)}
           </p>
         )}
@@ -127,7 +115,7 @@ export default function HeroSection({
         {/* Status & CTA */}
         <div
           className="animate-fade-up flex flex-col items-center gap-4"
-          style={{ animationDelay: "380ms" }}
+          style={{ animationDelay: "120ms" }}
         >
           <div className="inline-flex items-center gap-2 rounded-full border border-green-100 bg-green-50 px-3 py-1 text-[13px] font-medium text-green-700 md:text-[14px]">
             <span className="relative flex h-2 w-2">
@@ -164,7 +152,7 @@ export default function HeroSection({
         {/* Company Logos */}
         <div
           className="animate-fade-up mt-16"
-          style={{ animationDelay: "480ms" }}
+          style={{ animationDelay: "180ms" }}
         >
           <div className="flex items-center justify-center -space-x-2 sm:-space-x-3">
             {companies.map((company, index) => (

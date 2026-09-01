@@ -1,21 +1,20 @@
 # Graph Report - my-portofolio-general  (2026-09-01)
 
 ## Corpus Check
-- 65 files · ~732,198 words
+- 66 files · ~732,218 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 301 nodes · 632 edges · 41 communities (19 shown, 22 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.85)
+- 306 nodes · 638 edges · 40 communities (18 shown, 22 thin omitted)
+- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a3cb0cb5`
+- Built from commit: `d9d2ded4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- useLanguage
 - portfolio-export.ts
 - devDependencies
 - data-engineer/page.tsx
@@ -27,7 +26,7 @@
 - PT Aksarakan Bhumi Indonesia (client company)
 - postcss.config.mjs
 - Project interface
-- Localized
+- LanguageProvider.tsx
 - projects.ts
 - site.ts
 - Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?
@@ -67,35 +66,31 @@
 ## Surprising Connections (you probably didn't know these)
 - `ProjectMeta` --references--> `Localized`  [EXTRACTED]
   src/data/projects.ts → src/i18n/config.ts
+- `Testimonial` --references--> `Localized`  [EXTRACTED]
+  src/data/testimonials.ts → src/i18n/config.ts
 - `same()` --calls--> `t()`  [EXTRACTED]
   src/data/testimonials.ts → src/i18n/config.ts
 - `ProjectModal()` --calls--> `getProjectById()`  [EXTRACTED]
   src/app/@modal/(.)projects/[id]/page.tsx → src/data/projects.ts
-- `generateMetadata()` --calls--> `pageMetadata()`  [EXTRACTED]
-  src/app/projects/[id]/page.tsx → src/lib/seo.ts
-- `About()` --calls--> `useLanguage()`  [EXTRACTED]
-  src/components/About.tsx → src/i18n/LanguageProvider.tsx
+- `ContextBadge()` --calls--> `useLanguage()`  [EXTRACTED]
+  src/components/ContextBadge.tsx → src/i18n/LanguageProvider.tsx
 
 ## Import Cycles
 - None detected.
 
-## Communities (41 total, 22 thin omitted)
-
-### Community 0 - "useLanguage"
-Cohesion: 0.14
-Nodes (25): ContextBadge(), STYLES, STANDARDS, FeaturedHero(), Header(), LanguageSuggestBanner(), LANG_LABELS, LanguageToggle() (+17 more)
+## Communities (40 total, 22 thin omitted)
 
 ### Community 1 - "portfolio-export.ts"
-Cohesion: 0.26
-Nodes (14): GET(), GET(), pdfSafe(), plainMarkdown(), runtime, TextStyle, wrapText(), getPipeline() (+6 more)
+Cohesion: 0.17
+Nodes (19): GET(), GET(), pdfSafe(), plainMarkdown(), runtime, TextStyle, wrapText(), UPWORK_URL (+11 more)
 
 ### Community 2 - "devDependencies"
 Cohesion: 0.05
 Nodes (40): eslint, eslint-config-next, @eslint/eslintrc, next, dependencies, next, pdf-lib, react (+32 more)
 
 ### Community 3 - "data-engineer/page.tsx"
-Cohesion: 0.15
-Nodes (28): dataTech, Home(), metadata, Home(), Home(), metadata, About(), CrossLinkBanner() (+20 more)
+Cohesion: 0.17
+Nodes (27): dataTech, Home(), metadata, Home(), Home(), metadata, About(), CrossLinkBanner() (+19 more)
 
 ### Community 4 - "compilerOptions"
 Cohesion: 0.07
@@ -105,17 +100,17 @@ Nodes (26): dom, dom.iterable, esnext, next-env.d.ts, .next/types/**/*.ts, node_
 Cohesion: 0.40
 Nodes (4): compat, __dirname, eslintConfig, __filename
 
-### Community 12 - "Localized"
-Cohesion: 0.13
-Nodes (15): CrossLinkBannerProps, Step, STEPS, SectionHeaderProps, DEFAULT_DESC, DEFAULT_TITLE, defaultTech, TechStackProps (+7 more)
+### Community 12 - "LanguageProvider.tsx"
+Cohesion: 0.10
+Nodes (24): CrossLinkBannerProps, STANDARDS, Step, STEPS, SUBTITLE, TITLE, LANG_LABELS, DEFAULT_LABEL (+16 more)
 
 ### Community 13 - "projects.ts"
 Cohesion: 0.11
-Nodes (19): ProjectModal(), generateMetadata(), ProjectPage(), staticRoutes, SUBTITLE, TITLE, PipelineDiagram(), ProjectDetail() (+11 more)
+Nodes (28): ProjectModal(), generateMetadata(), ProjectPage(), staticRoutes, ContextBadge(), STYLES, FeaturedHero(), Modal() (+20 more)
 
 ### Community 14 - "site.ts"
-Cohesion: 0.14
-Nodes (15): metadata, RootLayout(), companies, CTA_URL, LINKEDIN_URL, PortfolioMode, SITE_URL, TALLY_URL (+7 more)
+Cohesion: 0.10
+Nodes (21): metadata, RootLayout(), GoogleAnalytics(), INTERACTION_EVENTS, Window, companies, LanguageSuggestBanner(), LanguageToggle() (+13 more)
 
 ### Community 15 - "Q: sekarang apakah yang dua porto tadi sudah masuk ke portofolio.md?"
 Cohesion: 0.40
@@ -138,7 +133,7 @@ Cohesion: 0.40
 Nodes (4): Answer, Outcome, Q: Where should a reusable Copy page as Markdown action live for project detail pages, and how can project data be serialized to Markdown?, Source Nodes
 
 ## Knowledge Gaps
-- **111 isolated node(s):** `__filename`, `__dirname`, `compat`, `eslintConfig`, `nextConfig` (+106 more)
+- **113 isolated node(s):** `__filename`, `__dirname`, `compat`, `eslintConfig`, `nextConfig` (+108 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **22 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -152,17 +147,17 @@ Nodes (4): Answer, Outcome, Q: Where should a reusable Copy page as Markdown act
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `useLanguage()` connect `useLanguage` to `data-engineer/page.tsx`, `Localized`, `projects.ts`, `site.ts`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
-- **Why does `Localized` connect `Localized` to `useLanguage`, `data-engineer/page.tsx`, `projects.ts`, `site.ts`?**
+- **Why does `useLanguage()` connect `data-engineer/page.tsx` to `LanguageProvider.tsx`, `projects.ts`, `site.ts`?**
+  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+- **Why does `Localized` connect `LanguageProvider.tsx` to `portfolio-export.ts`, `projects.ts`, `site.ts`?**
   _High betweenness centrality (0.020) - this node is a cross-community bridge._
+- **Why does `SITE_URL` connect `site.ts` to `portfolio-export.ts`, `data-engineer/page.tsx`, `projects.ts`?**
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `compat` to the rest of the system?**
-  _111 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `useLanguage` be split into smaller, more focused modules?**
-  _Cohesion score 0.14414414414414414 - nodes in this community are weakly interconnected._
+  _113 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `devDependencies` be split into smaller, more focused modules?**
   _Cohesion score 0.04878048780487805 - nodes in this community are weakly interconnected._
-- **Should `data-engineer/page.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.14603174603174604 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
+- **Should `LanguageProvider.tsx` be split into smaller, more focused modules?**
+  _Cohesion score 0.10420168067226891 - nodes in this community are weakly interconnected._

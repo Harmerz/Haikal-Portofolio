@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Keep metadata in <head> for crawlers and audit tools instead of streaming it.
+  htmlLimitedBots: /.*/,
   poweredByHeader: false,
   compress: true,
   images: {

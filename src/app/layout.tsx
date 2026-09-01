@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import Script from "next/script";
 import "./globals.css";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import Header from "@/components/Header";
 import LanguageSuggestBanner from "@/components/LanguageSuggestBanner";
 import JsonLd from "@/components/JsonLd";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { LINKEDIN_URL, SITE_URL } from "@/config/site";
 import {
   DEFAULT_DESCRIPTION,
@@ -113,17 +113,7 @@ export default async function RootLayout({
           {modal}
           <LanguageSuggestBanner />
         </LanguageProvider>
-        {analyticsId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${analyticsId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','${analyticsId}',{anonymize_ip:true});`}
-            </Script>
-          </>
-        )}
+        {analyticsId && <GoogleAnalytics measurementId={analyticsId} />}
       </body>
     </html>
   );

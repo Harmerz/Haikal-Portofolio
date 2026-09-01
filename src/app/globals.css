@@ -36,18 +36,37 @@ body {
   animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* Scroll reveal — toggled by the <Reveal> component. */
+/* Content remains visible by default. Scroll motion is progressive enhancement. */
 .reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.6s ease-out,
-    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
-.reveal.is-visible {
   opacity: 1;
   transform: none;
+}
+
+@supports (animation-timeline: view()) {
+  .reveal {
+    animation: reveal-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 24%;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Skip layout and paint for long-page sections until they approach the viewport. */
+@supports (content-visibility: auto) {
+  main > section:not(:first-of-type) {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
 }
 
 /* Pipeline diagram — a pulse flowing along the connectors (suggests throughput). */
@@ -103,11 +122,10 @@ body {
   .animate-fade-up {
     animation: none;
   }
-  .reveal,
-  .reveal.is-visible {
+  .reveal {
     opacity: 1;
     transform: none;
-    transition: none;
+    animation: none;
   }
   .animate-pipe-x,
   .animate-pipe-y {

@@ -12,9 +12,9 @@
     "semantic_hash": "f1e80e839db34357a0e228efe227e759"
   },
   "next.config.ts": {
-    "mtime": 1788193896.4565449,
-    "seen": 1788194304.7446773,
-    "ast_hash": "74c1cb1022724d4f0406c29a304b34cf",
+    "mtime": 1788230779.69409,
+    "seen": 1788230898.36083,
+    "ast_hash": "87e3a10c2fe9a9628789c7718b0ea6ad",
     "semantic_hash": ""
   },
   "package.json": {
@@ -48,9 +48,9 @@
     "semantic_hash": ""
   },
   "src/app/layout.tsx": {
-    "mtime": 1788195986.8790796,
-    "seen": 1788196040.782351,
-    "ast_hash": "de6749eff7ea90a7faced1609107aed1",
+    "mtime": 1788230579.3811386,
+    "seen": 1788230898.3608406,
+    "ast_hash": "cfb0af2fa2e92c1f4e37173b4c342217",
     "semantic_hash": ""
   },
   "src/app/page.tsx": {
@@ -120,9 +120,9 @@
     "semantic_hash": ""
   },
   "src/components/HeroSection.tsx": {
-    "mtime": 1788194529.7554426,
-    "seen": 1788194575.077152,
-    "ast_hash": "f4b09733e8d025938768472cdfd8216e",
+    "mtime": 1788230579.3821452,
+    "seen": 1788230898.3608642,
+    "ast_hash": "652ac4d07631ac7cda2acf04a7776336",
     "semantic_hash": ""
   },
   "src/components/HowIWork.tsx": {
@@ -168,10 +168,10 @@
     "semantic_hash": ""
   },
   "src/components/Reveal.tsx": {
-    "mtime": 1780593121.7483628,
-    "seen": 1788194304.74472,
-    "ast_hash": "2586c2369c1184ade3c293d20cbb5e11",
-    "semantic_hash": "2586c2369c1184ade3c293d20cbb5e11"
+    "mtime": 1788230579.3821452,
+    "seen": 1788230898.3608768,
+    "ast_hash": "752f4d3a364f27528af7fdfc79479475",
+    "semantic_hash": ""
   },
   "src/components/SectionHeader.tsx": {
     "mtime": 1782890320.718649,
@@ -963,6 +963,12 @@
     "mtime": 1781600045.9015248,
     "seen": 1788194575.0772192,
     "ast_hash": "e55401b0d587d103dee44e5669426161",
+    "semantic_hash": ""
+  },
+  "src/components/GoogleAnalytics.tsx": {
+    "mtime": 1788230579.3796072,
+    "seen": 1788230898.3608615,
+    "ast_hash": "6334c1c34027c8c8452406ffdbb5d789",
     "semantic_hash": ""
   }
 }
