@@ -192,7 +192,7 @@ export async function GET(request: Request) {
 
   const pages = document.getPages();
   pages.forEach((currentPage, index) => {
-    const footer = `${meta.heading} | www.haikalhilmi.my.id | ${index + 1} / ${pages.length}`;
+    const footer = `${meta.heading} | haikalhilmi.my.id | ${index + 1} / ${pages.length}`;
     const footerSize = 8;
     currentPage.drawLine({
       start: { x: MARGIN_X, y: 35 },

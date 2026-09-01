@@ -7,7 +7,7 @@ type SubdomainConfig = {
 };
 
 const SUBDOMAIN_ROUTES: Record<string, SubdomainConfig> = {
-  "www.haikalhilmi.my.id": { route: "/", mode: "general" },
+  "haikalhilmi.my.id": { route: "/", mode: "general" },
   "se.haikalhilmi.my.id": { route: "/software-engineer", mode: "general" },
   "de.haikalhilmi.my.id": { route: "/data-engineer", mode: "general" },
   "upwork.haikalhilmi.my.id": { route: "/", mode: "upwork" },
@@ -25,9 +25,9 @@ export function middleware(req: NextRequest) {
   const url = req.nextUrl;
   const hostname = req.headers.get("host")?.split(":")[0] ?? "";
 
-  if (hostname === "haikalhilmi.my.id") {
+  if (hostname === "www.haikalhilmi.my.id") {
     const canonicalUrl = req.nextUrl.clone();
-    canonicalUrl.hostname = "www.haikalhilmi.my.id";
+    canonicalUrl.hostname = "haikalhilmi.my.id";
     canonicalUrl.port = "";
     canonicalUrl.protocol = "https";
     return NextResponse.redirect(canonicalUrl, 308);

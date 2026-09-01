@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
 
   const staticEntries = staticRoutes.map((route) => ({
-    url: `${SITE_URL}${route}`,
+    url: route === "/" ? SITE_URL : `${SITE_URL}${route}`,
     lastModified,
     changeFrequency: "monthly" as const,
     priority: route === "/" ? 1 : 0.9,

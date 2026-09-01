@@ -17,10 +17,6 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "haikalhilmi.my.id",
       },
-      {
-        protocol: "https",
-        hostname: "www.haikalhilmi.my.id",
-      },
     ],
   },
   async headers() {
