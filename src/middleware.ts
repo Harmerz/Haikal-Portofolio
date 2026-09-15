@@ -4,12 +4,18 @@ import type { NextRequest } from "next/server";
 type SubdomainConfig = {
   route: string;
   mode: "general" | "upwork";
+  site?: "general" | "hustler";
 };
 
 const SUBDOMAIN_ROUTES: Record<string, SubdomainConfig> = {
   "haikalhilmi.my.id": { route: "/", mode: "general" },
   "se.haikalhilmi.my.id": { route: "/software-engineer", mode: "general" },
   "de.haikalhilmi.my.id": { route: "/data-engineer", mode: "general" },
+  "hustler.haikalhilmi.my.id": {
+    route: "/hustler",
+    mode: "general",
+    site: "hustler",
+  },
   "upwork.haikalhilmi.my.id": { route: "/", mode: "upwork" },
   "upwork-se.haikalhilmi.my.id": {
     route: "/software-engineer",
@@ -43,8 +49,15 @@ export function middleware(req: NextRequest) {
 
   const config = SUBDOMAIN_ROUTES[hostname];
   const mode = config?.mode === "upwork" ? "upwork" : "general";
+  const isLocalHustlerPreview =
+    (hostname === "localhost" || hostname === "127.0.0.1") &&
+    url.pathname.startsWith("/hustler");
   const requestHeaders = new Headers(req.headers);
   requestHeaders.set("x-portfolio-mode", mode);
+  requestHeaders.set(
+    "x-portfolio-site",
+    config?.site === "hustler" || isLocalHustlerPreview ? "hustler" : "general"
+  );
 
   if (config && config.route !== "/" && url.pathname === "/") {
     return NextResponse.rewrite(new URL(config.route, req.url), {

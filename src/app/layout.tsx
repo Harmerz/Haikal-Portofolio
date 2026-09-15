@@ -79,6 +79,7 @@ export default async function RootLayout({
   const requestHeaders = await headers();
   const portfolioMode =
     requestHeaders.get("x-portfolio-mode") === "upwork" ? "upwork" : "general";
+  const isHustler = requestHeaders.get("x-portfolio-site") === "hustler";
 
   const personJsonLd = {
     "@context": "https://schema.org",
@@ -106,13 +107,17 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans antialiased">
-        <JsonLd data={[personJsonLd, websiteJsonLd]} />
-        <LanguageProvider>
-          <Header mode={portfolioMode} />
-          {children}
-          {modal}
-          <LanguageSuggestBanner />
-        </LanguageProvider>
+        {!isHustler && <JsonLd data={[personJsonLd, websiteJsonLd]} />}
+        {isHustler ? (
+          children
+        ) : (
+          <LanguageProvider>
+            <Header mode={portfolioMode} />
+            {children}
+            {modal}
+            <LanguageSuggestBanner />
+          </LanguageProvider>
+        )}
         {analyticsId && <GoogleAnalytics measurementId={analyticsId} />}
       </body>
     </html>
