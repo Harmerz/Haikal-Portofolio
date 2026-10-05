@@ -42,3 +42,6 @@ yarn-error.log*
 next-env.d.ts
 graphify-out/cost.jsonss
 graphify-out/cache/
+
+# local video assets & renders
+/videos/
