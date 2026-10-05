@@ -12,10 +12,16 @@ import HpcStats from "@/components/HpcStats";
 import TechStack from "@/components/TechStack";
 import Testimonials from "@/components/Testimonials";
 import CrossLinkBanner from "@/components/CrossLinkBanner";
+import IntroVideo from "@/components/IntroVideo";
 import Footer from "@/components/Footer";
 import { dataProjects } from "@/data/projects";
 import { t } from "@/i18n/config";
-import { getCtaUrl, SITE_URL, UPWORK_PORTFOLIO_URLS } from "@/config/site";
+import {
+  getCtaUrl,
+  INTRO_VIDEO,
+  SITE_URL,
+  UPWORK_PORTFOLIO_URLS,
+} from "@/config/site";
 import JsonLd from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
 
@@ -74,6 +80,19 @@ export default async function Home() {
           mainEntity: { "@id": `${SITE_URL}/#person` },
         }}
       />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "VideoObject",
+          name: "Haikal Hilmi — Data Engineer Intro",
+          description:
+            "A 45-second introduction to Haikal Hilmi's data engineering work: news collection pipelines, production data pipelines, and AI content tools.",
+          thumbnailUrl: `${SITE_URL}${INTRO_VIDEO.poster}`,
+          contentUrl: `${SITE_URL}${INTRO_VIDEO.src}`,
+          uploadDate: INTRO_VIDEO.uploadDate,
+          duration: INTRO_VIDEO.durationIso,
+        }}
+      />
       {/* Hero Section */}
       <HeroSection
         ctaHref={getCtaUrl(mode)}
@@ -118,6 +137,9 @@ export default async function Home() {
           "Parliamo delle tue esigenze di dati"
         )}
       />
+
+      {/* Intro Video */}
+      <IntroVideo />
 
       {/* Data Engineering Projects */}
       <section className="bg-white px-4 py-8">

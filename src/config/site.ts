@@ -17,3 +17,10 @@ export const UPWORK_PORTFOLIO_URLS = {
   software: "https://upwork-se.haikalhilmi.my.id",
   data: "https://upwork-de.haikalhilmi.my.id",
 } as const;
+
+export const INTRO_VIDEO = {
+  src: "/videos/intro-data-engineer.mp4",
+  poster: "/videos/intro-data-engineer-poster.jpg",
+  durationIso: "PT45S",
+  uploadDate: "2026-10-05",
+} as const;
