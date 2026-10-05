@@ -9,6 +9,7 @@ import Experience from "@/components/Experience";
 import HowIWork from "@/components/HowIWork";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import IntroVideo from "@/components/IntroVideo";
 import { featuredSoftware, dataProjects } from "@/data/projects";
 import { t } from "@/i18n/config";
 import { getCtaUrl, SITE_URL } from "@/config/site";
@@ -69,6 +70,9 @@ export default async function Home() {
           "Parliamo del tuo progetto"
         )}
       />
+
+      {/* Intro Video */}
+      <IntroVideo gutter="container" />
 
       {/* Data Engineering Portfolio Section */}
       <section className="bg-white py-8">

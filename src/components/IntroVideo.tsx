@@ -5,12 +5,19 @@ import Reveal from "@/components/Reveal";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { INTRO_VIDEO } from "@/config/site";
 
-const IntroVideo = () => {
+interface IntroVideoProps {
+  /** Matches the horizontal gutter of the surrounding page sections. */
+  gutter?: "section" | "container";
+}
+
+const IntroVideo = ({ gutter = "section" }: IntroVideoProps) => {
   const { t } = useLanguage();
+  const sectionPad = gutter === "section" ? "px-4" : "";
+  const containerPad = gutter === "container" ? "px-6" : "";
 
   return (
-    <section className="bg-white px-4 py-8">
-      <div className="mx-auto max-w-6xl">
+    <section className={`bg-white py-8 ${sectionPad}`}>
+      <div className={`mx-auto max-w-6xl ${containerPad}`}>
         <Reveal>
           <SectionHeader
             title={{
