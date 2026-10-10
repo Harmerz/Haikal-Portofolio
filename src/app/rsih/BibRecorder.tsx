@@ -1,7 +1,14 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
-import { readEntries, saveEntry, STORAGE_KEY, type BibEntry } from "./storage";
+import {
+  buildEntriesCsv,
+  readEntries,
+  saveEntry,
+  searchEntries,
+  STORAGE_KEY,
+  type BibEntry,
+} from "./storage";
 
 const inputClass =
   "mt-2 w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-lg text-slate-950 placeholder:text-slate-500 focus:border-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-700/20 disabled:bg-slate-100";
@@ -37,8 +44,31 @@ export default function BibRecorder() {
     return () => window.removeEventListener("storage", sync);
   }, []);
 
-  const result = entries.find((entry) => entry.bib === query.trim());
+  const results = searchEntries(entries, query);
   const isUpdate = entries.some((entry) => entry.bib === bib.trim());
+
+  function handleExport() {
+    try {
+      const saved = readEntries(window.localStorage);
+      if (!saved.length) {
+        setError("Belum ada data untuk diexport. Simpan BIB terlebih dahulu.");
+        return;
+      }
+      const url = URL.createObjectURL(
+        new Blob([buildEntriesCsv(saved)], { type: "text/csv;charset=utf-8" })
+      );
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `rsih-bib-${new Date().toISOString().slice(0, 10)}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+      setError("");
+    } catch {
+      setError("Data belum bisa diexport. Muat ulang halaman, lalu coba lagi.");
+    }
+  }
 
   function handleSave(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -84,7 +114,7 @@ export default function BibRecorder() {
             Cari nomor BIB
           </h2>
           <p className="mt-1 text-sm text-slate-600">
-            Masukkan nomor BIB untuk melihat angkanya.
+            Cari tanpa nol di depan. BIB 001 bisa dicari dengan 1.
           </p>
           <label
             htmlFor="bib-search"
@@ -98,7 +128,7 @@ export default function BibRecorder() {
             inputMode="numeric"
             autoComplete="off"
             maxLength={32}
-            placeholder="Contoh: 0012"
+            placeholder="Contoh: 1"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             className={inputClass}
@@ -119,18 +149,20 @@ export default function BibRecorder() {
                   ? "Ketik nomor BIB lengkap di atas. Hasil langsung muncul di sini."
                   : "Belum ada data. Tambahkan BIB lewat form di bawah."}
               </p>
-            ) : result ? (
-              <div>
-                <p className="text-sm break-all text-slate-600">
-                  Nomor angka untuk BIB{" "}
-                  <span className="font-semibold text-slate-900">
-                    {result.bib}
-                  </span>
-                </p>
-                <p className="mt-2 text-4xl font-bold break-all text-teal-800 tabular-nums">
-                  {result.angka}
-                </p>
-              </div>
+            ) : results.length ? (
+              results.map((result) => (
+                <div key={result.bib} className="mb-4 last:mb-0">
+                  <p className="text-sm break-all text-slate-600">
+                    Nomor angka untuk BIB{" "}
+                    <span className="font-semibold text-slate-900">
+                      {result.bib}
+                    </span>
+                  </p>
+                  <p className="mt-2 text-4xl font-bold break-all text-teal-800 tabular-nums">
+                    {result.angka}
+                  </p>
+                </div>
+              ))
             ) : (
               <p className="text-sm leading-6 break-all text-slate-600">
                 BIB{" "}
@@ -201,7 +233,7 @@ export default function BibRecorder() {
             <p className="mt-3 text-sm leading-6 text-slate-600">
               {isUpdate
                 ? "BIB ini sudah ada. Menyimpan akan memperbarui nomor angkanya."
-                : "Nol di depan tetap disimpan. BIB 0012 berbeda dengan 12."}
+                : "Nol di depan tetap disimpan. Pencarian 1 juga menemukan BIB 001."}
             </p>
             <button
               type="submit"
@@ -218,6 +250,18 @@ export default function BibRecorder() {
             </p>
           </form>
         </section>
+
+        <button
+          type="button"
+          onClick={handleExport}
+          disabled={!ready || entries.length === 0}
+          className="mt-6 min-h-12 w-full rounded-xl border border-teal-800 px-4 py-3 font-semibold text-teal-800 hover:bg-teal-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-800 disabled:cursor-not-allowed disabled:border-slate-300 disabled:text-slate-500"
+        >
+          Export CSV
+        </button>
+        <p className="mt-2 text-center text-xs leading-5 text-slate-600">
+          Unduh semua data BIB sebagai file backup.
+        </p>
 
         {error && (
           <p role="alert" className="mt-4 text-sm leading-6 text-red-800">

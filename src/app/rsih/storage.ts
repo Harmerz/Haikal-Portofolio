@@ -2,6 +2,22 @@ export type BibEntry = { bib: string; angka: string };
 
 export const STORAGE_KEY = "rsih-bib-entries-v1";
 
+export function searchEntries(entries: BibEntry[], query: string): BibEntry[] {
+  const bib = query.trim();
+  if (!/^\d+$/.test(bib)) return [];
+  const normalized = bib.replace(/^0+(?=\d)/, "");
+  return entries.filter(
+    (entry) => entry.bib.replace(/^0+(?=\d)/, "") === normalized
+  );
+}
+
+export function buildEntriesCsv(entries: BibEntry[]): string {
+  return (
+    "\uFEFFNomor BIB,Nomor angka\r\n" +
+    entries.map((entry) => `${entry.bib},${entry.angka}\r\n`).join("")
+  );
+}
+
 export function readEntries(storage: Pick<Storage, "getItem">): BibEntry[] {
   const raw = storage.getItem(STORAGE_KEY);
   if (raw === null) return [];
