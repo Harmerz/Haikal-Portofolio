@@ -56,7 +56,11 @@ export function middleware(req: NextRequest) {
   requestHeaders.set("x-portfolio-mode", mode);
   requestHeaders.set(
     "x-portfolio-site",
-    config?.site === "hustler" || isLocalHustlerPreview ? "hustler" : "general"
+    url.pathname === "/rsih" || url.pathname.startsWith("/rsih/")
+      ? "rsih"
+      : config?.site === "hustler" || isLocalHustlerPreview
+        ? "hustler"
+        : "general"
   );
 
   if (config && config.route !== "/" && url.pathname === "/") {
