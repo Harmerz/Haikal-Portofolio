@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { submitOnEnter } from "./keyboard";
 import {
   buildEntriesCsv,
   readEntries,
@@ -194,6 +195,8 @@ export default function BibRecorder() {
               id="bib-input"
               type="text"
               inputMode="numeric"
+              enterKeyHint="next"
+              onKeyDown={submitOnEnter}
               autoComplete="off"
               pattern="[0-9]+"
               maxLength={32}
@@ -217,6 +220,8 @@ export default function BibRecorder() {
               id="angka-input"
               type="text"
               inputMode="numeric"
+              enterKeyHint="done"
+              onKeyDown={submitOnEnter}
               autoComplete="off"
               pattern="[0-9]+"
               maxLength={64}

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { submitOnEnter } from "../src/app/rsih/keyboard.ts";
 import {
   readEntries,
   saveEntry,
@@ -62,4 +63,31 @@ for (const corrupt of ["{", "null", "{}", '[{"bib":"1","angka":2}]']) {
   assert.throws(() => saveEntry(storage, { bib: "1", angka: "2" }));
   assert.equal(storage.getItem(STORAGE_KEY), corrupt);
 }
-console.log("RSIH storage checks passed.");
+let submissions = 0;
+let prevented = 0;
+const keyEvent = {
+  key: "Enter",
+  repeat: false,
+  nativeEvent: { isComposing: false },
+  preventDefault: () => {
+    prevented += 1;
+  },
+  currentTarget: {
+    form: {
+      requestSubmit: () => {
+        submissions += 1;
+      },
+    },
+  },
+};
+submitOnEnter({ ...keyEvent, key: "Tab" });
+submitOnEnter({ ...keyEvent, nativeEvent: { isComposing: true } });
+assert.equal(submissions, 0);
+assert.equal(prevented, 0);
+submitOnEnter(keyEvent);
+assert.equal(submissions, 1);
+assert.equal(prevented, 1);
+submitOnEnter({ ...keyEvent, repeat: true });
+assert.equal(submissions, 1);
+assert.equal(prevented, 2);
+console.log("RSIH storage and keyboard checks passed.");
