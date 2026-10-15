@@ -81,7 +81,9 @@ export default async function RootLayout({
     requestHeaders.get("x-portfolio-mode") === "upwork" ? "upwork" : "general";
   const isHustler = requestHeaders.get("x-portfolio-site") === "hustler";
   const isRsih = requestHeaders.get("x-portfolio-site") === "rsih";
-  const isStandalone = isHustler || isRsih;
+  const isWeddingLetter =
+    requestHeaders.get("x-portfolio-site") === "wedding-letter";
+  const isStandalone = isHustler || isRsih || isWeddingLetter;
 
   const personJsonLd = {
     "@context": "https://schema.org",
@@ -107,7 +109,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={isRsih ? "id" : "en"}>
+    <html lang={isRsih || isWeddingLetter ? "id" : "en"}>
       <body className="font-sans antialiased">
         {!isStandalone && <JsonLd data={[personJsonLd, websiteJsonLd]} />}
         {isStandalone ? (

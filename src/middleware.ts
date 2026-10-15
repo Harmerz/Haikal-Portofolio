@@ -58,9 +58,11 @@ export function middleware(req: NextRequest) {
     "x-portfolio-site",
     url.pathname === "/rsih" || url.pathname.startsWith("/rsih/")
       ? "rsih"
-      : config?.site === "hustler" || isLocalHustlerPreview
-        ? "hustler"
-        : "general"
+      : url.pathname === "/untuk-nadia-rajendra"
+        ? "wedding-letter"
+        : config?.site === "hustler" || isLocalHustlerPreview
+          ? "hustler"
+          : "general"
   );
 
   if (config && config.route !== "/" && url.pathname === "/") {

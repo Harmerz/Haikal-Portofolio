@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-15T06:47:45Z",
+  "title": "Design System: Nadia & Rajendra — wedding letter",
+  "extensions": {
+    "colorMeta": {
+      "forest-ink": { "role": "primary", "displayName": "Forest ink", "tonalRamp": ["oklch(15% 0.04 157)", "oklch(26% 0.04 157)", "oklch(38% 0.04 157)", "oklch(49% 0.04 157)", "oklch(61% 0.04 157)", "oklch(72% 0.04 157)", "oklch(84% 0.04 157)", "oklch(95% 0.04 157)"] },
+      "ivory-paper": { "role": "neutral", "displayName": "Ivory paper", "tonalRamp": ["oklch(15% 0.015 90)", "oklch(26% 0.015 90)", "oklch(38% 0.015 90)", "oklch(49% 0.015 90)", "oklch(61% 0.015 90)", "oklch(72% 0.015 90)", "oklch(84% 0.015 90)", "oklch(95% 0.015 90)"] },
+      "muted-brass": { "role": "primary", "displayName": "Muted brass", "tonalRamp": ["oklch(15% 0.06 75)", "oklch(26% 0.06 75)", "oklch(38% 0.06 75)", "oklch(49% 0.06 75)", "oklch(61% 0.06 75)", "oklch(72% 0.06 75)", "oklch(84% 0.06 75)", "oklch(95% 0.06 75)"] },
+      "focus-brass": { "displayName": "Focus brass", "tonalRamp": ["oklch(15% 0.1 72)", "oklch(26% 0.1 72)", "oklch(38% 0.1 72)", "oklch(49% 0.1 72)", "oklch(61% 0.1 72)", "oklch(72% 0.1 72)", "oklch(84% 0.1 72)", "oklch(95% 0.1 72)"] },
+      "muted-paper": { "role": "neutral", "displayName": "Muted paper", "tonalRamp": ["oklch(15% 0.025 115)", "oklch(26% 0.025 115)", "oklch(38% 0.025 115)", "oklch(49% 0.025 115)", "oklch(61% 0.025 115)", "oklch(72% 0.025 115)", "oklch(84% 0.025 115)", "oklch(95% 0.025 115)"] }
+    },
+    "shadows": [{ "name": "envelope", "value": "0 18px 38px #101e1940", "purpose": "Lift ivory paper from the forest correspondence section." }],
+    "motion": [
+      { "name": "letter-reveal", "value": "600ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Reveal the opened letter; disabled for reduced motion." },
+      { "name": "seal-rotation", "value": "transform 350ms", "purpose": "Rotate the seal by -8deg on summary hover; disabled for reduced motion." }
+    ],
+    "breakpoints": [{ "name": "single-column-max", "value": "700px" }, { "name": "compact-desktop-max", "value": "1000px" }, { "name": "wide-desktop-min", "value": "1600px" }]
+  },
+  "components": [
+    {
+      "name": "Letter link",
+      "kind": "button",
+      "refersTo": "letter-link",
+      "description": "An outlined anchor leading to the envelope section.",
+      "html": "<a class=\"ds-letter-link\" href=\"#surat\">Ada surat untuk kalian <svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"M12 4v16m-6-6 6 6 6-6\"/></svg></a>",
+      "css": ".ds-letter-link{display:inline-flex;align-items:center;gap:32px;padding:17px 23px;border:1px solid #263d32;color:#263d32;font:13px system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;text-decoration:none;transition:color 200ms,background 200ms}.ds-letter-link svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.ds-letter-link:hover{background:#263d32;color:#f4f0e5}.ds-letter-link:focus-visible{outline:3px solid #9a682f;outline-offset:7px}@media(max-width:700px){.ds-letter-link{font-size:12px;padding:15px 20px;gap:25px}}@media(prefers-reduced-motion:reduce){.ds-letter-link{transition:none}}"
+    },
+    {
+      "name": "Envelope disclosure",
+      "kind": "custom",
+      "refersTo": "envelope",
+      "description": "The native paper envelope and monogram seal that open the letter.",
+      "html": "<details class=\"ds-envelope\"><summary><span class=\"ds-to\">Kepada<strong>Nadia &amp; Rajendra</strong></span><span class=\"ds-seal\" aria-hidden=\"true\">H</span><span class=\"ds-action\"><span class=\"ds-closed\">Buka surat</span><span class=\"ds-open\">Tutup surat</span><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path d=\"m5 9 7 7 7-7\"/></svg></span></summary><article class=\"ds-letter\"><p>Nadia &amp; Rajendra yang berbahagia,</p><p>Selamat menempuh hidup baru!</p></article></details>",
+      "css": "@font-face{font-family:'Wedding Bodoni';src:url('/untuk-nadia-rajendra/bodoni-moda.ttf') format('truetype');font-weight:500;font-display:swap}.ds-envelope{background:#f4f0e5;color:#263d32;box-shadow:0 18px 38px #101e1940;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}.ds-envelope summary{list-style:none;cursor:pointer;min-height:220px;padding:36px 40px;display:grid;grid-template-columns:1fr 64px;align-items:start;gap:28px}.ds-envelope summary::-webkit-details-marker{display:none}.ds-envelope summary:focus-visible{outline:3px solid #9a682f;outline-offset:-7px}.ds-to{font-size:12px;line-height:1.8}.ds-to strong{display:block;font-family:'Wedding Bodoni',Georgia,serif;font-size:29px;font-weight:500;line-height:1.2;margin-top:7px}.ds-seal{display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#263d32;color:#f4f0e5;font-family:'Wedding Bodoni',Georgia,serif;font-size:34px;transition:transform 350ms,background 200ms}.ds-envelope summary:hover .ds-seal{background:#52644b;transform:rotate(-8deg)}.ds-action{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #263d3233;padding-top:20px;font-size:12px}.ds-action svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}.ds-open{display:none}.ds-envelope[open] .ds-closed{display:none}.ds-envelope[open] .ds-open{display:inline}.ds-envelope[open] .ds-action svg{transform:rotate(180deg)}.ds-letter{padding:12px 40px 42px;font-size:15px;line-height:1.95;animation:ds-unfold 600ms cubic-bezier(0.16,1,0.3,1)}@keyframes ds-unfold{from{opacity:.5;clip-path:inset(0 0 20% 0)}to{opacity:1;clip-path:inset(0)}}@media(max-width:700px){.ds-envelope summary{grid-template-columns:1fr 52px;padding:25px;gap:24px;min-height:210px}.ds-seal{width:52px;height:52px;font-size:30px}.ds-to strong{font-size:26px}.ds-letter{padding:8px 25px 32px;font-size:14px;line-height:1.9}}@media(prefers-reduced-motion:reduce){.ds-envelope *{animation:none!important;transition:none!important}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Personal correspondence",
+    "overview": "This system applies only to `/untuk-nadia-rajendra`. The portfolio, Hustler, and RSIH keep their incumbent CSS. Warm paper, forest ink, generous space, and the couple's real photograph make the page feel like a letter addressed to two people.",
+    "keyCharacteristics": ["Large serif names and quiet sans-serif reading text.", "Square paper surfaces and a circular monogram seal.", "A native envelope disclosure with restrained motion."],
+    "rules": [],
+    "dos": ["Do preserve native disclosure semantics, visible keyboard focus, and reduced-motion support.", "Do keep the local typefaces and real couple photograph with their recorded provenance."],
+    "donts": ["Don't apply these route-specific tokens to the portfolio, Hustler, or RSIH.", "Don't add rounded paper cards or decorative imagery to this established letter treatment."]
+  }
+}
