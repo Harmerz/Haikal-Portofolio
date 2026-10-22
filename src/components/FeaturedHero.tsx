@@ -23,7 +23,7 @@ export default function FeaturedHero({ project }: { project: Project }) {
         {image && isVideo(image) ? (
           <video
             src={image}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="absolute inset-0 h-full w-full bg-gray-950 object-contain"
             autoPlay
             muted
             loop

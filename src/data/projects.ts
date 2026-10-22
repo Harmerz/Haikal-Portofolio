@@ -23,6 +23,61 @@ export interface Project {
 // ----------------------------------------------------------------------------
 export const softwareProjects: Project[] = [
   {
+    id: "funrun",
+    title: "Engineering Fun Run UGM",
+    description: t(
+      "An event platform built entirely by me for Engineering Fun Run UGM, from race information to participant registration, payments, and email tickets.",
+      "Platform acara Engineering Fun Run UGM yang saya bangun seluruhnya, dari informasi lomba hingga pendaftaran peserta, pembayaran, dan tiket melalui email.",
+      "Eine vollständig von mir entwickelte Veranstaltungsplattform für Engineering Fun Run UGM, von Laufinformationen bis zu Anmeldung, Zahlung und E-Mail-Tickets.",
+      "Une plateforme événementielle entièrement développée par mes soins pour Engineering Fun Run UGM, des informations de course à l'inscription, au paiement et aux billets par e-mail.",
+      "Una plataforma para Engineering Fun Run UGM desarrollada íntegramente por mí, desde información de la carrera hasta inscripciones, pagos y entradas por correo electrónico.",
+      "Una piattaforma per Engineering Fun Run UGM sviluppata interamente da me, dalle informazioni sulla corsa alle iscrizioni, ai pagamenti e ai biglietti via e-mail.",
+    ),
+    tech: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS 4", "Nodemailer", "Google APIs", "reCAPTCHA"],
+    result: t(
+      "2,800+ registered participants.",
+      "2.800+ peserta terdaftar.",
+      "Über 2.800 angemeldete Teilnehmende.",
+      "Plus de 2 800 participants inscrits.",
+      "Más de 2.800 participantes inscritos.",
+      "Oltre 2.800 partecipanti iscritti.",
+    ),
+    image: "/Porto/funrun.jpg",
+    alt: "Engineering Fun Run UGM event website on a laptop",
+    link: "https://engineeringugm.run",
+  },
+  {
+    id: "tdw",
+    title: "TDW Resources",
+    description: t(
+      "An event product concept for TDW Resources covering the company profile, seminar and training schedules, registration, and payment flows.",
+      "Konsep produk event untuk TDW Resources yang mencakup profil perusahaan, jadwal seminar dan pelatihan, pendaftaran, serta alur pembayaran.",
+      "Ein Event-Produktkonzept für TDW Resources mit Unternehmensprofil, Seminar- und Schulungsterminen sowie Anmelde- und Zahlungsabläufen.",
+      "Un concept de produit événementiel pour TDW Resources couvrant le profil de l'entreprise, les dates de séminaires et de formations, l'inscription et le paiement.",
+      "Un concepto de producto de eventos para TDW Resources que incluye el perfil de la empresa, calendarios de seminarios y formación, inscripciones y flujos de pago.",
+      "Un concept di prodotto per eventi per TDW Resources con profilo aziendale, calendari di seminari e formazione, iscrizioni e flussi di pagamento.",
+    ),
+    tech: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS 4", "Nodemailer", "Google APIs", "reCAPTCHA"],
+    image: "/Porto/tdw.jpg",
+    alt: "TDW Resources seminar and training website on a tablet",
+  },
+  {
+    id: "walet",
+    title: "Walet — Personal Finance App",
+    description: t(
+      "Arthavera's React Native personal finance app for tracking transactions, assets, budgets, and savings goals. Built under my technical leadership as CTO, with all core features functional.",
+      "Aplikasi keuangan pribadi Arthavera berbasis React Native untuk mencatat transaksi, aset, anggaran, dan target tabungan. Dibangun di bawah kepemimpinan teknis saya sebagai CTO, dengan seluruh fitur utama sudah berfungsi.",
+      "Arthaveras React-Native-App für persönliche Finanzen zur Verwaltung von Transaktionen, Vermögen, Budgets und Sparzielen. Unter meiner technischen Leitung als CTO entwickelt, mit allen Kernfunktionen funktionsfähig.",
+      "L'application de finances personnelles d'Arthavera en React Native pour suivre les transactions, les actifs, les budgets et les objectifs d'épargne. Développée sous ma direction technique en tant que CTO, avec toutes les fonctionnalités principales opérationnelles.",
+      "La aplicación de finanzas personales de Arthavera en React Native para gestionar transacciones, activos, presupuestos y metas de ahorro. Desarrollada bajo mi dirección técnica como CTO, con todas las funciones principales operativas.",
+      "L'app di finanza personale di Arthavera in React Native per gestire transazioni, patrimoni, budget e obiettivi di risparmio. Sviluppata sotto la mia direzione tecnica come CTO, con tutte le funzionalità principali operative.",
+    ),
+    tech: ["React Native", "Expo", "NestJS"],
+    image: "/Porto/walet/walet-hero.mp4",
+    images: ["/Porto/walet/walet-hero.mp4"],
+    alt: "Walet personal finance app showing transactions, assets, and budgets",
+  },
+  {
     id: "pwc",
     title: "PwC Securing AI",
     image: "/Porto/lensight_ori_pwc.png",
@@ -1253,6 +1308,47 @@ export interface ProjectMeta {
 }
 
 export const projectMeta: Record<string, ProjectMeta> = {
+  funrun: {
+    role: t(
+      "Full-Stack Developer (solo)",
+      "Full-Stack Developer (solo)",
+      "Full-Stack-Entwickler (allein)",
+      "Développeur full-stack (solo)",
+      "Desarrollador full-stack (individual)",
+      "Sviluppatore full-stack (in autonomia)",
+    ),
+    status: t("Live", "Live", "Live", "En ligne", "En línea", "Online"),
+  },
+  tdw: {
+    role: t(
+      "Full-Stack Developer (solo)",
+      "Full-Stack Developer (solo)",
+      "Full-Stack-Entwickler (allein)",
+      "Développeur full-stack (solo)",
+      "Desarrollador full-stack (individual)",
+      "Sviluppatore full-stack (in autonomia)",
+    ),
+    status: t(
+      "Event ticketing overview for client · Not deployed",
+      "Overview website ticketing event untuk klien · Belum live",
+      "Übersicht einer Event-Ticketing-Website für den Kunden · Noch nicht veröffentlicht",
+      "Présentation d'un site de billetterie événementielle pour le client · Non déployé",
+      "Presentación de un sitio de venta de entradas para el cliente · Sin publicar",
+      "Presentazione di un sito di biglietteria per eventi al cliente · Non pubblicato",
+    ),
+  },
+  walet: {
+    role: t("CTO at Arthavera", "CTO di Arthavera", "CTO bei Arthavera", "CTO chez Arthavera", "CTO en Arthavera", "CTO presso Arthavera"),
+    context: "owned",
+    status: t(
+      "In development · App Store & Google Play release planned",
+      "Dalam pengembangan · Rencana rilis di App Store & Google Play",
+      "In Entwicklung · Veröffentlichung im App Store und bei Google Play geplant",
+      "En développement · Sortie prévue sur l'App Store et Google Play",
+      "En desarrollo · Lanzamiento previsto en App Store y Google Play",
+      "In sviluppo · Pubblicazione prevista su App Store e Google Play",
+    ),
+  },
   "cross-platform-review-scraper": {
     role: t(
       "Data / Backend Engineer",
@@ -1990,7 +2086,7 @@ export function getProjectById(id: string): Project | undefined {
 // Featured "hook" projects — the strongest for freelance clients (AI, SaaS,
 // real client products). University/competition work shows lower as "more work".
 const FEATURED_IDS = [
-  "pwc", // award + AI + image
+  "walet", // Arthavera mobile product + video
   "robota-new", // B2B AI + image
   "gmat", // international award + image
   "omnisocials", // SaaS (NDA-safe, content-rich)
