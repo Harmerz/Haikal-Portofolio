@@ -1,4 +1,8 @@
 import { PDFDocument, StandardFonts, rgb, type PDFFont } from "pdf-lib";
+import { readFile } from "node:fs/promises";
+import path from "node:path";
+import sharp from "sharp";
+import { dataProjects, isVideo, softwareProjects, type Project } from "@/data/projects";
 import {
   buildPortfolioMarkdown,
   getPortfolioExportMeta,
@@ -48,7 +52,19 @@ function wrapText(
   size: number,
   maxWidth: number
 ): string[] {
-  const words = text.split(/\s+/).filter(Boolean);
+  // Split long URLs too, so evidence links stay inside the page margins.
+  const words = text.split(/\s+/).filter(Boolean).flatMap((word) => {
+    const chunks: string[] = [];
+    let chunk = "";
+    for (const character of word) {
+      if (chunk && font.widthOfTextAtSize(chunk + character, size) > maxWidth) {
+        chunks.push(chunk);
+        chunk = "";
+      }
+      chunk += character;
+    }
+    return [...chunks, chunk];
+  });
   if (words.length === 0) return [""];
 
   const lines: string[] = [];
@@ -74,7 +90,7 @@ export async function GET(request: Request) {
   const document = await PDFDocument.create();
   document.setTitle(meta.title);
   document.setAuthor("Haikal Hilmi");
-  document.setSubject(`${meta.title} - AI-ready professional portfolio export`);
+  document.setSubject(`${meta.title} - Illustrated professional portfolio`);
   document.setKeywords([
     "data engineer",
     "software engineer",
@@ -113,6 +129,7 @@ export async function GET(request: Request) {
     ensureSpace(blockHeight);
     y -= style.gapBefore ?? 0;
     for (const line of lines) {
+      ensureSpace(lineHeight);
       page.drawText(line, {
         x: MARGIN_X + indent,
         y: y - style.size,
@@ -125,11 +142,61 @@ export async function GET(request: Request) {
     y -= style.gapAfter ?? 0;
   };
 
+  const drawProjectImages = async (project: Project) => {
+    const sources = [...new Set([project.image, ...(project.images ?? [])])]
+      .filter((source): source is string => Boolean(source));
+    const images = [];
+    for (const source of sources) {
+      // Videos use a checked-in still; PDF readers cannot play gallery videos.
+      const imagePath = isVideo(source)
+        ? source.replace(/\.[^.]+$/, "-poster.jpg")
+        : source;
+      if (!/\.(png|jpe?g)$/i.test(imagePath)) continue;
+      try {
+        const bytes = await readFile(path.join(process.cwd(), "public", imagePath));
+        // Detect the actual format (some .png assets are WebP) and size for print.
+        const jpeg = await sharp(bytes).rotate()
+          .resize({ width: 1600, height: 1200, fit: "inside", withoutEnlargement: true })
+          .flatten({ background: "#ffffff" }).jpeg({ quality: 88 }).toBuffer();
+        images.push(await document.embedJpg(jpeg));
+      } catch (error) {
+        // Gallery videos may have no still; keep the cover and the project text.
+        if (!isVideo(source)) console.warn(`PDF image unavailable: ${imagePath}`, error);
+      }
+    }
+    const columns = images.length > 1 ? 2 : 1;
+    const gap = 12;
+    const cellWidth = (CONTENT_WIDTH - gap * (columns - 1)) / columns;
+    for (let index = 0; index < images.length; index += columns) {
+      const row = images.slice(index, index + columns).map((image) => ({
+        image,
+        ...image.scaleToFit(cellWidth, 230),
+      }));
+      const height = Math.max(...row.map((image) => image.height));
+      ensureSpace(height + 16);
+      row.forEach(({ image, width, height: imageHeight }, column) => {
+        page.drawImage(image, {
+          x: MARGIN_X + column * (cellWidth + gap) + (cellWidth - width) / 2,
+          y: y - height + (height - imageHeight) / 2,
+          width,
+          height: imageHeight,
+        });
+      });
+      y -= height + 16;
+    }
+  };
+
   const markdownLines = buildPortfolioMarkdown(scope).split("\n");
+  const projects = [
+    ...(scope !== "de" ? softwareProjects : []),
+    ...(scope !== "se" ? dataProjects : []),
+  ];
+  let projectSection = false;
+  let firstProject = false;
   let inFrontmatter = false;
   let frontmatterSeen = false;
 
-  for (const rawLine of markdownLines) {
+  for (const [lineIndex, rawLine] of markdownLines.entries()) {
     const trimmed = rawLine.trim();
     if (trimmed === "---" && !frontmatterSeen) {
       inFrontmatter = !inFrontmatter;
@@ -140,6 +207,8 @@ export async function GET(request: Request) {
       if (!inFrontmatter) y -= 3;
       continue;
     }
+    if (trimmed.startsWith("- Cover image:") || trimmed.startsWith("- ID:")) continue;
+    if (trimmed.startsWith("This document is optimized for search")) continue;
 
     if (trimmed.startsWith("# ")) {
       draw(trimmed.slice(2), {
@@ -149,6 +218,12 @@ export async function GET(request: Request) {
         gapAfter: 10,
       });
     } else if (trimmed.startsWith("## ")) {
+      projectSection = /^## (Software|Data) engineering projects$/.test(trimmed);
+      firstProject = projectSection;
+      if (projectSection || trimmed === "## Professional experience" || trimmed === "## Client testimonials") {
+        addPage();
+      }
+      ensureSpace(70);
       draw(trimmed.slice(3), {
         font: bold,
         size: 16,
@@ -157,13 +232,33 @@ export async function GET(request: Request) {
         gapAfter: 5,
       });
     } else if (trimmed.startsWith("### ")) {
+      const project = projectSection
+        ? projects.find((project) => project.title === trimmed.slice(4))
+        : undefined;
+      if (project) {
+        if (!firstProject) addPage();
+        firstProject = false;
+      }
+      if (!project) {
+        // Keep each experience entry together whenever it fits on one page.
+        let height = 35;
+        for (const line of markdownLines.slice(lineIndex + 1)) {
+          if (line.startsWith("##")) break;
+          height += line.trim()
+            ? wrapText(plainMarkdown(line), regular, 9.25, CONTENT_WIDTH - 8).length * 9.25 * 1.38 + 2
+            : 3;
+        }
+        ensureSpace(Math.min(height, PAGE_HEIGHT - MARGIN_TOP - MARGIN_BOTTOM));
+      }
+      ensureSpace(70);
       draw(trimmed.slice(4), {
         font: bold,
-        size: 11.5,
+        size: project ? 18 : 11.5,
         color: rgb(0.08, 0.12, 0.2),
         gapBefore: 8,
-        gapAfter: 2,
+        gapAfter: project ? 14 : 2,
       });
+      if (project) await drawProjectImages(project);
     } else if (trimmed.startsWith("> ")) {
       draw(trimmed.slice(2), {
         font: regular,

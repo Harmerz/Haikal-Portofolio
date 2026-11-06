@@ -5,6 +5,12 @@ const nextConfig: NextConfig = {
   htmlLimitedBots: /.*/,
   poweredByHeader: false,
   compress: true,
+  outputFileTracingIncludes: {
+    "/portfolio.pdf": [
+      "./public/Porto/**/*.{png,jpg,jpeg}",
+      "./public/home/portfolio/**/*.{png,jpg,jpeg}",
+    ],
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 2592000,
