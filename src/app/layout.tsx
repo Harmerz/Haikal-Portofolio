@@ -83,7 +83,8 @@ export default async function RootLayout({
   const isRsih = requestHeaders.get("x-portfolio-site") === "rsih";
   const isWeddingLetter =
     requestHeaders.get("x-portfolio-site") === "wedding-letter";
-  const isStandalone = isHustler || isRsih || isWeddingLetter;
+  const isRiotJogja = requestHeaders.get("x-portfolio-site") === "riot-jogja";
+  const isStandalone = isHustler || isRsih || isWeddingLetter || isRiotJogja;
 
   const personJsonLd = {
     "@context": "https://schema.org",
@@ -109,7 +110,7 @@ export default async function RootLayout({
   };
 
   return (
-    <html lang={isRsih || isWeddingLetter ? "id" : "en"}>
+    <html lang={isRsih || isWeddingLetter || isRiotJogja ? "id" : "en"}>
       <body className="font-sans antialiased">
         {!isStandalone && <JsonLd data={[personJsonLd, websiteJsonLd]} />}
         {isStandalone ? (

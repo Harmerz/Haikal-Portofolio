@@ -60,6 +60,8 @@ export function middleware(req: NextRequest) {
       ? "rsih"
       : url.pathname === "/untuk-nadia-rajendra"
         ? "wedding-letter"
+        : url.pathname === "/riot-jogja"
+          ? "riot-jogja"
         : config?.site === "hustler" || isLocalHustlerPreview
           ? "hustler"
           : "general"

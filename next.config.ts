@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
       "./public/Porto/**/*.{png,jpg,jpeg}",
       "./public/home/portfolio/**/*.{png,jpg,jpeg}",
     ],
+    "/api/riot-jogja": ["./private/riot-jogja/data.json"],
   },
   images: {
     formats: ["image/avif", "image/webp"],
